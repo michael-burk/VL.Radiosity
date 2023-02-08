@@ -1,0 +1,29 @@
+[TextureSource]
+[Summary("Generates pixel noise from a value")]
+shader DistanceField2DVertical_TextureFX : TextureFX
+{
+	float2 R = ViewSize;
+	float Threshold = .5;
+	float Width = 512;
+
+	float pVERT(float2 x){
+	int2 ip=x*R;
+	bool inside=Texture0.Load(int3(ip.xy,0)).a>Threshold;
+	float dist=1;
+	for(int i=1;i<=Width;i++){
+		if((Texture0.Load(int3(ip.x,clamp(ip.y+i,0,R.y-1),0)).a>Threshold)^inside)dist=min(dist,(float)i/Width);
+		if((Texture0.Load(int3(ip.x,clamp(ip.y-i,0,R.y-1),0)).a>Threshold)^inside)dist=min(dist,(float)i/Width);
+		
+	}
+	if(inside)dist*=-1;
+	//dist=inside;
+	return dist;
+	}
+
+	stage override float Shading()
+	{
+		return pVERT(streams.TexCoord.xy);
+	}
+
+
+};

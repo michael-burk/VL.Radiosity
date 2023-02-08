@@ -1,0 +1,118 @@
+[TextureSource]
+
+
+shader Radiosity_TextureFX : TextureFX
+{
+
+float2 R = ViewSize;
+
+
+#define SAMPLES 96
+#define SAMPLES2 64
+
+float maxDist = 0.15;
+
+// float4 color = .1;
+
+
+float sphereSDF(float2 p, float size) {
+    return length(p) - size;
+}
+
+float boxSDF(float2 p, float2 size) {
+    float2 r = abs(p) - size;
+    return min(max(r.x, r.y),0.) + length(max(r,float2(0,0)));
+}
+
+void addObj(inout float dist, inout float3 color, float d, float3 c) {
+    if (dist >= d) {
+        dist = d;
+        color = c;
+    }
+}
+
+
+float texDist(float2 p){
+    float samp = Texture0.SampleLevel(Sampler0, (p + .5), 0).r;
+    // float samp = Texture0.Load(int3( (p + .5) / 1 * R, 0)).r;
+    return samp;
+}
+void addObjTex(inout float dist, inout float3 color, float d, float2 p) {
+    if (dist > d) {
+        dist = d;
+        color = Texture1.SampleLevel(Sampler0, (p + .5), 0).rgb;
+        // color =  Texture1.Load(int3( (p + .5) / 1 * R, 0)).r;
+    }
+}
+
+
+void scene(in float2 pos, out float3 color, out float dist) {
+    dist = 1e9;
+    // color = float3(0,0,0);
+    // addObj(dist, color, sphereSDF(pos - float2(0,-2), 0.5),  float3(1, 1, 1)*2);
+    // addObj(dist, color, boxSDF(pos - float2(.75,0), float2(.01, 0.5)), float3(1.0,.5,.5));
+    // addObj(dist, color, boxSDF(pos - float2(-.75,0), float2(.01, 0.5)), float3(.5,.5,1.0));
+   
+    addObjTex(dist, color, texDist(pos), pos);
+    // addObj(dist, color, boxSDF(pos - float2(mouse), float2(0.01, 0.1)), float3(.0,.0,.0));
+
+}
+
+void trace(float2 p, float2 dir, out float3 c, out float marchedDist) {
+    float marched = 0;
+    float d;
+    float2 start = p;
+    for (int j = 0; j < SAMPLES2; j++) {
+        
+        scene(p, c, d);
+        
+        marched += d;
+
+        if(marched > maxDist) break;
+        if (d < .001 ) {  
+            // Stupid Refleciton
+            // if (c.r < .5) dir.x *= -1;
+            // else return;
+            marchedDist = marched;
+            return;
+        }
+
+        p -= dir * d;
+    }
+
+
+    c = float3(0,0,0);
+}
+
+// Use golden noise instead! https://www.shadertoy.com/view/ltB3zD
+
+float random (in float2 _st) {
+    
+    return frac(sin(dot(_st.xy,
+        float2(12.9898,78.233)))*
+        43758.5453123);
+}
+
+stage override float4 Shading()
+{
+// Normalized pixel coordinates (from 0 to 1) ( maybe )
+float2 uv = (streams.TexCoord.xy -.5); //* R/R.x
+float3 c;
+float3 col = float3(0,0,0);
+for (int i = 0; i < SAMPLES; i++) {
+    float t = (float(i) + random(uv+float(i))) / float(SAMPLES) * 2. * 3.1415;        
+    float marchedDist;
+    trace(uv, float2(cos(t), sin(t)), c, marchedDist);
+    c = lerp(c,0,marchedDist/maxDist);
+    col += c;
+
+}
+col /= float(SAMPLES);
+
+// Output to screen
+    // return saturate(float4(col + Texture2.SampleLevel(Sampler0, streams.TexCoord.xy, 0).rgb * col ,1.0)  + color);
+    return saturate(float4(col, 1.0));
+}
+
+
+};

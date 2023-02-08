@@ -1,0 +1,50 @@
+[TextureSource]
+[Summary("Generates pixel noise from a value")]
+shader DistanceField2DHorizontal_TextureFX : TextureFX
+{
+	float2 R = ViewSize;
+	float Threshold = .5;
+	float Width = 72;
+
+	float Scale=1;
+	float Bias=0;
+
+	float CalcC(float H, float V, bool inv=0){
+		if(inv)V=-V;
+		V=max(0,V);
+	    return (sqrt(H*H+V*V));
+	}
+
+	float pHORIZONTAL(float2 uv){
+	int2 ip=uv*R;
+	// bool inside=Texture0.Load(int3(ip,0)).a>Threshold;
+	bool inside=Texture0.SampleLevel(Sampler0,uv,0).a>Threshold;
+	// float dist = CalcC(0.0, Texture1.Load(int3(ip,0)).x,inside);
+	float dist = CalcC(0.0, Texture1.SampleLevel(Sampler0,uv,0).x,inside);
+
+	for (int i=1;i<=Width;i++){
+		float H = (float)i/Width;
+		 // j ++;
+		float k = (float)i/R.x;
+
+		dist = min(dist, CalcC(H, Texture1.SampleLevel(Sampler0,float2(uv.x+k,uv.y),0).x,inside));
+		dist = min(dist, CalcC(H, Texture1.SampleLevel(Sampler0,float2(uv.x-k,uv.y),0).x,inside));
+
+		// dist = min(dist, CalcC(H, Texture1.Load(int3(clamp(ip.x+i,0,R.x-1),ip.y,0)).x,inside));
+		// dist = min(dist, CalcC(H, Texture1.Load(int3(clamp(ip.x-i,0,R.x-1),ip.y,0)).x,inside));
+
+	}
+	if(inside)dist=-dist+1./Width;
+	dist=dist*Scale+Bias;
+
+	return dist;
+
+	}
+
+	stage override float Shading()
+	{
+		return pHORIZONTAL(streams.TexCoord.xy);
+	}
+
+
+};
