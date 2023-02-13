@@ -7,8 +7,8 @@ shader Radiosity_TextureFX : TextureFX
 float2 R = ViewSize;
 
 
-#define SAMPLES 512
-#define SAMPLES2 512
+#define SAMPLES 128
+#define SAMPLES2 64
 
 float maxDist = 0.15;
 
