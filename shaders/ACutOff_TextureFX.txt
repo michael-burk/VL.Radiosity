@@ -1,0 +1,16 @@
+[TextureSource]
+shader ACutOff_TextureFX : TextureFX
+{
+
+    float Opacity = 1;
+
+    stage override float4 Shading()
+    {
+        float4 col = InTex0().rgba;
+
+        if length(col.rgb) < Opacity
+        col.a = 0;
+
+        return col;
+    }
+};

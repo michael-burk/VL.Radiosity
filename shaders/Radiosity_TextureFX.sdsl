@@ -7,8 +7,8 @@ shader Radiosity_TextureFX : TextureFX
 float2 R = ViewSize;
 
 
-#define SAMPLES 96
-#define SAMPLES2 64
+#define SAMPLES 512
+#define SAMPLES2 512
 
 float maxDist = 0.15;
 
@@ -69,7 +69,7 @@ void trace(float2 p, float2 dir, out float3 c, out float marchedDist) {
         marched += d;
 
         if(marched > maxDist) break;
-        if (d < .001 ) {  
+        if (d < .0001 ) {  
             // Stupid Refleciton
             // if (c.r < .5) dir.x *= -1;
             // else return;
