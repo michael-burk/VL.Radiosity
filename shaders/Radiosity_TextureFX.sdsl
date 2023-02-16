@@ -61,20 +61,36 @@ void scene(in float2 pos, out float3 color, out float dist) {
 void trace(float2 p, float2 dir, out float3 c, out float marchedDist) {
     float marched = 0;
     float d;
+    // int bounces = 0;
     float2 start = p;
+    float localMax = maxDist;
     for (int j = 0; j < SAMPLES2; j++) {
-        
         scene(p, c, d);
         
         marched += d;
 
-        if(marched > maxDist) break;
+        if(marched > localMax) break;
         if (d < .0001 ) {  
+            
             // Stupid Refleciton
-            // if (c.r < .5) dir.x *= -1;
-            // else return;
+            // if (c.r < .1) {
+            //     // bounces++;
+            //     dir.x *= -1;
+            //     p -= dir * .001;
+            //     // localMax = .2;
+            //     // d = .001;
+            //     // marched += .5;
+            //     // marchedDist = marched;
+            //     // return;
+            // }
+            // else{
+            //     marchedDist = marched;
+            //     return;
+            // } 
+
             marchedDist = marched;
             return;
+            // if(bounces > 1)  return;
         }
 
         p -= dir * d;

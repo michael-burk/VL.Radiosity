@@ -386,7 +386,7 @@
               <Pin Id="UzrLKi70DmyO6lI6rbhmNt" Name="Enabled" Kind="InputPin" DefaultValue="True" />
               <Pin Id="KZTUrnIspCkP83fv9ydVFW" Name="Output" Kind="OutputPin" />
             </Node>
-            <Pad Id="ULaZvyJAMvsLKMhixjymd0" Comment="Scale" Bounds="200,544,66,16" ShowValueBox="true" isIOBox="true" Value="0.021">
+            <Pad Id="ULaZvyJAMvsLKMhixjymd0" Comment="Scale" Bounds="200,544,66,16" ShowValueBox="true" isIOBox="true" Value="0.16">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="TypeFlag" Name="Float32" />
               </p:TypeAnnotation>
@@ -473,12 +473,12 @@
               <Pin Id="QS7dNaMiUwnO5JGQ9umZSv" Name="X" Kind="OutputPin" />
               <Pin Id="AsxCPJF2PHSOPCdDvqH15S" Name="Y" Kind="OutputPin" />
             </Node>
-            <Pad Id="OokSYkOpgj7OuPntSXlIWL" Comment="" Bounds="153,336,35,15" ShowValueBox="true" isIOBox="true" Value="72">
+            <Pad Id="OokSYkOpgj7OuPntSXlIWL" Comment="" Bounds="140,350,35,15" ShowValueBox="true" isIOBox="true" Value="72">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="TypeFlag" Name="Float32" />
               </p:TypeAnnotation>
             </Pad>
-            <Node Bounds="197,498,25,19" Id="AFAEej93QHiMRf1TmuausU">
+            <Node Bounds="190,495,25,19" Id="AFAEej93QHiMRf1TmuausU">
               <p:NodeReference LastCategoryFullName="Primitive.Float32" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="/ (Integer)" />
@@ -497,9 +497,10 @@
               <Pin Id="K6rBbgtLF7wP2XTD8k28Tm" Name="X" Kind="OutputPin" />
               <Pin Id="UT8xUh0TCuWNeN5zevqVnW" Name="Y" Kind="OutputPin" />
             </Node>
+            <Pad Id="G8D1McK1sr1PfWGffvpFw2" Comment="" Bounds="308,732,190,132" ShowValueBox="true" isIOBox="true" />
           </Canvas>
           <Patch Id="E7d2WoBU0fHMBoGeoMbsj5" Name="Create" />
-          <Patch Id="VLas3X8AR3KLkotZNEENgY" Name="Update">
+          <Patch Id="VLas3X8AR3KLkotZNEENgY" Name="Update" ParticipatingElements="J8wPeV5jfYnO61bQMiC7xj">
             <Pin Id="JtTwDbJ7zOFNsdR8zT6piF" Name="Input" Kind="InputPin" Bounds="118,183" />
             <Pin Id="Uzu51dVg89bL1ykRUcQIXx" Name="Output" Kind="OutputPin" Bounds="99,656" />
             <Pin Id="SOjTW3VtMpoLd1xqPya1QE" Name="Res" Kind="InputPin" Bounds="239,157" />
@@ -535,10 +536,11 @@
           <Link Id="HHr2HPYB1hWPi82uRkn9qh" Ids="Kl1yod6grbNP17I5fT901p,UgVw2pUtkCCPW7ihxeGwsG" />
           <Link Id="Ac4JBBQCGXJMvScuTDVsjz" Ids="K6rBbgtLF7wP2XTD8k28Tm,J8dlNuVWcZiMZyruIHgVU3" />
           <Link Id="UTfsEHIwJMiLg8AH2VNt76" Ids="OokSYkOpgj7OuPntSXlIWL,GrIwW5rOf6ZMwbQv5ViVXP" />
-          <Link Id="DlPjRu0d4xyMA252zYLfRd" Ids="LrgyLBXaG1SQUpfmpzMJT4,ULaZvyJAMvsLKMhixjymd0" />
           <Link Id="VJNtBd8sBoSPhH9T9yw5yq" Ids="QS7dNaMiUwnO5JGQ9umZSv,OokSYkOpgj7OuPntSXlIWL" />
-          <Link Id="RF8lBiQzWEXN2V0CUD3cs1" Ids="AsxCPJF2PHSOPCdDvqH15S,MfduPMs2yuJQWNVLj1N0UW" />
           <Link Id="A8miHWRSiqWLyd6SfNbGC4" Ids="AsxCPJF2PHSOPCdDvqH15S,IcGANDypnQVQXqRLtY1Pxp" />
+          <Link Id="SGbE4O1QYkeQUTPNiSjeEr" Ids="KZTUrnIspCkP83fv9ydVFW,G8D1McK1sr1PfWGffvpFw2" />
+          <Link Id="Ki0LgSwvXdhQW6kS2tPRT3" Ids="LrgyLBXaG1SQUpfmpzMJT4,ULaZvyJAMvsLKMhixjymd0" />
+          <Link Id="J8wPeV5jfYnO61bQMiC7xj" Ids="OokSYkOpgj7OuPntSXlIWL,MfduPMs2yuJQWNVLj1N0UW" />
         </Patch>
       </Node>
     </Canvas>
@@ -564,7 +566,7 @@
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="RenderWindow" />
             </p:NodeReference>
-            <Pin Id="BCPAJugxFudNfWln69EbMp" Name="Bounds" Kind="InputPin" DefaultValue="1417.333, 30, 1140, 672" />
+            <Pin Id="BCPAJugxFudNfWln69EbMp" Name="Bounds" Kind="InputPin" DefaultValue="1416.667, 30, 1140, 672" />
             <Pin Id="VZpy2XqcWncPLy1IdmKNls" Name="Input" Kind="InputPin" />
             <Pin Id="KEKnfAF14zkN4ZBzQAWPlR" Name="Render View" Kind="InputPin" />
             <Pin Id="MmSDrFpys1fPXanfFEwJs6" Name="Title" Kind="InputPin" />
@@ -679,7 +681,7 @@
             <Pin Id="MbwPfil96lELvuKhZRxq5Q" Name="Enabled" Kind="InputPin" DefaultValue="True" />
             <Pin Id="QdQunfmQLzILBKrrArThDL" Name="Output" Kind="OutputPin" />
           </Node>
-          <Pad Id="T9XC8ySAEqtLKUB5hghNy8" Comment="Size" Bounds="684,616,35,28" ShowValueBox="true" isIOBox="true" Value="0.14, 0.94">
+          <Pad Id="T9XC8ySAEqtLKUB5hghNy8" Comment="Size" Bounds="684,616,35,28" ShowValueBox="true" isIOBox="true" Value="0.11, 0.11">
             <p:TypeAnnotation LastCategoryFullName="2D" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="TypeFlag" Name="Vector2" />
             </p:TypeAnnotation>
@@ -723,19 +725,36 @@
               <Choice Kind="TypeFlag" Name="RGBA" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="BYu0YU86UfJMKzl97ovfda" Comment="Position" Bounds="661,578,35,28" ShowValueBox="true" isIOBox="true" Value="-0.18, 0">
+          <Pad Id="BYu0YU86UfJMKzl97ovfda" Comment="Position" Bounds="661,578,35,28" ShowValueBox="true" isIOBox="true" Value="-0.03, 0.31">
             <p:TypeAnnotation LastCategoryFullName="2D" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="TypeFlag" Name="Vector2" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="JAuiDMorx2DMGD13S23kND" Comment="Point A" Bounds="687,747,35,28" ShowValueBox="true" isIOBox="true" Value="-0.84, 0">
+          <Pad Id="JAuiDMorx2DMGD13S23kND" Comment="Point A" Bounds="687,747,35,28" ShowValueBox="true" isIOBox="true" Value="0.4, -0.29">
             <p:TypeAnnotation LastCategoryFullName="2D" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="TypeFlag" Name="Vector2" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="T53t5O5wEI9N0DgxpKfgel" Comment="Point B" Bounds="706,694,35,28" ShowValueBox="true" isIOBox="true" Value="0.42, 0.61">
+          <Pad Id="T53t5O5wEI9N0DgxpKfgel" Comment="Point B" Bounds="706,694,35,28" ShowValueBox="true" isIOBox="true" Value="0.4, 0.52">
             <p:TypeAnnotation LastCategoryFullName="2D" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="TypeFlag" Name="Vector2" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Node Bounds="805,583" Id="ACicnJBbBONPXR545P6bEU">
+            <p:NodeReference LastCategoryFullName="Graphics.Skia.Paint" LastSymbolSource="VL.Skia.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="Category" Name="Paint" NeedsToBeDirectParent="true">
+                <p:OuterCategoryReference Kind="Category" Name="Skia" NeedsToBeDirectParent="true" />
+              </CategoryReference>
+              <Choice Kind="ProcessAppFlag" Name="SetColor" />
+            </p:NodeReference>
+            <Pin Id="LhydBKnH1LOMPZpi9CpV38" Name="Input" Kind="InputPin" />
+            <Pin Id="M7DxoP6VSKAPEQcDrFBREY" Name="Value" Kind="InputPin" />
+            <Pin Id="PqmyRtaHRtOOPcJnSTSzRm" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Pad Id="KrewRucsclCPpwy2t4us7Z" Comment="" Bounds="858,550,136,15" ShowValueBox="true" isIOBox="true" Value="1, 1, 1, 1">
+            <p:TypeAnnotation LastCategoryFullName="Color" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="RGBA" />
             </p:TypeAnnotation>
           </Pad>
         </Canvas>
@@ -763,6 +782,8 @@
         <Link Id="JwWNHJP55lpNocxM5VVCsv" Ids="Rib0Fli6Tc8OateixdARQi,AbORhzOwtspQUDvKwoIwWm" />
         <Link Id="JWarnBXDYKGONIESDsBuH2" Ids="JAuiDMorx2DMGD13S23kND,CrJVDuv1tcFLv3Bn0UGPVj" />
         <Link Id="Nm82CV2kXPwNJdKkWSxGfY" Ids="T53t5O5wEI9N0DgxpKfgel,L0Z9hSALoGPLa1Jh4Pi73G" />
+        <Link Id="LuQ2jCZs10zL3fbh6piWgo" Ids="PqmyRtaHRtOOPcJnSTSzRm,EHxyOwBMWTjONEgwYBKwwU" />
+        <Link Id="QN6vWeMqIamLXhOYD3njxM" Ids="KrewRucsclCPpwy2t4us7Z,M7DxoP6VSKAPEQcDrFBREY" />
       </Patch>
     </Node>
   </Patch>
