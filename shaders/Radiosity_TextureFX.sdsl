@@ -58,6 +58,30 @@ void scene(in float2 pos, out float3 color, out float dist) {
 
 }
 
+float3 scene2(in float2 pos) {
+    float dist = 1e9;
+    // color = float3(0,0,0);
+    // addObj(dist, color, sphereSDF(pos - float2(0,-2), 0.5),  float3(1, 1, 1)*2);
+    // addObj(dist, color, boxSDF(pos - float2(.75,0), float2(.01, 0.5)), float3(1.0,.5,.5));
+    // addObj(dist, color, boxSDF(pos - float2(-.75,0), float2(.01, 0.5)), float3(.5,.5,1.0));
+    float3 color;
+    addObjTex(dist, color, texDist(pos), pos);
+    return color;
+    // addObj(dist, color, boxSDF(pos - float2(mouse), float2(0.01, 0.1)), float3(.0,.0,.0));
+
+}
+
+float3 calcNormal( float2 p ) // for function f(p)
+{
+    float h = 0.0001; // replace by an appropriate value
+    float2 k = float2(1,-1);
+    return normalize( k.xyy*scene2( p + k.xyy*h) + 
+                      k.yyx*scene2( p + k.yyx*h) + 
+                      k.yxy*scene2( p + k.yxy*h) + 
+                      k.xxx*scene2( p + k.xxx*h));
+}
+
+
 void trace(float2 p, float2 dir, out float3 c, out float marchedDist) {
     float marched = 0;
     float d;
@@ -70,26 +94,30 @@ void trace(float2 p, float2 dir, out float3 c, out float marchedDist) {
         marched += d;
 
         if(marched > localMax) break;
-        if (d < .0001 ) {  
+        if (d <= .0001 ) {  
             
             // Stupid Refleciton
-            // if (c.r < .1) {
-            //     // bounces++;
-            //     dir.x *= -1;
-            //     p -= dir * .001;
-            //     // localMax = .2;
-            //     // d = .001;
-            //     // marched += .5;
-            //     // marchedDist = marched;
-            //     // return;
-            // }
-            // else{
-            //     marchedDist = marched;
-            //     return;
-            // } 
+            if (c.r < .1) {
+                // bounces++;
+                // dir.x *= -1;
+                // dir *= -normalize(Texture2.SampleLevel(Sampler0, (p + .5), 0).rg);
+                dir = reflect(dir, normalize(Texture2.SampleLevel(Sampler0, (p + .5), 0).rg -.5));
+                // dir *= -calcNormal(p).xy;
+                p -= dir * .001;
+                // float3 normal = calcNormal(p);
+                // localMax = .2;
+                // d = .001;
+                // marched += .5;
+                // marchedDist = marched;
+                // return;
+            }
+            else{
+                marchedDist = marched;
+                return;
+            } 
 
-            marchedDist = marched;
-            return;
+            // marchedDist = marched;
+            // return;
             // if(bounces > 1)  return;
         }
 
@@ -108,6 +136,7 @@ float random (in float2 _st) {
         float2(12.9898,78.233)))*
         43758.5453123);
 }
+
 
 stage override float4 Shading()
 {
