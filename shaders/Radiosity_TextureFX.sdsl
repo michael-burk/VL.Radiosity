@@ -7,7 +7,7 @@ shader Radiosity_TextureFX : TextureFX
 float2 R = ViewSize;
 float aspectX = 1.1;
 
-#define SAMPLES 96
+#define SAMPLES 128
 #define SAMPLES2 64
 
 float maxDist = 0.15;
@@ -85,7 +85,7 @@ float3 calcNormal( float2 p ) // for function f(p)
 void trace(float2 p, float2 dir, out float3 c, out float marchedDist) {
     float marched = 0;
     float d;
-    // int bounces = 0;
+    int bounces = 0;
     float2 start = p;
     float localMax = maxDist;
     for (int j = 0; j < SAMPLES2; j++) {
@@ -98,7 +98,7 @@ void trace(float2 p, float2 dir, out float3 c, out float marchedDist) {
             
             // Stupid Refleciton
             if (c.r < .1) {
-                // bounces++;
+                bounces++;
                 // dir.x *= -1;
                 // dir *= -normalize(Texture2.SampleLevel(Sampler0, (p + .5), 0).rg);
                 dir = reflect(dir, normalize(Texture2.SampleLevel(Sampler0, (p + .5), 0).rg -.5));
@@ -118,7 +118,7 @@ void trace(float2 p, float2 dir, out float3 c, out float marchedDist) {
 
             // marchedDist = marched;
             // return;
-            // if(bounces > 1)  return;
+            if(bounces > 2)  return;
         }
 
         p -= dir * float2(1,aspectX) * d;
