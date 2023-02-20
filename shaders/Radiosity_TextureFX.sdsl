@@ -5,9 +5,9 @@ shader Radiosity_TextureFX : TextureFX
 {
 
 float2 R = ViewSize;
+float aspectX = 1.1;
 
-
-#define SAMPLES 128
+#define SAMPLES 96
 #define SAMPLES2 64
 
 float maxDist = 0.15;
@@ -121,7 +121,7 @@ void trace(float2 p, float2 dir, out float3 c, out float marchedDist) {
             // if(bounces > 1)  return;
         }
 
-        p -= dir * d;
+        p -= dir * float2(1,aspectX) * d;
     }
 
 
@@ -148,7 +148,7 @@ for (int i = 0; i < SAMPLES; i++) {
     float t = (float(i) + random(uv+float(i))) / float(SAMPLES) * 2. * 3.1415;        
     float marchedDist;
     trace(uv, float2(cos(t), sin(t)), c, marchedDist);
-    c = lerp(c,0,marchedDist/maxDist);
+      c = lerp(c,0,pow(abs(marchedDist/maxDist), maxDist));
     col += c;
 
 }
