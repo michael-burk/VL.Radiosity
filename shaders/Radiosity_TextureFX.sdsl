@@ -5,14 +5,18 @@ shader Radiosity_TextureFX : TextureFX
 {
 
 float2 R = ViewSize;
-float aspectX = 1.1;
+float aspectX = 1.0;
 
 #define SAMPLES 128
 #define SAMPLES2 32
 
 float maxDist = 0.15;
+// float distFieldScale = 0.1;
 
 // float4 color = .1;
+
+
+
 
 
 float sphereSDF(float2 p, float size) {
@@ -31,16 +35,29 @@ void addObj(inout float dist, inout float3 color, float d, float3 c) {
     }
 }
 
+float3 calcNormal( float2 p ) // for function f(p)
+{
+    float h = 0.09961; // replace by an appropriate value
+    float2 k = float2(1,-1);
+    return normalize( k.xyy*texDist( p + k.xyy*h) + 
+                      k.yyx*texDist( p + k.yyx*h) + 
+                      k.yxy*texDist( p + k.yxy*h) + 
+                      k.xxx*texDist( p + k.xxx*h));
+}
 
 float texDist(float2 p){
     float samp = Texture0.SampleLevel(Sampler0, (p + .5), 0).r;
     // float samp = Texture0.Load(int3( (p + .5) / 1 * R, 0)).r;
     return samp;
 }
+
+
+
 void addObjTex(inout float dist, inout float3 color, float d, float2 p) {
     if (dist > d) {
         dist = d;
         color = Texture1.SampleLevel(Sampler0, (p + .5), 0).rgb* 1;
+
         // color =  Texture1.Load(int3( (p + .5) / 1 * R, 0)).r;
     }
 }
@@ -71,16 +88,6 @@ float3 scene2(in float2 pos) {
 
 }
 
-float3 calcNormal( float2 p ) // for function f(p)
-{
-    float h = 0.0001; // replace by an appropriate value
-    float2 k = float2(1,-1);
-    return normalize( k.xyy*scene2( p + k.xyy*h) + 
-                      k.yyx*scene2( p + k.yyx*h) + 
-                      k.yxy*scene2( p + k.yxy*h) + 
-                      k.xxx*scene2( p + k.xxx*h));
-}
-
 
 void trace(float2 p, float2 dir, out float3 c, out float marchedDist) {
     float marched = 0;
@@ -94,7 +101,7 @@ void trace(float2 p, float2 dir, out float3 c, out float marchedDist) {
         marched += d;
 
         if(marched > localMax) break;
-        if (d <= .0001 ) {  
+        if (d <= .001 ) {  
             
             // Stupid Refleciton
             if (c.r < .1) {
@@ -102,9 +109,9 @@ void trace(float2 p, float2 dir, out float3 c, out float marchedDist) {
                 // dir.x *= -1;
                 // dir *= -normalize(Texture2.SampleLevel(Sampler0, (p + .5), 0).rg);
                 dir = reflect(dir, normalize(Texture2.SampleLevel(Sampler0, (p + .5), 0).rg -.5));
-                // dir = reflect(dir, -calcNormal(p).xy*10);
+                // dir = reflect(dir, calcNormal(p).xy*1);
                 // dir *= -calcNormal(p).xy;
-                p -= dir * .001;
+                p -= dir * .01;
                 // float3 normal = calcNormal(p);
                 // localMax = .2;
                 // d = .001;
@@ -119,7 +126,7 @@ void trace(float2 p, float2 dir, out float3 c, out float marchedDist) {
 
             // marchedDist = marched;
             // return;
-            if(bounces > 2)  return;
+            // if(bounces > 2)  return;
         }
 
         p -= dir * float2(1,aspectX) * d;
