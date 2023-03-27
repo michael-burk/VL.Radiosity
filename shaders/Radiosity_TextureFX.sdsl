@@ -8,7 +8,7 @@ float2 R = ViewSize;
 float aspectX = 1.1;
 
 #define SAMPLES 128
-#define SAMPLES2 64
+#define SAMPLES2 32
 
 float maxDist = 0.15;
 
@@ -40,7 +40,7 @@ float texDist(float2 p){
 void addObjTex(inout float dist, inout float3 color, float d, float2 p) {
     if (dist > d) {
         dist = d;
-        color = Texture1.SampleLevel(Sampler0, (p + .5), 0).rgb;
+        color = Texture1.SampleLevel(Sampler0, (p + .5), 0).rgb* 1;
         // color =  Texture1.Load(int3( (p + .5) / 1 * R, 0)).r;
     }
 }
@@ -102,6 +102,7 @@ void trace(float2 p, float2 dir, out float3 c, out float marchedDist) {
                 // dir.x *= -1;
                 // dir *= -normalize(Texture2.SampleLevel(Sampler0, (p + .5), 0).rg);
                 dir = reflect(dir, normalize(Texture2.SampleLevel(Sampler0, (p + .5), 0).rg -.5));
+                // dir = reflect(dir, -calcNormal(p).xy*10);
                 // dir *= -calcNormal(p).xy;
                 p -= dir * .001;
                 // float3 normal = calcNormal(p);
