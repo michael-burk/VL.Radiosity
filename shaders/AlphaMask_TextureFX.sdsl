@@ -1,0 +1,16 @@
+
+shader AlphaMask_TextureFX : TextureFX
+{
+
+    float Opacity = 1;
+
+    stage override float4 Shading()
+    {
+        float4 col = 1;
+
+        // if (length(InTex0().a) < Opacity)
+        // col = 0;
+
+        return col * InTex0().a;
+    }
+};
