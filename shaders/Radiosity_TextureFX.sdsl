@@ -106,12 +106,13 @@ void trace(float2 p, float2 dir, out float3 c, out float marchedDist) {
             // Stupid Refleciton
             if (c.r < .1) {
                 bounces++;
-                // dir.x *= -1;
-                // dir *= -normalize(Texture2.SampleLevel(Sampler0, (p + .5), 0).rg);
-                dir = reflect(dir, normalize(Texture2.SampleLevel(Sampler0, (p + .5), 0).rg -.5));
-                // dir = reflect(dir, calcNormal(p).xy*1);
-                // dir *= -calcNormal(p).xy;
+
+                // dir = reflect(dir, normalize(Texture2.SampleLevel(Sampler0, (p + .5), 0).rg -.5));
+                dir = refract(dir, normalize(Texture2.SampleLevel(Sampler0, (p + .5), 0).rg -.5),1.52);
+
                 p -= dir * .01;
+
+
                 // float3 normal = calcNormal(p);
                 // localMax = .2;
                 // d = .001;

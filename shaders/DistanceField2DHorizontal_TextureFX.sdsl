@@ -19,6 +19,7 @@ shader DistanceField2DHorizontal_TextureFX : TextureFX
 	int2 ip=uv*R;
 	// bool inside=Texture0.Load(int3(ip,0)).a>Threshold;
 	bool inside=Texture0.SampleLevel(Sampler0,uv,0).a>Threshold;
+
 	// float dist = CalcC(0.0, Texture1.Load(int3(ip,0)).x,inside);
 	float dist = CalcC(0.0, Texture1.SampleLevel(Sampler0,uv,0).x,inside);
 
