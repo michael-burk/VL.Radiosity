@@ -110,7 +110,7 @@ void trace(float2 p, float2 dir, out float3 c, out float marchedDist) {
                 dir = reflect(dir, normalize(Texture2.SampleLevel(Sampler0, (p + .5), 0).rg -.5));
                 // dir = refract(dir, normalize(Texture2.SampleLevel(Sampler0, (p + .5), 0).rg -.5),1.52);
 
-                p -= dir * .02;
+                p -= dir * .009;
 
 
                 // float3 normal = calcNormal(p);
