@@ -1,0 +1,14 @@
+[Category("Filter")]
+shader Max_TextureFX : TextureFX
+{
+
+    float Opacity = 1;
+
+    stage override float4 Shading()
+    {
+
+        float2 uv = streams.TexCoord;
+
+        return max(Texture0.SampleLevel(Sampler0, uv, 0),Texture1.SampleLevel(Sampler0, uv, 0));
+    }
+};

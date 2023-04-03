@@ -6,9 +6,8 @@ shader Radiosity_TextureFX : TextureFX
 
 float2 R = ViewSize;
 float aspectX = 1.0;
-float time = 0.0;
-#define SAMPLES 128
-#define SAMPLES2 32
+int SAMPLES =  128;
+int SAMPLES2 = 32;
 
 float maxDist = 0.15;
 // float distFieldScale = 0.1;
@@ -143,29 +142,27 @@ float random (in float2 _st) {
     
     return frac(sin(dot(_st.xy,
         float2(12.9898,78.233)))*
-        43758.5453123 );
+        43758.5453123);
 }
 
 
 stage override float4 Shading()
 {
-// Normalized pixel coordinates (from 0 to 1) ( maybe )
-float2 uv = (streams.TexCoord.xy -.5); //* R/R.x
+float2 uv = (streams.TexCoord.xy -.5);
 float3 c;
 float3 col = float3(0,0,0);
 for (int i = 0; i < SAMPLES; i++) {
-    float t = (float(i) + random(uv+float(i)))/ float(SAMPLES) * 2. * 3.14159265359;        
+    
+    float t = (float(i) + random(uv+float(i)))/ float(SAMPLES) * 2. * 3.141;        
+    
     float marchedDist;
-    trace(uv, float2(cos(t+time), sin(t+time)), c, marchedDist);
-      c = lerp(c,0,pow(abs(marchedDist/maxDist), maxDist));
+    trace(uv, float2(cos(t), sin(t)), c, marchedDist);
+    c = lerp(c,0,pow(abs(marchedDist/maxDist), maxDist));
     col += c;
 
 }
 col /= float(SAMPLES);
-
-// Output to screen
-    // return saturate(float4(col + Texture2.SampleLevel(Sampler0, streams.TexCoord.xy, 0).rgb * col ,1.0)  + color);
-    return saturate(float4(col, 1.0));
+ return saturate(float4(col, 1.0));
 }
 
 
