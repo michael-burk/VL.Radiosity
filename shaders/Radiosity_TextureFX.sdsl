@@ -74,19 +74,6 @@ void scene(in float2 pos, out float3 color, out float dist) {
 
 }
 
-float3 scene2(in float2 pos) {
-    float dist = 1e9;
-    // color = float3(0,0,0);
-    // addObj(dist, color, sphereSDF(pos - float2(0,-2), 0.5),  float3(1, 1, 1)*2);
-    // addObj(dist, color, boxSDF(pos - float2(.75,0), float2(.01, 0.5)), float3(1.0,.5,.5));
-    // addObj(dist, color, boxSDF(pos - float2(-.75,0), float2(.01, 0.5)), float3(.5,.5,1.0));
-    float3 color;
-    addObjTex(dist, color, texDist(pos), pos);
-    return color;
-    // addObj(dist, color, boxSDF(pos - float2(mouse), float2(0.01, 0.1)), float3(.0,.0,.0));
-
-}
-
 
 void trace(float2 p, float2 dir, out float3 c, out float marchedDist) {
     float marched = 0;
@@ -100,12 +87,10 @@ void trace(float2 p, float2 dir, out float3 c, out float marchedDist) {
         
         marched += d;
 
-        // if(marched > localMax) break;
+        
         if (d <= .0001 ) {  
             
-            // Stupid Refleciton
-            if (c.r < .1) {
-            // bounces++;
+            // // bounces++;
                 
             float2 normal = normalize(Texture2.SampleLevel(Sampler0, (p + .5), 0).rg -.5);
             float material = Texture3.SampleLevel(Sampler0, (p + .5), 0).r;
@@ -113,35 +98,34 @@ void trace(float2 p, float2 dir, out float3 c, out float marchedDist) {
             if(material < .1){
                 // Diffuse Reflection
                 dir = normalize(-normal - normalize(float2(random(p+sin(time)),random(p+5+sin(time))*1)-.5));
-                // dir = -normalize(normal + normalize(float2(cos(random(p+time)),sin(random(p+time))) ));
-                // dir = normalize(-normal - dir);
-                 // dir = -normal;
                 p -= dir * .009;
+                diffuseCol = c;
             }
             else if(material < .2){
                 // Specular Reflection
                 dir = reflect(dir, normal);
                 p -= dir * .009;
+                diffuseCol = c;
             }
              else if(material < .3){
             // Specular Refraction
                  dir = refract(dir, -normal,1.52);
                 p -= dir * .02;
+                diffuseCol = c;
 
              }
-
-             diffuseCol = float3(0,0,3)*1;
-
-            }
-            else{
+             else if(material < .5){ // is emissive
                 marchedDist = marched;
-                c += diffuseCol;
+                c = (c + diffuseCol);
                 return;
-            } 
+             }
+
+             
+             // if(marched > maxDist) return;
 
         }
 
-        // if(marchedDist >= .5) return;
+        if(marchedDist >= maxDist) return;
 
         p -= dir * float2(1,aspectX) * d;
     }

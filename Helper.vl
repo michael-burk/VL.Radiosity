@@ -1038,12 +1038,12 @@
                 <Choice Kind="ProcessAppFlag" Name="RenderWindow" />
               </p:NodeReference>
               <Pin Id="KKE1fus1WR3PGkxalU4HE4" Name="Node Context" Kind="InputPin" />
-              <Pin Id="UyBRzNRz7mSMQ5fEYsq05M" Name="Bounds" Kind="InputPin" DefaultValue="1262.667, -628, 573.3333, 588" />
+              <Pin Id="UyBRzNRz7mSMQ5fEYsq05M" Name="Bounds" Kind="InputPin" DefaultValue="710.6667, -687.3333, 577.3333, 577.3333" />
               <Pin Id="L89nBYB717xQTrOVJMnSBW" Name="Input" Kind="InputPin" />
               <Pin Id="RVZUBwTgqhuLnxRnSO1tUO" Name="Render View" Kind="InputPin" />
               <Pin Id="S8ylNYlMGSqPu9KkozIuwc" Name="Title" Kind="InputPin" DefaultValue="Stride" />
               <Pin Id="R2YLyzdkyh2QQDtIp64FdJ" Name="Clear Color" Kind="InputPin" />
-              <Pin Id="GvYSJZ1F0dlLB9YnVuUmt2" Name="Clear" Kind="InputPin" DefaultValue="False" />
+              <Pin Id="GvYSJZ1F0dlLB9YnVuUmt2" Name="Clear" Kind="InputPin" />
               <Pin Id="NyoHfgtqZZSP9MirnGXHa0" Name="Edit Mode" Kind="InputPin" />
               <Pin Id="VDSCsGlzRAQOZmc9oNUnv9" Name="Enable Keyboard Shortcuts" Kind="InputPin" />
               <Pin Id="IznqFgfGGVZOwkmE5Ajuob" Name="Enabled" Kind="InputPin" />
@@ -1064,7 +1064,7 @@
               <Pin Id="KWfxFc2aNZ8PzZeoP9TTtM" Name="Sampler" Kind="InputPin" />
               <Pin Id="QuXq3m9PJsgOfezakLcMhx" Name="Sample Mode" Kind="InputPin" />
               <Pin Id="JBFV1mzXIHEMpMuJgHTZ4l" Name="Blend State" Kind="InputPin" />
-              <Pin Id="CEvurozuJXQL7De9KA1tmY" Name="Color" Kind="InputPin" DefaultValue="0.72, 0.72, 0.72, 1" />
+              <Pin Id="CEvurozuJXQL7De9KA1tmY" Name="Color" Kind="InputPin" />
               <Pin Id="IBhSXRwjJruPStE4hbxvXG" Name="Rasterizer State" Kind="InputPin" />
               <Pin Id="UokQmsM71nXNGVfGBCfo9v" Name="Depth Stencil State" Kind="InputPin" />
               <Pin Id="EP9aNATGPLiMeorabHALvy" Name="Output" Kind="OutputPin" />
