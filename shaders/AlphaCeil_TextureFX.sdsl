@@ -1,5 +1,5 @@
-[TextureSource]
-shader ACutOff_TextureFX : TextureFX
+
+shader AlphaCeil_TextureFX : TextureFX
 {
 
     float Opacity = 1;
@@ -8,8 +8,8 @@ shader ACutOff_TextureFX : TextureFX
     {
         float4 col = InTex0().rgba;
 
-        if length(col.rgb) < Opacity
-        col.a = 0;
+        if (col.a >= Opacity)
+        col.a = 1;
 
         return col;
     }

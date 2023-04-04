@@ -8,8 +8,8 @@ shader ACutOff_TextureFX : TextureFX
     {
         float4 col = InTex0().rgba;
 
-        if (length(col.rgb) < Opacity)
-        col.a = 0;
+        if (length(col.rgb) >= Opacity)
+        col.a = 1;
 
         return col;
     }
