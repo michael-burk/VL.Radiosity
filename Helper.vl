@@ -1038,7 +1038,7 @@
                 <Choice Kind="ProcessAppFlag" Name="RenderWindow" />
               </p:NodeReference>
               <Pin Id="KKE1fus1WR3PGkxalU4HE4" Name="Node Context" Kind="InputPin" />
-              <Pin Id="UyBRzNRz7mSMQ5fEYsq05M" Name="Bounds" Kind="InputPin" DefaultValue="2592.667, 88, 561.3333, 583.3333" />
+              <Pin Id="UyBRzNRz7mSMQ5fEYsq05M" Name="Bounds" Kind="InputPin" DefaultValue="1262.667, -628, 573.3333, 588" />
               <Pin Id="L89nBYB717xQTrOVJMnSBW" Name="Input" Kind="InputPin" />
               <Pin Id="RVZUBwTgqhuLnxRnSO1tUO" Name="Render View" Kind="InputPin" />
               <Pin Id="S8ylNYlMGSqPu9KkozIuwc" Name="Title" Kind="InputPin" DefaultValue="Stride" />
@@ -1064,12 +1064,12 @@
               <Pin Id="KWfxFc2aNZ8PzZeoP9TTtM" Name="Sampler" Kind="InputPin" />
               <Pin Id="QuXq3m9PJsgOfezakLcMhx" Name="Sample Mode" Kind="InputPin" />
               <Pin Id="JBFV1mzXIHEMpMuJgHTZ4l" Name="Blend State" Kind="InputPin" />
-              <Pin Id="CEvurozuJXQL7De9KA1tmY" Name="Color" Kind="InputPin" />
+              <Pin Id="CEvurozuJXQL7De9KA1tmY" Name="Color" Kind="InputPin" DefaultValue="0.72, 0.72, 0.72, 1" />
               <Pin Id="IBhSXRwjJruPStE4hbxvXG" Name="Rasterizer State" Kind="InputPin" />
               <Pin Id="UokQmsM71nXNGVfGBCfo9v" Name="Depth Stencil State" Kind="InputPin" />
               <Pin Id="EP9aNATGPLiMeorabHALvy" Name="Output" Kind="OutputPin" />
             </Node>
-            <Node Bounds="680,545,85,19" Id="BfOEFWZBdTzPfx9JhNNYQc">
+            <Node Bounds="679,528,85,19" Id="BfOEFWZBdTzPfx9JhNNYQc">
               <p:NodeReference LastCategoryFullName="Main" LastDependency="Helper.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="TextureCam" />
@@ -1096,7 +1096,6 @@
               <Pin Id="SjcrG7zFptdM5nqbqEpQzj" Name="Apply" Kind="InputPin" />
             </Node>
             <ControlPoint Id="BtNleRy2GQHMGqGhX0fFdt" Bounds="683,442" />
-            <Pad Id="VtZlodW0RFnPuZNQzRqum1" Comment="" Bounds="861,595,35,35" ShowValueBox="true" isIOBox="true" />
             <Node Bounds="618,778,64,26" Id="BB3plEVDKwJPDnVmHezRSj">
               <p:NodeReference LastCategoryFullName="Stride.API.Games.GameWindow" LastSymbolSource="VL.Stride.Runtime.TypeForwards.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -1309,12 +1308,10 @@
             <Fragment Id="VHJtQulNjtwOLbOWzttm1C" Patch="IAkuyGRI3L1La0mNgmxHbY" Enabled="true" />
             <Fragment Id="O6fQZMR0pF2MC7r9OBE1ju" Patch="PrAp80vjDq5NIc2ih2jl54" Enabled="true" />
           </ProcessDefinition>
-          <Link Id="EkvPTfcNFOdMh8HX8bHfKj" Ids="EP9aNATGPLiMeorabHALvy,L89nBYB717xQTrOVJMnSBW" />
           <Link Id="SDfznEzo2HNOh68nfuXLhZ" Ids="VmDGKg8W0o7PEZ9RjvIFm2,AHLKOKpq0g7LIXS9K5BL3A" />
           <Link Id="PEBJnXdnRphNwnE8QvH3Vd" Ids="PoTDWGD1zXeOFUlqPWaBCT,VkScTcFiJ0LNcnykHiwHSi" />
           <Link Id="Qcy73Yw3g2uPqeBKfya0pW" Ids="BtNleRy2GQHMGqGhX0fFdt,KtXh7l7MPAfM5y913vBmzF" />
           <Link Id="OGF4BZttKfUPzO1sif6Gqe" Ids="FIBj9aODsV6QAikJ6UTRu5,BtNleRy2GQHMGqGhX0fFdt" IsHidden="true" />
-          <Link Id="Tt2Rf5p5uG0P78hrCObPFM" Ids="HHacg1srkUWOjnJhM6y6ZS,VtZlodW0RFnPuZNQzRqum1" />
           <Link Id="JROM4mQxMmrMwaj4s6RqiO" Ids="VmDGKg8W0o7PEZ9RjvIFm2,JSxEgZ0BBdqP3nsmPCJVWH" />
           <Link Id="SEoRQMWAyRHNXCJQUxxY2z" Ids="CfyptvVUOOZPQPKRquzAtn,JpGQ6i9PVFkN0ZaetN89Hv" />
           <Link Id="RMOucDxeIagOojX6QWJg6w" Ids="I4TJUNphUngQBZBXROyp9B,KG6uUkIk6rbOZpANnJnLoB" />
@@ -1361,6 +1358,7 @@
           <Link Id="REVc7HDE1rgQKH7z2Gf0mi" Ids="G0ABwe5xJquLpOV9MT7IOH,TvwMcITsNNbNzGLaOxP0L0" IsFeedback="true" />
           <Link Id="TX7q5rcOf4JNP4KmcKZvbu" Ids="QISZydYUUj9QD9pb4P3fcj,TvwMcITsNNbNzGLaOxP0L0" />
           <Link Id="EN2vOL2wPnWOKigLZbgEJq" Ids="TvwMcITsNNbNzGLaOxP0L0,CdwDSrj1vFsM27ugyAKFyj" />
+          <Link Id="LiL6xDTGvjrO1DbTdImdCs" Ids="EP9aNATGPLiMeorabHALvy,L89nBYB717xQTrOVJMnSBW" />
         </Patch>
       </Node>
       <Canvas Id="HwfnYGllnkJPVpNNAXIJkM" Name="Animation" Position="965,381">

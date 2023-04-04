@@ -101,39 +101,52 @@ void trace(float2 p, float2 dir, out float3 c, out float marchedDist) {
         marched += d;
 
         // if(marched > localMax) break;
-        if (d <= .001 ) {  
+        if (d <= .0001 ) {  
             
             // Stupid Refleciton
             if (c.r < .1) {
+            // bounces++;
+                
+            float2 normal = normalize(Texture2.SampleLevel(Sampler0, (p + .5), 0).rg -.5);
+            float material = Texture3.SampleLevel(Sampler0, (p + .5), 0).r;
 
-                // bounces++;
-                float2 normal = normalize(Texture2.SampleLevel(Sampler0, (p + .5), 0).rg -.5);
-
-            // Diffuse Reflection
-                dir = -normal - normalize(float2(random(p+sin(time)),random(p+cos(time) + 5)*1)-.5);
+            if(material < .1){
+                // Diffuse Reflection
+                dir = normalize(-normal - normalize(float2(random(p+sin(time)),random(p+5+sin(time))*1)-.5));
+                // dir = -normalize(normal + normalize(float2(cos(random(p+time)),sin(random(p+time))) ));
+                // dir = normalize(-normal - dir);
+                 // dir = -normal;
                 p -= dir * .009;
+            }
+            else if(material < .2){
+                // Specular Reflection
+                dir = reflect(dir, normal);
+                p -= dir * .009;
+            }
+             else if(material < .3){
+            // Specular Refraction
+                 dir = refract(dir, -normal,1.52);
+                p -= dir * .02;
 
-            // Specular Reflection / Refraction
-                // dir = reflect(dir, normal);
-                // p -= dir * .009;
+             }
 
-                // dir = refract(dir, -normal,1.52);
-                // p -= dir * .02;
+             diffuseCol = float3(0,0,3)*1;
 
-             diffuseCol = float3(0,0,1)*1;
             }
             else{
                 marchedDist = marched;
-                  c += diffuseCol;
+                c += diffuseCol;
                 return;
             } 
 
         }
 
+        // if(marchedDist >= .5) return;
+
         p -= dir * float2(1,aspectX) * d;
     }
 
-
+    diffuseCol = 0;
     c = float3(0,0,0);
 }
 
