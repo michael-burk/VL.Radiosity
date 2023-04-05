@@ -141,12 +141,12 @@ void trace(float2 p, float2 dir, out float3 c, out float marchedDist) {
             //       - e.g. red: 1.52, green, 1.53, blue, 1.51
             //
             // Specular Refraction
-                dir = refract(dir, -normal,5.);
+                dir = refract(dir, -normal,3.);
                 p -= dir * .02;
              }
             else if(material < .6){
             // Specular Refraction
-                dir = refract(dir, -normal,5.);
+                dir = refract(dir, -normal,3.);
                 p -= dir * .02;
                 bounceCol *= c;
              }        
@@ -178,13 +178,15 @@ float2 uv = (streams.TexCoord.xy -.5);
 float3 c;
 float3 col = float3(0,0,0);
 float4 texCol = Texture1.SampleLevel(Sampler0, (uv + .5), 0);
-// if (texCol.a >.9999) return texCol;
+if (texCol.a >.9999) return texCol;
 
 for (int i = 0; i < SAMPLES; i++) {
     
     float t = (float(i) + random(uv+float(i)))/ float(SAMPLES) * 2. * 3.141;        
     
     float marchedDist;
+    // Accidental focus blur, was supposed to smooth edges
+    //trace(uv+(random(uv+float(i)+float2(sin(time),cos(time)))-.5)*.01, float2(cos(t+time), sin(t+time)), c, marchedDist);
     trace(uv, float2(cos(t+time), sin(t+time)), c, marchedDist);
     c = lerp(c,0,pow(abs(marchedDist/maxDist), maxDist));
     col += c;
