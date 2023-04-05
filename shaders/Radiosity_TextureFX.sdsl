@@ -118,9 +118,13 @@ void trace(float2 p, float2 dir, out float3 c, out float marchedDist) {
                 bounceCol *= c;
             }
             else if(material < .3){
+                // Iridescence ?
+                // bounceCol = lerp(float3(1,0,0),float3(0,0,1),dot(dir, normal)-.5);
+
                 // Specular Reflection
                 dir = reflect(dir, normal);
                 p -= dir * .009;
+
             }
               else if(material < .4){
                 // Specular Reflection
@@ -129,13 +133,20 @@ void trace(float2 p, float2 dir, out float3 c, out float marchedDist) {
                 bounceCol *= c;
             }
              else if(material < .5){
+            // Refraction index of Glass: 1.52. Here we use 5.0 for more drama!
+            // Todo: Chormatic aberation and also reflection
+            //       - Give every ray an ID
+            //       - 50% of rays refelect, 50% refract
+            //       - on refraction give every thrid ray different refraction index and color
+            //       - e.g. red: 1.52, green, 1.53, blue, 1.51
+            //
             // Specular Refraction
-                 dir = refract(dir, -normal,1.52);
+                dir = refract(dir, -normal,5.);
                 p -= dir * .02;
              }
             else if(material < .6){
             // Specular Refraction
-                dir = refract(dir, -normal,1.52);
+                dir = refract(dir, -normal,5.);
                 p -= dir * .02;
                 bounceCol *= c;
              }        
