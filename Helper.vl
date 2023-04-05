@@ -1038,7 +1038,7 @@
                 <Choice Kind="ProcessAppFlag" Name="RenderWindow" />
               </p:NodeReference>
               <Pin Id="KKE1fus1WR3PGkxalU4HE4" Name="Node Context" Kind="InputPin" />
-              <Pin Id="UyBRzNRz7mSMQ5fEYsq05M" Name="Bounds" Kind="InputPin" DefaultValue="710.6667, -687.3333, 577.3333, 577.3333" />
+              <Pin Id="UyBRzNRz7mSMQ5fEYsq05M" Name="Bounds" Kind="InputPin" DefaultValue="795.3333, -692, 625.3333, 632.6667" />
               <Pin Id="L89nBYB717xQTrOVJMnSBW" Name="Input" Kind="InputPin" />
               <Pin Id="RVZUBwTgqhuLnxRnSO1tUO" Name="Render View" Kind="InputPin" />
               <Pin Id="S8ylNYlMGSqPu9KkozIuwc" Name="Title" Kind="InputPin" DefaultValue="Stride" />
