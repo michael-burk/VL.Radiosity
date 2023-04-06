@@ -10,13 +10,10 @@ int SAMPLES =  64;
 int SAMPLES2 = 48;
 float time = 0;
 float maxDist = 0.15;
-// float distFieldScale = 0.1;
-
-// float4 color = .1;
 
 
- float LightPower = 25.0f;
- float BumpAmount = 10.0f;
+float LightPower = 25.0f;
+float BumpAmount = 10.0f;
 
 float4 PhongDirectional(float3 NormV, float3 ViewDirV, float3 LightDirV)
 {
@@ -37,7 +34,7 @@ float4 PhongDirectional(float3 NormV, float3 ViewDirV, float3 LightDirV)
     float3 V = normalize(ViewDirV); 
 
     //calculate specular light
-    float4 spec = pow(max(dot(R, V),0), LightPower*.2) * .1;
+    float4 spec = pow(max(dot(R, V),0), LightPower * .2) * .1;
 
     return diff + spec;
 }
@@ -181,7 +178,7 @@ void trace(float2 p, float2 dir, out float3 c, out float marchedDist, out float2
             //       - e.g. red: 1.52, green, 1.53, blue, 1.51
             //
             // Specular Refraction
-                dir = refract(dir, -normal,1.);
+                dir = refract(dir, -normal,3.);
                 p -= dir * .02;
              }
             else if(material < .6){
@@ -219,8 +216,8 @@ stage override float4 Shading()
 float2 uv = (streams.TexCoord.xy -.5);
 float3 c;
 float3 col = float3(0,0,0);
-float4 texCol = Texture1.SampleLevel(Sampler0, (uv + .5), 0);
-if (texCol.a >.9999) return texCol;
+float4 texCol = Texture1.SampleLevel(Sampler1, (uv + .5), 0);
+// if (texCol.a >.99999) return texCol; // Has aliasing issues
 
 float4 bump = Texture4.SampleLevel(Sampler0, streams.TexCoord.xy, 0);
 
