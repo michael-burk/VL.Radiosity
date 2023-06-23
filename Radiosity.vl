@@ -271,7 +271,6 @@
           <Link Id="E35AEnj64owPXxaI8A4OGP" Ids="Na9lUgOizuPLwRQfW2H9jz,JZlUWKq57RrOg43cSL0Qox" />
           <Link Id="J84PULeC9JzMwBKM3PJO7l" Ids="Na9lUgOizuPLwRQfW2H9jz,JdBXXAl0HuSLgrjqukGOAl" />
           <Link Id="BdY2AUHSVfULSu5WKnvxYa" Ids="SlUc7cBdqyXLA7cwUaPopt,FiwBKTqQyPhPDknbpJnHoy" />
-          <Link Id="JWoownH7XRUN8gcnBKYPOM" Ids="GJ45UfQjdaCPdYfHEljou7,Khnv7jOb3W2MnWRqdW313S" />
           <Link Id="P4aXyKbHFlCQIMHcY9liPV" Ids="GJ45UfQjdaCPdYfHEljou7,M96mXFICOrQNBhZA2x2Ip9" />
           <Link Id="IeYoCViHb6PNX0aEZ6XDrz" Ids="AnTPnttjBMBLZIUqAW1OWW,GJNBDhAMfxxOqLADTOsSHH" />
           <Link Id="SLxjyfvIahNQMq0UUUisw1" Ids="RK0mZC4okaqNyZBSFWNRXH,JaTRoeeS7qiLrW8FFg4ihz" />
@@ -611,5 +610,5 @@
   <NugetDependency Id="IbDSUNiaLrHP34lXamuppu" Location="System.Drawing.Common" Version="6.0.0" />
   <PlatformDependency Id="JHS49jB9PQmN0zM3vO19id" Location="System.Drawing" />
   <PlatformDependency Id="CXUy1IRQsb7LoaL6Gtrxjx" Location="System" />
-  <DocumentDependency Id="Gb2tEf4Q7C6QF3A5HQme7e" Location="./Helper.vl" />
+  <DocumentDependency Id="I7jOKc2WCGZLYflqC6QdEw" Location="./VL.Helper/Helper.vl" />
 </Document>

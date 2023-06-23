@@ -1167,15 +1167,6 @@
               <Choice Kind="TypeFlag" Name="RGBA" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="EIjD7YgMaMbMO63IERZdhO" Comment="Enabled" Bounds="1857,713,35,35" ShowValueBox="true" isIOBox="true" Value="False">
-            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
-              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
-              <CategoryReference Kind="Category" Name="Primitive" />
-            </p:TypeAnnotation>
-            <p:ValueBoxSettings>
-              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
-            </p:ValueBoxSettings>
-          </Pad>
           <Node Bounds="1844,619,105,19" Id="Jq6ghjrhhdzLWE6wTuYWqd">
             <p:NodeReference LastCategoryFullName="Graphics.Skia.Paint" LastDependency="VL.Skia.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -1189,6 +1180,39 @@
             <Pin Id="FWat1l6pyY6OZ5mhmFP8hL" Name="Miter" Kind="InputPin" />
             <Pin Id="GBuF0vFqBPFQIjCTr0cbv5" Name="Output" Kind="OutputPin" />
           </Node>
+          <Node Bounds="1987,735,85,19" Id="KYI8Gjs3iXAMxIC2KE59Eo">
+            <p:NodeReference LastCategoryFullName="Graphics.Skia.Layers" LastDependency="VL.Skia.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="Category" Name="Layers" NeedsToBeDirectParent="true">
+                <p:OuterCategoryReference Kind="Category" Name="Skia" NeedsToBeDirectParent="true" />
+              </CategoryReference>
+              <Choice Kind="ProcessAppFlag" Name="Circle" />
+            </p:NodeReference>
+            <Pin Id="KeZMM5FGwKgPmePw6k4nW5" Name="Position" Kind="InputPin" />
+            <Pin Id="EnXJPxVQGVlLvrUXp4pObj" Name="Radius" Kind="InputPin" DefaultValue="1.17" />
+            <Pin Id="M0Q5bNVlKSCPfJajVnLCUh" Name="Anchor" Kind="InputPin" />
+            <Pin Id="DeTSfXD0myhO7K44bYuDCK" Name="Paint" Kind="InputPin" />
+            <Pin Id="KNpUXRi7XQgQEC5VflWvxY" Name="Enabled" Kind="InputPin" />
+            <Pin Id="DHSUwFfrfsrPA8qt2zCPDw" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="2036,685,105,19" Id="HDWlFu2YZZ5OcwDPZNYeFS">
+            <p:NodeReference LastCategoryFullName="Graphics.Skia.Paint" LastDependency="VL.Skia.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="Stroke" />
+            </p:NodeReference>
+            <Pin Id="K33WJYS0XqHPY096XmDYCX" Name="Input" Kind="InputPin" />
+            <Pin Id="Urk92W4ReniN6ucmK87XU3" Name="Color" Kind="InputPin" />
+            <Pin Id="JiYx68MMAWWObOVfaOZztt" Name="Stroke Width" Kind="InputPin" />
+            <Pin Id="Ng916DMiqBXNh0hRc2QXb1" Name="Join" Kind="InputPin" />
+            <Pin Id="KTm5y8Ejd2aOIOeMnAr7pd" Name="Cap" Kind="InputPin" />
+            <Pin Id="TTanZ3Dvv9vMl6RmV7CNGW" Name="Miter" Kind="InputPin" />
+            <Pin Id="HQ97caTZb6iMam6xyClUF5" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Pad Id="Rc83ctkGGFGM6z0MQ6NtKR" Comment="Color" Bounds="2064,618,136,15" ShowValueBox="true" isIOBox="true" Value="0.86319995, 0.64, 1, 1">
+            <p:TypeAnnotation LastCategoryFullName="Color" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="RGBA" />
+            </p:TypeAnnotation>
+          </Pad>
         </Canvas>
         <Patch Id="TXnSJGJjfDULYoLEGedkXx" Name="Create" />
         <Patch Id="UIVWpTr21jgQRHYrEdBrns" Name="Update" />
@@ -1281,11 +1305,14 @@
         <Link Id="OEFzOuNeHQlMXs8bI3MzxX" Ids="GHkDzGzYoj9M3BQ4pivG24,KNs6X5sa2cUMcw6Jwxi7b3" />
         <Link Id="PCn3iwmqgwYQEXWJ9EoPNV" Ids="Bd8sIq2L74FMANF74tUyS7,BS1vAsJ8d2VMb3fxAV0P4Z" />
         <Link Id="GpCOFWbFegGL8BzEKrQbaG" Ids="GBuF0vFqBPFQIjCTr0cbv5,EjBKbJsUxsjLarE6SrPKpZ" />
+        <Link Id="EyAOTLWK014PgAYgvNvosg" Ids="DHSUwFfrfsrPA8qt2zCPDw,R5WxkeL5iMrMwyr7AAZGVI" />
+        <Link Id="DTrqZ8vPgz3NKvvPNXJfBY" Ids="HQ97caTZb6iMam6xyClUF5,DeTSfXD0myhO7K44bYuDCK" />
+        <Link Id="GAb46ojoH0cOKq3JfHMrjj" Ids="Rc83ctkGGFGM6z0MQ6NtKR,Urk92W4ReniN6ucmK87XU3" />
       </Patch>
     </Node>
   </Patch>
   <DocumentDependency Id="IR8dOuBJa09MjVcW1yRLs7" Location="./Radiosity.vl" />
   <NugetDependency Id="APzBifgssL0NIeylMmE4xe" Location="VL.Skia" Version="2023.5.0" />
   <NugetDependency Id="LbMkk7VDzXNPKqOOfoKRC6" Location="VL.Stride" Version="2023.5.0" />
-  <DocumentDependency Id="BCvi89SX4CkQQyl3zalc8N" Location="./Helper.vl" />
+  <DocumentDependency Id="LNaKLxVO5YWMqj2PRvm7fY" Location="./VL.Helper/Helper.vl" />
 </Document>

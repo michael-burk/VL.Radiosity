@@ -1,0 +1,3 @@
+[submodule "VL.Helper"]
+	path = VL.Helper
+	url = git@github.com:michael-burk/VL.Helper.git
