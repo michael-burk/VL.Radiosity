@@ -185,7 +185,6 @@
               <Pin Id="AFNXvwiVpxJNFpsA9DYkik" Name="Output" Kind="OutputPin" />
               <Pin Id="VTkTCusrDXAOJhB6j8B2En" Name="Renderer" Kind="OutputPin" />
             </Node>
-            <ControlPoint Id="TWvtnoXjPOSQPq3p8Q9x8O" Bounds="469,519" />
             <Node Bounds="610,489,63,19" Id="Sm3yrhysZW3MWUWS3cAFIB">
               <p:NodeReference LastCategoryFullName="Animation" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -240,6 +239,15 @@
             </Node>
             <ControlPoint Id="NBUov38JJDSMNpY85ORVTL" Bounds="499,496" />
             <ControlPoint Id="PucofciCLYDMKp98ZugBdQ" Bounds="528,416" />
+            <Node Bounds="435,127,69,19" Id="LTzUokKXE09N1V7nmwCtAA">
+              <p:NodeReference LastCategoryFullName="Radiosity" LastDependency="Radiosity.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <CategoryReference Kind="Category" Name="Radiosity" NeedsToBeDirectParent="true" />
+                <Choice Kind="ProcessAppFlag" Name="NormalMap" />
+              </p:NodeReference>
+              <Pin Id="MszoyGROV4KQX5folQTPUq" Name="Input" Kind="InputPin" />
+              <Pin Id="JCFmkw7UyWUOK7Icndhkhe" Name="Output" Kind="OutputPin" />
+            </Node>
           </Canvas>
           <ProcessDefinition Id="Pik2ZvwYvtANowJ176Oty2">
             <Fragment Id="CIPVMPxQZTWOxIuzB7mq0t" Patch="LGbKiQ4wsElOa3xX8QVt7t" Enabled="true" />
@@ -266,9 +274,7 @@
           <Link Id="JWoownH7XRUN8gcnBKYPOM" Ids="GJ45UfQjdaCPdYfHEljou7,Khnv7jOb3W2MnWRqdW313S" />
           <Link Id="P4aXyKbHFlCQIMHcY9liPV" Ids="GJ45UfQjdaCPdYfHEljou7,M96mXFICOrQNBhZA2x2Ip9" />
           <Link Id="IeYoCViHb6PNX0aEZ6XDrz" Ids="AnTPnttjBMBLZIUqAW1OWW,GJNBDhAMfxxOqLADTOsSHH" />
-          <Link Id="DdEw9pTt2zwOAq7t42izUa" Ids="QfVkminBBjoLn0xaw99ku6,TWvtnoXjPOSQPq3p8Q9x8O" IsHidden="true" />
           <Link Id="SLxjyfvIahNQMq0UUUisw1" Ids="RK0mZC4okaqNyZBSFWNRXH,JaTRoeeS7qiLrW8FFg4ihz" />
-          <Link Id="ALfzsxkdZJFMOirmmmtvYx" Ids="TWvtnoXjPOSQPq3p8Q9x8O,Ns11YgERY0dNwF7avxiRls" />
           <Link Id="VSwnccS0pM5NPyNlR8oMRC" Ids="EXj2WgrjszjLEU9Vj1yPut,DU4kQqBQ4IqNJCXPr0XZ7A" />
           <Link Id="SibObFgdDhMMlkRt3Pnodk" Ids="UafByZrCbidNCgfGmJO8oj,Qf2215TtxjfMYGyZiwpJ2G" />
           <Link Id="Hx9twGuJw2WO2ogQNfrBww" Ids="Iooc4k2beoaL7agwXWLF4o,BdidG6Fo0fhNeqy8sggO9O" />
@@ -287,10 +293,11 @@
           <Link Id="IWZAxkQ096qMGoLd9tPnWt" Ids="PucofciCLYDMKp98ZugBdQ,NuNNWdO6VvpOVoAnlRF86M" />
           <Link Id="MQ35wVazGqUNyjqcD9Stda" Ids="DVzPDpsmEfNOoL0w85zQI9,PucofciCLYDMKp98ZugBdQ" IsHidden="true" />
           <Link Id="M4JHUilFP4PLNa7ZFosaAL" Ids="VEUQDqE6ABdOnW9B32X3Ao,A3taipaPbR2PCsw6IdBxsr" />
+          <Link Id="HtqdcYRVqPTNhEXyOm7lvO" Ids="EXj2WgrjszjLEU9Vj1yPut,MszoyGROV4KQX5folQTPUq" />
+          <Link Id="NHkiJWmpGvuMRHVqWnDPMl" Ids="JCFmkw7UyWUOK7Icndhkhe,Ns11YgERY0dNwF7avxiRls" />
           <Patch Id="LGbKiQ4wsElOa3xX8QVt7t" Name="Create" />
           <Patch Id="U5xcjqqp532NYfQ0XS5IEc" Name="Update">
             <Pin Id="GxWgubVgdBqLzc9Rj2KxLy" Name="Input" Kind="InputPin" Bounds="381,338" />
-            <Pin Id="QfVkminBBjoLn0xaw99ku6" Name="NormalMap" Kind="InputPin" Bounds="597,368" />
             <Pin Id="TAD4H1lvW9zMfk1xqQ9N1G" Name="Res" Kind="InputPin" Bounds="591,669" />
             <Pin Id="NhgfRt7ti3EM3JsmD4qyFV" Name="MaterialMap" Kind="InputPin" Bounds="532,474" />
             <Pin Id="DVzPDpsmEfNOoL0w85zQI9" Name="NormalMapBackground" Kind="InputPin" />
@@ -615,7 +622,7 @@
             <Pin Id="Fzv1WEpaWjwPIO7kTlOueu" Name="Space" Kind="InputPin" />
             <Pin Id="KWj1QJrjl8yNDPQUQGV3kF" Name="Output" Kind="OutputPin" />
           </Node>
-          <Node Bounds="379,964,125,19" Id="Pr6obywRCVrMs3vcva4tfF">
+          <Node Bounds="379,973,125,19" Id="Pr6obywRCVrMs3vcva4tfF">
             <p:NodeReference LastCategoryFullName="Stride" LastDependency="VL.Stride.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="RenderTexture" />
@@ -664,15 +671,6 @@
               <Choice Kind="TypeFlag" Name="RGBA" />
             </p:TypeAnnotation>
           </Pad>
-          <Node Bounds="424,1010,69,19" Id="D2p6vYqJLY0MTbEb0mhpAN">
-            <p:NodeReference LastCategoryFullName="Radiosity" LastDependency="Radiosity.vl">
-              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <CategoryReference Kind="Category" Name="Radiosity" NeedsToBeDirectParent="true" />
-              <Choice Kind="ProcessAppFlag" Name="NormalMap" />
-            </p:NodeReference>
-            <Pin Id="MdkCSk2VqMGPWjnUJw8XyR" Name="Input" Kind="InputPin" />
-            <Pin Id="Lg8DkyVjWzlMN94LXk944D" Name="Output" Kind="OutputPin" />
-          </Node>
           <Node Bounds="378,1067,186,19" Id="Pc3XdOE8QfoLmZeCufsC2A">
             <p:NodeReference LastCategoryFullName="Radiosity" LastDependency="Radiosity.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -680,7 +678,6 @@
               <Choice Kind="ProcessAppFlag" Name="Radiosity" />
             </p:NodeReference>
             <Pin Id="F8f2Odf9w0NO0bCIGEOYNC" Name="Input" Kind="InputPin" />
-            <Pin Id="GK68eBj2zCZLYHsC2S0LIe" Name="NormalMap" Kind="InputPin" />
             <Pin Id="Ha4DlYk8GtsQCwar8WoHRP" Name="Res" Kind="InputPin" />
             <Pin Id="ShFkEqL5w9cNstmpb1y1xx" Name="MaterialMap" Kind="InputPin" />
             <Pin Id="Mpj824OFkSiL8Ymd0l84K4" Name="NormalMapBackground" Kind="InputPin" />
@@ -1785,8 +1782,6 @@
         <Link Id="B2Eb0db8PmoLIj0uHjEwdP" Ids="T86qPhyzziUMxYjBdaRO6y,CaTP83JpZc6PbXcAjWamZc" />
         <Link Id="KilcdOvMkfsOoB7bkHeYEm" Ids="MUAcJoiTRJHOmFyv1bbFJs,F1t6PjC3aZPP36OqnfOt9h" />
         <Link Id="Adk0nPnBNLpPrU4nrbJJVS" Ids="IpxB9TrJpgXP2zB7XZliOt,Vcxg3BGmB7pO1geNwyd19K" />
-        <Link Id="J8j2FoIb6GDNDIbADTk1aO" Ids="JLus50j55JLMH1huf6ForW,MdkCSk2VqMGPWjnUJw8XyR" />
-        <Link Id="OXzfBcM4cnlP5HABCopDCj" Ids="Lg8DkyVjWzlMN94LXk944D,GK68eBj2zCZLYHsC2S0LIe" />
         <Link Id="EYaGhZ7KP37LB1WbsarChB" Ids="Add3uZaYUE8PnRPeQINkyR,IPttoXw2wTCNne9uDZFzUr" />
         <Link Id="Uk27Tp1cXFhMzLkQaFEr1C" Ids="T86qPhyzziUMxYjBdaRO6y,Ha4DlYk8GtsQCwar8WoHRP" />
         <Link Id="RFWVXB7KPSsQPUfs9Czwj7" Ids="JLus50j55JLMH1huf6ForW,F8f2Odf9w0NO0bCIGEOYNC" />
