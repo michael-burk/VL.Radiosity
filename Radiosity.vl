@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="N7nKnwmvVeBNegWecgA67u" LanguageVersion="2023.5.0" Version="0.128">
+<Document xmlns:p="property" xmlns:r="reflection" Id="N7nKnwmvVeBNegWecgA67u" LanguageVersion="2023.5.3-0053-g0221086038" Version="0.128">
   <Patch Id="Ve0aGIUidpxQTQiFuTrrtK">
     <Canvas Id="DcYg7AMaOFlNA2EQcjmy9l" DefaultCategory="Radiosity" CanvasType="FullCategory">
       <!--
@@ -29,7 +29,7 @@
               <Pin Id="H44y0AdIXqyPuGng0mAeJS" Name="SAMPLES2" Kind="InputPin" />
               <Pin Id="BeZDH24ocpkM3repTZyWnb" Name="Time" Kind="InputPin" />
               <Pin Id="Nvs0oZxbvSXNzMtiTPoVrx" Name="Max Dist" Kind="InputPin" />
-              <Pin Id="K1zC29Ksri9MCGVK7ll6Ur" Name="Bumpy" Kind="InputPin" DefaultValue="False" />
+              <Pin Id="K1zC29Ksri9MCGVK7ll6Ur" Name="Bumpy" Kind="InputPin" DefaultValue="True" />
               <Pin Id="Khnv7jOb3W2MnWRqdW313S" Name="Output Size" Kind="InputPin" />
               <Pin Id="JvWytv3xA92OpErDx3L1VT" Name="Output Format" Kind="InputPin" DefaultValue="R16G16B16A16_Float" />
               <Pin Id="S8bGdFJK1zyOOoiGSpZ0qC" Name="Enabled" Kind="InputPin" />
@@ -110,7 +110,7 @@
                 <Choice Kind="TypeFlag" Name="RGBA" />
               </p:TypeAnnotation>
             </Pad>
-            <Pad Id="GpHTFSyIounOlQZsuTRvqQ" Comment="Max Dist" Bounds="640,450,35,15" ShowValueBox="true" isIOBox="true" Value="1">
+            <Pad Id="GpHTFSyIounOlQZsuTRvqQ" Comment="Max Dist" Bounds="640,450,35,15" ShowValueBox="true" isIOBox="true" Value="2">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="TypeFlag" Name="Float32" />
               </p:TypeAnnotation>
@@ -205,7 +205,7 @@
               <Pin Id="C6qErG2fGobOhrtDr7bllT" Name="Enabled" Kind="InputPin" DefaultValue="False" />
               <Pin Id="Iooc4k2beoaL7agwXWLF4o" Name="Output" Kind="OutputPin" />
             </Node>
-            <Pad Id="PE8ZnycY5zCMuEBCXQzilL" Comment="Enabled" Bounds="441,623,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+            <Pad Id="PE8ZnycY5zCMuEBCXQzilL" Comment="Enabled" Bounds="441,623,35,35" ShowValueBox="true" isIOBox="true" Value="True">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
                 <CategoryReference Kind="Category" Name="Primitive" />
@@ -604,9 +604,9 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="HIso4iDRN4iNSZxOaP0H2p" Location="VL.CoreLib" Version="2023.5.0" />
-  <NugetDependency Id="CEszKi4CR48LXWCFc4Kevs" Location="VL.Stride" Version="2023.5.0" />
-  <NugetDependency Id="QKt8dsFfXgNPAG8pqrdHFr" Location="VL.Skia" Version="2023.5.0" />
+  <NugetDependency Id="HIso4iDRN4iNSZxOaP0H2p" Location="VL.CoreLib" Version="2023.5.3-0053-g0221086038" />
+  <NugetDependency Id="CEszKi4CR48LXWCFc4Kevs" Location="VL.Stride" Version="2023.5.3-0053-g0221086038" />
+  <NugetDependency Id="QKt8dsFfXgNPAG8pqrdHFr" Location="VL.Skia" Version="2023.5.3-0053-g0221086038" />
   <NugetDependency Id="IbDSUNiaLrHP34lXamuppu" Location="System.Drawing.Common" Version="6.0.0" />
   <PlatformDependency Id="JHS49jB9PQmN0zM3vO19id" Location="System.Drawing" />
   <PlatformDependency Id="CXUy1IRQsb7LoaL6Gtrxjx" Location="System" />
