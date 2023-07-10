@@ -260,7 +260,7 @@
             <Pin Id="QqSEup0OB6GLcMB47tTHhl" Name="Enabled" Kind="InputPin" DefaultValue="True" />
             <Pin Id="H3HgylWNEqwM8n1SjLlAW5" Name="Output" Kind="OutputPin" />
           </Node>
-          <Pad Id="QIDHjfjezklLxLk3JMLPA8" Comment="Point A" Bounds="433,490,35,28" ShowValueBox="true" isIOBox="true" Value="-0.71, -0.16">
+          <Pad Id="QIDHjfjezklLxLk3JMLPA8" Comment="Point A" Bounds="433,490,35,28" ShowValueBox="true" isIOBox="true" Value="-0.75, -0.41">
             <p:TypeAnnotation LastCategoryFullName="2D" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Vector2" />
             </p:TypeAnnotation>
@@ -306,7 +306,7 @@
             <Pin Id="MSrp2bmjN6kLnkr88MDp86" Name="Effect" Kind="InputPin" />
             <Pin Id="Emy8zY0x7QCMvJSmfPSfOl" Name="Output" Kind="OutputPin" />
           </Node>
-          <Node Bounds="817,461,59,19" Id="VgTDFCvucPuOhyCGdoHRXx">
+          <Node Bounds="860,469,59,19" Id="VgTDFCvucPuOhyCGdoHRXx">
             <p:NodeReference LastCategoryFullName="Graphics.Skia.Paint.PathEffects" LastDependency="VL.Skia.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="Category" Name="PathEffects" />
@@ -316,7 +316,7 @@
             <Pin Id="Ostqt624YeIOn1lzpsxvlG" Name="Outer" Kind="InputPin" />
             <Pin Id="EP8bfTtjfyQMpo9UaASlTl" Name="Output" Kind="OutputPin" />
           </Node>
-          <Node Bounds="822,404,45,19" Id="ML1GmVVcz2TN7CWty9FKlo">
+          <Node Bounds="862,405,45,19" Id="ML1GmVVcz2TN7CWty9FKlo">
             <p:NodeReference LastCategoryFullName="Graphics.Skia.Paint.PathEffects" LastDependency="VL.Skia.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Jitter" />
@@ -326,7 +326,7 @@
             <Pin Id="RxScAs3iiYIQYxIvJDj5hY" Name="Seed" Kind="InputPin" DefaultValue="156" />
             <Pin Id="Stvxygx9knlM4LX4ZQoDfL" Name="Output" Kind="OutputPin" />
           </Node>
-          <Node Bounds="873,428,47,19" Id="RWmVq3FZYymMT2ZbvOJK5E">
+          <Node Bounds="916,436,47,19" Id="RWmVq3FZYymMT2ZbvOJK5E">
             <p:NodeReference LastCategoryFullName="Graphics.Skia.Paint.PathEffects" LastDependency="VL.Skia.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Corner" />
@@ -334,7 +334,7 @@
             <Pin Id="AYaKr7jG8gwNPuQUn6sNkw" Name="Radius" Kind="InputPin" DefaultValue="0.77" />
             <Pin Id="H2jbCGLd920MnBMdr8I5Zl" Name="Output" Kind="OutputPin" />
           </Node>
-          <Node Bounds="842,309,45,19" Id="LJym9Csks5wLkFD01X5ZNX">
+          <Node Bounds="882,310,45,19" Id="LJym9Csks5wLkFD01X5ZNX">
             <p:NodeReference LastCategoryFullName="Animation" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="LFO" />
@@ -346,7 +346,7 @@
             <Pin Id="Sok4Nqp8rQSPNkptGIZA6I" Name="On New Cycle" Kind="OutputPin" />
             <Pin Id="UqX8HYj3Ow7LEri65CnrZh" Name="Cycles" Kind="OutputPin" />
           </Node>
-          <Node Bounds="867,348,91,26" Id="CgNCz10YNnFMiRFeWc06pW">
+          <Node Bounds="907,349,91,26" Id="CgNCz10YNnFMiRFeWc06pW">
             <p:NodeReference LastCategoryFullName="Primitive.Integer32" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="Int32Type" Name="Integer32" NeedsToBeDirectParent="true" />
