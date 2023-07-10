@@ -327,7 +327,7 @@
               <Choice Kind="TypeFlag" Name="RGBA" />
             </p:TypeAnnotation>
           </Pad>
-          <Node Bounds="549,476,105,19" Id="Jq6ghjrhhdzLWE6wTuYWqd">
+          <Node Bounds="483,383,105,19" Id="Jq6ghjrhhdzLWE6wTuYWqd">
             <p:NodeReference LastCategoryFullName="Graphics.Skia.Paint" LastDependency="VL.Skia.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Stroke" />
@@ -340,7 +340,7 @@
             <Pin Id="FWat1l6pyY6OZ5mhmFP8hL" Name="Miter" Kind="InputPin" />
             <Pin Id="GBuF0vFqBPFQIjCTr0cbv5" Name="Output" Kind="OutputPin" />
           </Node>
-          <Pad Id="BwiKyA7NRA9N084nr4TtFG" Comment="Stroke Width" Bounds="592,454,35,15" ShowValueBox="true" isIOBox="true" Value="0.015">
+          <Pad Id="BwiKyA7NRA9N084nr4TtFG" Comment="Stroke Width" Bounds="526,361,35,15" ShowValueBox="true" isIOBox="true" Value="0.015">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Float32" />
             </p:TypeAnnotation>
@@ -349,7 +349,7 @@
               <p:stepsize p:Type="Single">0.01</p:stepsize>
             </p:ValueBoxSettings>
           </Pad>
-          <Node Bounds="784,649,75,19" Id="VC3y4oe6RcpLUTDDfKGoKi">
+          <Node Bounds="595,570,75,19" Id="VC3y4oe6RcpLUTDDfKGoKi">
             <p:NodeReference LastCategoryFullName="Graphics.Skia.Paint" LastDependency="VL.Skia.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="SetPathEffect" />
@@ -358,7 +358,7 @@
             <Pin Id="MSrp2bmjN6kLnkr88MDp86" Name="Effect" Kind="InputPin" />
             <Pin Id="Emy8zY0x7QCMvJSmfPSfOl" Name="Output" Kind="OutputPin" />
           </Node>
-          <Node Bounds="799,587,59,19" Id="VgTDFCvucPuOhyCGdoHRXx">
+          <Node Bounds="610,508,59,19" Id="VgTDFCvucPuOhyCGdoHRXx">
             <p:NodeReference LastCategoryFullName="Graphics.Skia.Paint.PathEffects" LastDependency="VL.Skia.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="Category" Name="PathEffects" />
@@ -368,7 +368,7 @@
             <Pin Id="Ostqt624YeIOn1lzpsxvlG" Name="Outer" Kind="InputPin" />
             <Pin Id="EP8bfTtjfyQMpo9UaASlTl" Name="Output" Kind="OutputPin" />
           </Node>
-          <Node Bounds="821,537,45,19" Id="ML1GmVVcz2TN7CWty9FKlo">
+          <Node Bounds="632,458,45,19" Id="ML1GmVVcz2TN7CWty9FKlo">
             <p:NodeReference LastCategoryFullName="Graphics.Skia.Paint.PathEffects" LastDependency="VL.Skia.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Jitter" />
@@ -378,7 +378,7 @@
             <Pin Id="RxScAs3iiYIQYxIvJDj5hY" Name="Seed" Kind="InputPin" DefaultValue="156" />
             <Pin Id="Stvxygx9knlM4LX4ZQoDfL" Name="Output" Kind="OutputPin" />
           </Node>
-          <Node Bounds="872,561,47,19" Id="RWmVq3FZYymMT2ZbvOJK5E">
+          <Node Bounds="683,482,47,19" Id="RWmVq3FZYymMT2ZbvOJK5E">
             <p:NodeReference LastCategoryFullName="Graphics.Skia.Paint.PathEffects" LastDependency="VL.Skia.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Corner" />
@@ -386,7 +386,7 @@
             <Pin Id="AYaKr7jG8gwNPuQUn6sNkw" Name="Radius" Kind="InputPin" DefaultValue="0.77" />
             <Pin Id="H2jbCGLd920MnBMdr8I5Zl" Name="Output" Kind="OutputPin" />
           </Node>
-          <Node Bounds="841,442,45,19" Id="LJym9Csks5wLkFD01X5ZNX">
+          <Node Bounds="652,363,45,19" Id="LJym9Csks5wLkFD01X5ZNX">
             <p:NodeReference LastCategoryFullName="Animation" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="LFO" />
@@ -398,7 +398,7 @@
             <Pin Id="Sok4Nqp8rQSPNkptGIZA6I" Name="On New Cycle" Kind="OutputPin" />
             <Pin Id="UqX8HYj3Ow7LEri65CnrZh" Name="Cycles" Kind="OutputPin" />
           </Node>
-          <Node Bounds="866,481,91,26" Id="CgNCz10YNnFMiRFeWc06pW">
+          <Node Bounds="677,402,91,26" Id="CgNCz10YNnFMiRFeWc06pW">
             <p:NodeReference LastCategoryFullName="Primitive.Integer32" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="Int32Type" Name="Integer32" NeedsToBeDirectParent="true" />
@@ -441,7 +441,6 @@
         <Link Id="DdAdjKsebATMgK3HaltWAH" Ids="VaHXB9O8oOpL33YlcnIUCM,PnRfU6QJDJSPQBPPkULXMx" />
         <Link Id="PRPvFB1ywNFPft8Ma0voQ2" Ids="NbG5Y8O78eNL7Yu5fnwW9J,QKxe987tBFHPrg7G2TO50u" />
         <Link Id="HqqGy1FWouGLlM5QRRK1vd" Ids="UDYkCKcGSNKOCFtjklc2SI,QqrchFPwzWULMBc4QwleEk" />
-        <Link Id="JQUTJJ7OEqzP7CxfuzofAy" Ids="HzAwzHWt7CNLTRp7uKlKBK,JENgOQx8I3jLSc3VaPQc5z" />
         <Link Id="OAOWVDgocZpNQ48hNjtINr" Ids="B7rlm98NJ3ZPFjq8ODyOJ6,MYys2XEVxeMOASykfuE0S9" />
         <Link Id="Le55mhHK8eQP1JFMhsMXCr" Ids="QIDHjfjezklLxLk3JMLPA8,FWUbGEAK4NKMeGL79Aky2d" />
         <Link Id="MYmViR0025dMasbNDJa1iv" Ids="QkqYs9umQ5uNJn5jl9jsAf,OFP8IQ7783tNgLrOPc8T8U" />

@@ -29,7 +29,7 @@
               <Pin Id="H44y0AdIXqyPuGng0mAeJS" Name="SAMPLES2" Kind="InputPin" />
               <Pin Id="BeZDH24ocpkM3repTZyWnb" Name="Time" Kind="InputPin" />
               <Pin Id="Nvs0oZxbvSXNzMtiTPoVrx" Name="Max Dist" Kind="InputPin" />
-              <Pin Id="K1zC29Ksri9MCGVK7ll6Ur" Name="Bumpy" Kind="InputPin" DefaultValue="True" />
+              <Pin Id="K1zC29Ksri9MCGVK7ll6Ur" Name="Bumpy" Kind="InputPin" DefaultValue="False" />
               <Pin Id="Khnv7jOb3W2MnWRqdW313S" Name="Output Size" Kind="InputPin" />
               <Pin Id="JvWytv3xA92OpErDx3L1VT" Name="Output Format" Kind="InputPin" DefaultValue="R16G16B16A16_Float" />
               <Pin Id="S8bGdFJK1zyOOoiGSpZ0qC" Name="Enabled" Kind="InputPin" />
@@ -48,7 +48,7 @@
             <ControlPoint Id="EXj2WgrjszjLEU9Vj1yPut" Bounds="377,-77" />
             <ControlPoint Id="KNXb9FDipSEOXXhYezzHTA" Bounds="367,1042" />
             <ControlPoint Id="JdnXTqiQFfYQNW7AX1hOYg" Bounds="479,199" />
-            <Node Bounds="698,139,185,19" Id="PaP1yXwtzsaLwkXXhsgMos">
+            <Node Bounds="589,289,185,19" Id="PaP1yXwtzsaLwkXXhsgMos">
               <p:NodeReference LastCategoryFullName="Stride.Graphics" LastDependency="VL.Stride.Graphics.Nodes">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessNode" Name="SamplerState" />
@@ -65,12 +65,12 @@
               <Pin Id="ROM5tLJQiuvOMmxb3VJWAn" Name="Compare Function" Kind="InputPin" />
               <Pin Id="UBqoHfSuI4LOfGk54zmKjB" Name="Output" Kind="OutputPin" />
             </Node>
-            <Pad Id="RK0mZC4okaqNyZBSFWNRXH" Comment="Address U" Bounds="720,92,79,15" ShowValueBox="true" isIOBox="true" Value="Border">
+            <Pad Id="RK0mZC4okaqNyZBSFWNRXH" Comment="Address U" Bounds="611,242,79,15" ShowValueBox="true" isIOBox="true" Value="Border">
               <p:TypeAnnotation LastCategoryFullName="Stride.API.Graphics" LastDependency="VL.Stride.vl">
                 <Choice Kind="TypeFlag" Name="TextureAddressMode" />
               </p:TypeAnnotation>
             </Pad>
-            <Pad Id="DyRTWCibXxKO6s8q72cWpw" Comment="Filter" Bounds="700,117,214,15" ShowValueBox="true" isIOBox="true" Value="Point">
+            <Pad Id="DyRTWCibXxKO6s8q72cWpw" Comment="Filter" Bounds="591,267,214,15" ShowValueBox="true" isIOBox="true" Value="Point">
               <p:TypeAnnotation LastCategoryFullName="Stride.Graphics" LastDependency="Stride.dll">
                 <Choice Kind="TypeFlag" Name="TextureFilter" />
               </p:TypeAnnotation>
@@ -105,7 +105,7 @@
                 <p:stepsize p:Type="Single">0.01</p:stepsize>
               </p:ValueBoxSettings>
             </Pad>
-            <Pad Id="QOb6BkNXz4QLWxUBeohgIO" Comment="Border Color" Bounds="783,67,20,15" ShowValueBox="true" isIOBox="true" Value="1, 1, 1, 1">
+            <Pad Id="QOb6BkNXz4QLWxUBeohgIO" Comment="Border Color" Bounds="674,217,20,15" ShowValueBox="true" isIOBox="true" Value="1, 1, 1, 1">
               <p:TypeAnnotation LastCategoryFullName="Color" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="TypeFlag" Name="RGBA" />
               </p:TypeAnnotation>
@@ -248,6 +248,15 @@
               <Pin Id="MszoyGROV4KQX5folQTPUq" Name="Input" Kind="InputPin" />
               <Pin Id="JCFmkw7UyWUOK7Icndhkhe" Name="Output" Kind="OutputPin" />
             </Node>
+            <Node Bounds="669,518,65,19" Id="DYQ3vyRAm4QQJ6Puulwxua">
+              <p:NodeReference LastCategoryFullName="Primitive.Object" LastDependency="VL.CoreLib.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="IsAssigned" />
+              </p:NodeReference>
+              <Pin Id="RedRYY2h3fVL5olPrPma8z" Name="X" Kind="InputPin" />
+              <Pin Id="PEBL8Ix9RmjOnqMZDQcxzA" Name="Result" Kind="OutputPin" />
+              <Pin Id="VFmjGjSubGfPeCMPt1cShc" Name="Not Assigned" Kind="OutputPin" />
+            </Node>
           </Canvas>
           <ProcessDefinition Id="Pik2ZvwYvtANowJ176Oty2">
             <Fragment Id="CIPVMPxQZTWOxIuzB7mq0t" Patch="LGbKiQ4wsElOa3xX8QVt7t" Enabled="true" />
@@ -302,6 +311,8 @@
             <Pin Id="DVzPDpsmEfNOoL0w85zQI9" Name="NormalMapBackground" Kind="InputPin" />
             <Pin Id="VWcUsMd3C4RPOXnUb3mKGJ" Name="Output" Kind="OutputPin" Bounds="353,1003" />
           </Patch>
+          <Link Id="RHDIoSGARxDNNlUU4PQ5GC" Ids="PucofciCLYDMKp98ZugBdQ,RedRYY2h3fVL5olPrPma8z" />
+          <Link Id="OW8tUUPlixTN8EAkrDKeji" Ids="PEBL8Ix9RmjOnqMZDQcxzA,K1zC29Ksri9MCGVK7ll6Ur" />
         </Patch>
       </Node>
       <!--
