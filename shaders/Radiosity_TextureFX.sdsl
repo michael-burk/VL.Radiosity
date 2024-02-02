@@ -212,6 +212,7 @@ float random (in float2 _st) {
 stage override float4 Shading()
 {
 float aspectX = R.y/R.x;
+aspectX = 1;
 float2 uv = (streams.TexCoord.xy -.5);
 float3 c;
 float3 col = float3(0,0,0);
