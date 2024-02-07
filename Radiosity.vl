@@ -2254,7 +2254,7 @@
               <Pin Id="M5GsHYlACJCNENvHLd7glR" Name="Result" Kind="OutputPin" />
               <Pin Id="NVxFnWImG7UNEjDMInPC8X" Name="Not Assigned" Kind="OutputPin" />
             </Node>
-            <Pad Id="HyB6yeySfvULph7D81ElVP" Comment="MagicNumber" Bounds="428,692,35,15" ShowValueBox="true" isIOBox="true" Value="0.035">
+            <Pad Id="HyB6yeySfvULph7D81ElVP" Comment="MagicNumber" Bounds="428,692,35,15" ShowValueBox="true" isIOBox="true" Value="0.04">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="TypeFlag" Name="Float32" />
               </p:TypeAnnotation>
