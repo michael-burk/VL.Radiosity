@@ -2030,7 +2030,7 @@
               <Pin Id="VaVbVF9ttx0OEEII5Xl9xC" Name="Compare Function" Kind="InputPin" />
               <Pin Id="EUGhOZDB4WTPmsW58fhAXz" Name="Output" Kind="OutputPin" />
             </Node>
-            <Pad Id="DzQwl31jMvbQNUQ87p1MwY" Comment="Address U" Bounds="549,574,79,15" ShowValueBox="true" isIOBox="true" Value="Mirror">
+            <Pad Id="DzQwl31jMvbQNUQ87p1MwY" Comment="Address U" Bounds="549,574,79,15" ShowValueBox="true" isIOBox="true" Value="Border">
               <p:TypeAnnotation LastCategoryFullName="Stride.API.Graphics" LastDependency="VL.Stride.vl">
                 <Choice Kind="TypeFlag" Name="TextureAddressMode" />
               </p:TypeAnnotation>
