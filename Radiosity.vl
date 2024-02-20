@@ -1098,7 +1098,7 @@
                 <Choice Kind="ProcessAppFlag" Name="RenderWindow" />
               </p:NodeReference>
               <Pin Id="UbNWVFI1RjVNH4CBhqrZzI" Name="Node Context" Kind="InputPin" />
-              <Pin Id="S5GH00eMnI4M1y2H694dDA" Name="Bounds" Kind="InputPin" DefaultValue="1192.5714, 109.14286, 978.8571, 550.2857" />
+              <Pin Id="S5GH00eMnI4M1y2H694dDA" Name="Bounds" Kind="InputPin" DefaultValue="1192.5714, 127.42857, 978.8571, 550.2857" />
               <Pin Id="STOG8SyomxwOXdxyK2bBqr" Name="Bound to Document" Kind="InputPin" IsHidden="true" />
               <Pin Id="Em7rqyfySkvO9g23QPujXF" Name="Dialog If Document Changed" Kind="InputPin" IsHidden="true" />
               <Pin Id="V8MaQyLbT3MPcBDIu9aI2W" Name="Save Bounds" Kind="InputPin" IsHidden="true" />
@@ -2030,7 +2030,7 @@
               <Pin Id="VaVbVF9ttx0OEEII5Xl9xC" Name="Compare Function" Kind="InputPin" />
               <Pin Id="EUGhOZDB4WTPmsW58fhAXz" Name="Output" Kind="OutputPin" />
             </Node>
-            <Pad Id="DzQwl31jMvbQNUQ87p1MwY" Comment="Address U" Bounds="549,574,79,15" ShowValueBox="true" isIOBox="true" Value="Border">
+            <Pad Id="DzQwl31jMvbQNUQ87p1MwY" Comment="Address U" Bounds="549,574,79,15" ShowValueBox="true" isIOBox="true" Value="Mirror">
               <p:TypeAnnotation LastCategoryFullName="Stride.API.Graphics" LastDependency="VL.Stride.vl">
                 <Choice Kind="TypeFlag" Name="TextureAddressMode" />
               </p:TypeAnnotation>
@@ -2191,7 +2191,7 @@
               </p:NodeReference>
               <Pin Id="LoII9hkjh7uOUKAAe2yug6" Name="Node Context" Kind="InputPin" IsHidden="true" />
               <Pin Id="BMTq0sQiU8DOAJ8p0kSCdb" Name="Texture" Kind="InputPin" />
-              <Pin Id="InmAKp3l74fPyh1UpCjvrg" Name="Amount" Kind="InputPin" DefaultValue="0.8" />
+              <Pin Id="InmAKp3l74fPyh1UpCjvrg" Name="Amount" Kind="InputPin" DefaultValue="0.85" />
               <Pin Id="CYyXzkW1aJ7PHqj6eqiBAj" Name="Size" Kind="InputPin" />
               <Pin Id="DB5165qKzBNPZmC7BusMGA" Name="Enabled" Kind="InputPin" DefaultValue="False" />
               <Pin Id="AUAD32LDf0iMi3SzBNqSuR" Name="Output" Kind="OutputPin" />
@@ -2264,6 +2264,16 @@
               </p:ValueBoxSettings>
             </Pad>
             <ControlPoint Id="C4QDjFdlOsdMBaLUzfa0ax" Bounds="175,439" />
+            <Pad Id="NN5RwxTwrOkNEALc1BxP2i" Comment="SAMPLES" Bounds="491,796,35,15" ShowValueBox="true" isIOBox="true" Value="128">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                <Choice Kind="TypeFlag" Name="Integer32" />
+              </p:TypeAnnotation>
+            </Pad>
+            <Pad Id="LT9wLPbIN40LreNrEXn84t" Comment="SAMPLES2" Bounds="528,765,35,15" ShowValueBox="true" isIOBox="true" Value="64">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                <Choice Kind="TypeFlag" Name="Integer32" />
+              </p:TypeAnnotation>
+            </Pad>
           </Canvas>
           <ProcessDefinition Id="HJcJmf0oEdLOnzVIhQ096o">
             <Fragment Id="JSc1R2R6ifBPgCsoQIj5kP" Patch="U6bpm8ptJORPfYHKE5Y4yL" Enabled="true" />
@@ -2323,6 +2333,8 @@
           </Patch>
           <Link Id="CxeO5R61f4oQXuDEjc5Wub" Ids="C4QDjFdlOsdMBaLUzfa0ax,RuswOejeUlJPVDAL4W9Vq5" />
           <Link Id="RImcykyTypEPMw70bV3Gk3" Ids="C4QDjFdlOsdMBaLUzfa0ax,Pan0T77rf6NP4O1Z4yGquo" />
+          <Link Id="RLkwMjBpjFcMv7lKBd27g1" Ids="NN5RwxTwrOkNEALc1BxP2i,A1daxdKE0JqOVIAimU0Dq8" />
+          <Link Id="Fn9JmZD4XbOPVpKAu1E9ah" Ids="LT9wLPbIN40LreNrEXn84t,PdxPaLQwWsuNb6ceul3vSA" />
         </Patch>
       </Node>
     </Canvas>
