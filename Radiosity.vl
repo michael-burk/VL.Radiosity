@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="N7nKnwmvVeBNegWecgA67u" LanguageVersion="2023.5.3-0233-g35376658ae" Version="0.128">
+<Document xmlns:p="property" xmlns:r="reflection" Id="N7nKnwmvVeBNegWecgA67u" LanguageVersion="2024.6.0-0166-gf4293d3464" Version="0.128">
   <Patch Id="Ve0aGIUidpxQTQiFuTrrtK">
     <Canvas Id="DcYg7AMaOFlNA2EQcjmy9l" DefaultCategory="Radiosity" CanvasType="FullCategory">
       <!--
@@ -163,7 +163,7 @@
               <Pin Id="UglBrNqUkpuPaFd7mpCRML" Name="Output" Kind="OutputPin" />
             </Node>
             <Node Bounds="319,1186,145,19" Id="UcOmfPAcqK0O2inefGAXey">
-              <p:NodeReference LastCategoryFullName="Stride.Textures.Mixer" LastDependency="VL.Stride.vl">
+              <p:NodeReference LastCategoryFullName="Stride.Textures.Mixer" LastDependency="VL.Stride.TextureFX.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <CategoryReference Kind="Category" Name="Mixer" NeedsToBeDirectParent="true" />
                 <Choice Kind="ProcessAppFlag" Name="Blend" />
@@ -192,7 +192,7 @@
               </p:ValueBoxSettings>
             </Pad>
             <Node Bounds="297,1280,105,19" Id="Vz7BDr4I8mFNOErobP4m7Q">
-              <p:NodeReference LastCategoryFullName="Stride.Textures.Filter" LastDependency="VL.Stride.vl">
+              <p:NodeReference LastCategoryFullName="Stride.Textures.Filter" LastDependency="VL.Stride.TextureFX.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="FXAA" />
               </p:NodeReference>
@@ -614,7 +614,7 @@
         <Patch Id="CNkZiRtb5viMbzC1onkyMz">
           <Canvas Id="EG2P6owwkRbL8WOTBKSANV" CanvasType="Group">
             <Node Bounds="725,700,125,19" Id="VrHDQbdIErhMhsYJUKbFay">
-              <p:NodeReference LastCategoryFullName="Stride.Textures.Filter" LastDependency="VL.Stride.vl">
+              <p:NodeReference LastCategoryFullName="Stride.Textures.Filter" LastDependency="VL.Stride.TextureFX.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessNode" Name="NormalGlow" />
               </p:NodeReference>
@@ -638,7 +638,7 @@
               </p:TypeAnnotation>
             </Pad>
             <Node Bounds="727,802,85,19" Id="CaIrECJvGHlMFTdA1MCp9s">
-              <p:NodeReference LastCategoryFullName="Stride.Textures.Filter" LastDependency="VL.Stride.vl">
+              <p:NodeReference LastCategoryFullName="Stride.Textures.Filter" LastDependency="VL.Stride.TextureFX.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <CategoryReference Kind="Category" Name="Filter" NeedsToBeDirectParent="true" />
                 <Choice Kind="ProcessAppFlag" Name="Blur" />
@@ -1098,7 +1098,7 @@
                 <Choice Kind="ProcessAppFlag" Name="RenderWindow" />
               </p:NodeReference>
               <Pin Id="UbNWVFI1RjVNH4CBhqrZzI" Name="Node Context" Kind="InputPin" />
-              <Pin Id="S5GH00eMnI4M1y2H694dDA" Name="Bounds" Kind="InputPin" DefaultValue="1192.5714, 127.42857, 978.8571, 550.2857" />
+              <Pin Id="S5GH00eMnI4M1y2H694dDA" Name="Bounds" Kind="InputPin" DefaultValue="1178.8572, 122.85714, 978.8571, 550.2857" />
               <Pin Id="STOG8SyomxwOXdxyK2bBqr" Name="Bound to Document" Kind="InputPin" IsHidden="true" />
               <Pin Id="Em7rqyfySkvO9g23QPujXF" Name="Dialog If Document Changed" Kind="InputPin" IsHidden="true" />
               <Pin Id="V8MaQyLbT3MPcBDIu9aI2W" Name="Save Bounds" Kind="InputPin" IsHidden="true" />
@@ -1114,6 +1114,7 @@
               <Pin Id="HwH3asbNRBFOvhRSQvYKD9" Name="Clear Stencil" Kind="InputPin" IsHidden="true" />
               <Pin Id="ON47xagfJKwNZYAmdNiUOB" Name="Clear" Kind="InputPin" />
               <Pin Id="R2LEqAoTyx1NW7BvXIkHHx" Name="Edit Mode" Kind="InputPin" />
+              <Pin Id="GC69YTbMvljOUjLkteuXRy" Name="Commands" Kind="InputPin" IsHidden="true" />
               <Pin Id="QSGitzcaPJGO4Vo8WgVED6" Name="Enable Keyboard Shortcuts" Kind="InputPin" />
               <Pin Id="LQ9nKYwsBn3OaiF6xQf6Hb" Name="Enabled" Kind="InputPin" />
               <Pin Id="Qd1kt5Gbnc2MWw7bcGyGtZ" Name="Present Interval" Kind="InputPin" />
@@ -1462,7 +1463,7 @@
         <Patch Id="AXtTDU9JlejLsN8CSXnMPf">
           <Canvas Id="KGQB79jxB1hOuSkftXPCU8" CanvasType="Group">
             <Node Bounds="291,972,105,19" Id="PeIbtMQ6ILRNOSvqtsjBQi">
-              <p:NodeReference LastCategoryFullName="Stride.Textures.Filter" LastDependency="VL.Stride.vl">
+              <p:NodeReference LastCategoryFullName="Stride.Textures.Filter" LastDependency="VL.Stride.TextureFX.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <CategoryReference Kind="Category" Name="Filter" NeedsToBeDirectParent="true" />
                 <Choice Kind="ProcessAppFlag" Name="Transform" />
@@ -2126,7 +2127,7 @@
               <Pin Id="BTgMXOQtgl1OuWueE95jMa" Name="Output" Kind="OutputPin" />
             </Node>
             <Node Bounds="319,1186,145,19" Id="Sg1WLpqorbRLa914zVSzRj">
-              <p:NodeReference LastCategoryFullName="Stride.Textures.Mixer" LastDependency="VL.Stride.vl">
+              <p:NodeReference LastCategoryFullName="Stride.Textures.Mixer" LastDependency="VL.Stride.TextureFX.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <CategoryReference Kind="Category" Name="Mixer" NeedsToBeDirectParent="true" />
                 <Choice Kind="ProcessAppFlag" Name="Blend" />
@@ -2155,7 +2156,7 @@
               </p:ValueBoxSettings>
             </Pad>
             <Node Bounds="297,1280,105,19" Id="OwJdk5z8Y6yNJ01yloTFrj">
-              <p:NodeReference LastCategoryFullName="Stride.Textures.Filter" LastDependency="VL.Stride.vl">
+              <p:NodeReference LastCategoryFullName="Stride.Textures.Filter" LastDependency="VL.Stride.TextureFX.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="FXAA" />
               </p:NodeReference>
@@ -2264,7 +2265,7 @@
               </p:ValueBoxSettings>
             </Pad>
             <ControlPoint Id="C4QDjFdlOsdMBaLUzfa0ax" Bounds="175,439" />
-            <Pad Id="NN5RwxTwrOkNEALc1BxP2i" Comment="SAMPLES" Bounds="491,796,35,15" ShowValueBox="true" isIOBox="true" Value="128">
+            <Pad Id="NN5RwxTwrOkNEALc1BxP2i" Comment="SAMPLES" Bounds="491,796,35,15" ShowValueBox="true" isIOBox="true" Value="12">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="TypeFlag" Name="Integer32" />
               </p:TypeAnnotation>
@@ -2359,11 +2360,11 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="HIso4iDRN4iNSZxOaP0H2p" Location="VL.CoreLib" Version="2023.5.3-0233-g35376658ae" />
-  <NugetDependency Id="CEszKi4CR48LXWCFc4Kevs" Location="VL.Stride" Version="2023.5.3-0233-g35376658ae" />
-  <NugetDependency Id="QKt8dsFfXgNPAG8pqrdHFr" Location="VL.Skia" Version="2023.5.3-0233-g35376658ae" />
-  <NugetDependency Id="IbDSUNiaLrHP34lXamuppu" Location="System.Drawing.Common" Version="6.0.0" />
+  <NugetDependency Id="HIso4iDRN4iNSZxOaP0H2p" Location="VL.CoreLib" Version="2024.6.0-0166-gf4293d3464" />
+  <NugetDependency Id="CEszKi4CR48LXWCFc4Kevs" Location="VL.Stride" Version="2024.6.0-0166-gf4293d3464" />
+  <NugetDependency Id="QKt8dsFfXgNPAG8pqrdHFr" Location="VL.Skia" Version="2024.6.0-0166-gf4293d3464" />
+  <NugetDependency Id="IbDSUNiaLrHP34lXamuppu" Location="System.Drawing.Common" Version="8.0.0" />
   <PlatformDependency Id="JHS49jB9PQmN0zM3vO19id" Location="System.Drawing" />
   <PlatformDependency Id="CXUy1IRQsb7LoaL6Gtrxjx" Location="System" />
-  <NugetDependency Id="NpGvHjMQI12LtKHzlzT37D" Location="VL.Stride.TextureFX" Version="2024.6.0-0052-gb4d1f0b79e" />
+  <NugetDependency Id="NpGvHjMQI12LtKHzlzT37D" Location="VL.Stride.TextureFX" Version="2024.6.0-0166-gf4293d3464" />
 </Document>
