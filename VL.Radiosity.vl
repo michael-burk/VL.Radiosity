@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="N7nKnwmvVeBNegWecgA67u" LanguageVersion="2024.6.0-0166-gf4293d3464" Version="0.128">
+<Document xmlns:p="property" xmlns:r="reflection" Id="VWhoMkuIJEFOT0xveD0jwl" LanguageVersion="2024.6.0-0166-gf4293d3464" Version="0.128">
   <Patch Id="Ve0aGIUidpxQTQiFuTrrtK">
     <Canvas Id="DcYg7AMaOFlNA2EQcjmy9l" DefaultCategory="Radiosity" CanvasType="FullCategory">
       <!--
@@ -38,7 +38,7 @@
               <Pin Id="OtBXoZ5H10fORlMiVW2Wxu" Name="Output" Kind="OutputPin" />
             </Node>
             <Node Bounds="296,725,97,19" Id="IonuqyDbhZYOvndXqzxnYX">
-              <p:NodeReference LastCategoryFullName="Radiosity" LastDependency="Radiosity.vl">
+              <p:NodeReference LastCategoryFullName="Radiosity" LastDependency="VL.Radiosity.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="LazyDistanceField" />
               </p:NodeReference>
@@ -48,7 +48,7 @@
               <Pin Id="KY7Odgl0tn1NHpb1rBQHlw" Name="Res" Kind="InputPin" />
               <Pin Id="KRk2l6V7GHDQSWPKWWPK3D" Name="Output" Kind="OutputPin" />
             </Node>
-            <ControlPoint Id="R9tzG6BmZJYNesKmYaPVGm" Bounds="277,1302" />
+            <ControlPoint Id="R9tzG6BmZJYNesKmYaPVGm" Bounds="277,1362" />
             <ControlPoint Id="ASn6XFnTkkGNzQOlhiXwFf" Bounds="394,470" />
             <Node Bounds="504,560,185,19" Id="LvjbzVuyMVLPfK9AUOF1s5">
               <p:NodeReference LastCategoryFullName="Stride.Graphics" LastDependency="VL.Stride.Graphics.Nodes">
@@ -147,7 +147,7 @@
               <Pin Id="Fs6PC2FA01TL5aMedjWmxD" Name="Apply" Kind="InputPin" DefaultValue="True" />
               <Pin Id="DmCcWBkrk3bLrOahqPhrDW" Name="Output" Kind="OutputPin" />
             </Node>
-            <Node Bounds="295,1174,78,19" Id="Aq2ugLx9Th6OWHVDXFa2VH">
+            <Node Bounds="295,1234,78,19" Id="Aq2ugLx9Th6OWHVDXFa2VH">
               <p:NodeReference LastCategoryFullName="Stride.Textures.Utils" LastDependency="VL.Stride.Rendering.EffectShaderNodes">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <CategoryReference Kind="Category" Name="Utils" NeedsToBeDirectParent="true" />
@@ -182,7 +182,7 @@
               <Pin Id="L8eC5dP1z8TPAdr9IAhB0s" Name="Output" Kind="OutputPin" />
             </Node>
             <ControlPoint Id="LLvuedtSV00MOqVOKGPUen" Bounds="418,1112" />
-            <Pad Id="Lj5CWOuh7gJLFMVLuCGtql" Comment="Overlay" Bounds="435,973,38,37" ShowValueBox="true" isIOBox="true" Value="False">
+            <Pad Id="Lj5CWOuh7gJLFMVLuCGtql" Comment="Overlay" Bounds="435,973,38,37" ShowValueBox="true" isIOBox="true" Value="True">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
                 <CategoryReference Kind="Category" Name="Primitive" />
@@ -191,7 +191,7 @@
                 <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
               </p:ValueBoxSettings>
             </Pad>
-            <Node Bounds="274,1219,105,19" Id="O71pGFD6OFhQMVU43QGiHq">
+            <Node Bounds="274,1279,105,19" Id="O71pGFD6OFhQMVU43QGiHq">
               <p:NodeReference LastCategoryFullName="Stride.Textures.Filter" LastDependency="VL.Stride.TextureFX.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="FXAA" />
@@ -221,7 +221,7 @@
               <Pin Id="OIGT1hVcScsP7U3B9x1J5I" Name="Reset" Kind="InputPin" DefaultValue="False" />
               <Pin Id="UIVGkQGkPcIQGkxrdR0Hhv" Name="Time" Kind="OutputPin" />
             </Node>
-            <Node Bounds="295,952,65,19" Id="KYs28aVFJ6zMRpudZ9jTUi">
+            <Node Bounds="295,1185,65,19" Id="KYs28aVFJ6zMRpudZ9jTUi">
               <p:NodeReference LastCategoryFullName="Main" LastDependency="Helper.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="Echo" />
@@ -273,7 +273,7 @@
             <ControlPoint Id="BFrMaru6PcXNHxjUFLhbc7" Bounds="513,206" />
             <ControlPoint Id="IiCF9Ks82AUMgxAEwQhkXq" Bounds="442,702" />
             <Node Bounds="389,385,69,19" Id="LLCnG3nuM5qOwH7cKeh37y">
-              <p:NodeReference LastCategoryFullName="Radiosity" LastDependency="Radiosity.vl">
+              <p:NodeReference LastCategoryFullName="Radiosity" LastDependency="VL.Radiosity.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <CategoryReference Kind="Category" Name="Radiosity" NeedsToBeDirectParent="true" />
                 <Choice Kind="ProcessAppFlag" Name="NormalMap" />
@@ -382,12 +382,9 @@
           <Link Id="ItpSLZmVc3yN1pqfHu7AwE" Ids="Lj5CWOuh7gJLFMVLuCGtql,UD6Fizu3jpMONEGwiSgo3j" />
           <Link Id="AXLWkQsduoCPMEDqqoeeou" Ids="Lj5CWOuh7gJLFMVLuCGtql,Fs6PC2FA01TL5aMedjWmxD" />
           <Link Id="Iwy3R0QkgCmP4S53i3AwzV" Ids="Lj5CWOuh7gJLFMVLuCGtql,C9gPtIvXs0MMpSsX2SesFO" />
-          <Link Id="A74RCyVC6zLNZIcbCE2JaD" Ids="L8eC5dP1z8TPAdr9IAhB0s,LUeqkqgeJuuLvHJjq79pIj" />
           <Link Id="DQfqYb7nk0POkMMyS4s6xr" Ids="F0DnyN06QAyOGyIvOy3jMA,KY7Odgl0tn1NHpb1rBQHlw" />
           <Link Id="HWCDdOkMiHoM2WGAVdTlZy" Ids="DmCcWBkrk3bLrOahqPhrDW,PnGkiu7OA64OmWCLjlFKsN" />
           <Link Id="AW8J0afpKdvNke0Wb3zzPK" Ids="LNX8QK52H38PfM1t6gKTo8,EaBX7rcLU8iMaqcBTXVGgB" />
-          <Link Id="Tk8TkZWATymQEIiuM4XbeU" Ids="OtBXoZ5H10fORlMiVW2Wxu,O2D8y1IfpZoNYDV1LC9abI" />
-          <Link Id="JFRhKnm4PFVMz5RRau6JVB" Ids="CWGdxmfyarSQVG7gZ6s7FF,P72a3kGRHtvOotn9Vn2gHE" />
           <Link Id="AcvJZRbyGWYPtvqPrMzj0t" Ids="OCGkgKjurAcMSlQ7oJR4lB,Tnjb9snVQ5vNMZ65O7wgvj" />
           <Link Id="PlxQdcJ6wAPPpDTqjTljNU" Ids="UIVGkQGkPcIQGkxrdR0Hhv,LgUYbbpBuPGLhPVmnxV2Ve" />
           <Link Id="QfHTdOXXs9aOOpLNPPKuhB" Ids="KRk2l6V7GHDQSWPKWWPK3D,EBxalzwHKBzN5vYJMWYGOJ" />
@@ -396,7 +393,6 @@
           <Link Id="N5SGfRncVPdOEBJ9ZYsZ4B" Ids="EbXA92mIq5xLDtcCTMlqFn,IjrkkKHSslILQZn66u0me8" />
           <Link Id="VjwofeLGNrnMrfP9q43vbY" Ids="Hkabvh3zYYlNs0dW2cNC2D,Nc0uLZzJgiKQG7Sbu5WtQl" />
           <Link Id="B9UbL4Ku21qLk5bb6ucoOB" Ids="KhwDvm2QTTJMYQbUsneier,BFrMaru6PcXNHxjUFLhbc7" IsHidden="true" />
-          <Link Id="BYjHrjocMnfOgfiXyIcowH" Ids="F0DnyN06QAyOGyIvOy3jMA,APFxUhiFl3JPrARtYYGEVi" />
           <Link Id="MuwiQi2HXxjOgaDYqDaRFY" Ids="IiCF9Ks82AUMgxAEwQhkXq,LyKy5FR8QA5NKTt1WXhLs8" />
           <Link Id="CcHw6PN7SFwP3DtpnBfO1X" Ids="QNQzY4DYR6LN8UD5huhmv3,IiCF9Ks82AUMgxAEwQhkXq" IsHidden="true" />
           <Link Id="B48lpofqJ42O0hBLajGG3Q" Ids="DHdcoFSHuqfO1Q68unLbuw,Bav4Fh53Y1hPC8HwCVAPND" />
@@ -418,6 +414,10 @@
           <Link Id="Q8XM0FFXBNgMlk7zMbhHWC" Ids="SZyUuAi5UhiM9MjYfVr69J,KNM1hDaUn7HOll62TaRH0f" />
           <Link Id="BqzndscrFW0NCbwadO9kAd" Ids="NYX5ribyFhRQdYuTsiCjJJ,MkedcuDtPe5NqizYqXro9E" />
           <Link Id="GdK0moRgDblM6V45otlmwQ" Ids="EbXA92mIq5xLDtcCTMlqFn,Vwmu4QysOutPzKlDIwcZpH" />
+          <Link Id="PelFDi9JHK2O0hp1Vpgxvp" Ids="OtBXoZ5H10fORlMiVW2Wxu,P72a3kGRHtvOotn9Vn2gHE" />
+          <Link Id="QstDhNlVHmpNQiyJYQMpLN" Ids="L8eC5dP1z8TPAdr9IAhB0s,O2D8y1IfpZoNYDV1LC9abI" />
+          <Link Id="E4yGbGOOam2OX51nFDlxxO" Ids="CWGdxmfyarSQVG7gZ6s7FF,LUeqkqgeJuuLvHJjq79pIj" />
+          <Link Id="BVQ89s2ZMkMLnK1Wv1DEni" Ids="ASn6XFnTkkGNzQOlhiXwFf,APFxUhiFl3JPrARtYYGEVi" />
         </Patch>
       </Node>
       <!--
@@ -617,7 +617,7 @@
         </p:NodeReference>
         <Patch Id="CNkZiRtb5viMbzC1onkyMz">
           <Canvas Id="EG2P6owwkRbL8WOTBKSANV" CanvasType="Group">
-            <Node Bounds="725,700,125,19" Id="VrHDQbdIErhMhsYJUKbFay">
+            <Node Bounds="725,700,145,19" Id="VrHDQbdIErhMhsYJUKbFay">
               <p:NodeReference LastCategoryFullName="Stride.Textures.Filter" LastDependency="VL.Stride.TextureFX.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessNode" Name="NormalGlow" />
@@ -745,6 +745,6 @@
   <NugetDependency Id="IbDSUNiaLrHP34lXamuppu" Location="System.Drawing.Common" Version="8.0.0" />
   <PlatformDependency Id="JHS49jB9PQmN0zM3vO19id" Location="System.Drawing" />
   <PlatformDependency Id="CXUy1IRQsb7LoaL6Gtrxjx" Location="System" />
-  <DocumentDependency Id="TBYmXrGd2CcLWTmIipMycx" Location="./VL/Helper.vl" />
   <NugetDependency Id="DstPAEzW9cQNtFoxDglC26" Location="VL.Stride.TextureFX" Version="2024.6.0-0166-gf4293d3464" />
+  <DocumentDependency Id="C8DZoeKlRHhMS1uLiTaoCi" Location="./Helper.vl" />
 </Document>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="IaedzP2kQBtMeagKuEFvQr" LanguageVersion="2024.6.0-0166-gf4293d3464" Version="0.128">
+<Document xmlns:p="property" xmlns:r="reflection" Id="DG064QwbiXALNETy3LrmXW" LanguageVersion="2024.6.0-0166-gf4293d3464" Version="0.128">
   <NugetDependency Id="QrOYju77YY9OrnbvnlTSan" Location="VL.CoreLib" Version="2024.6.0-0166-gf4293d3464" />
   <Patch Id="C1ljkcUxLWTP3tvaADzCDe">
     <Canvas Id="GKhVJHOvR8xQc0OA4MyKr9" DefaultCategory="Main" CanvasType="FullCategory">
@@ -3174,7 +3174,7 @@
                 <Patch Id="Lj66JfeTKrGMQeKeaYeb0h" Name="Update" ManuallySortedPins="true" />
                 <Patch Id="NevrmAKLMHhLj9zR69gNR5" Name="Dispose" ManuallySortedPins="true" />
                 <Node Bounds="475,728,62,19" Id="QEkp10oo3xNMyv8GTeZ2FT">
-                  <p:NodeReference LastCategoryFullName="Main" LastDependency="Radiosity Example.vl">
+                  <p:NodeReference LastCategoryFullName="Main" LastDependency="HowTo Radiate.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="ProcessAppFlag" Name="Six_Shape" />
                   </p:NodeReference>
@@ -3582,7 +3582,7 @@
               </Patch>
             </Node>
             <Node Bounds="419,381,145,19" Id="F0WupvWxKxFO4kUjU3o4Il">
-              <p:NodeReference LastCategoryFullName="Main.WarpGrid" LastDependency="Radiosity Example.vl">
+              <p:NodeReference LastCategoryFullName="Main.WarpGrid" LastDependency="HowTo Radiate.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="Subdivide" />
               </p:NodeReference>
@@ -3608,7 +3608,7 @@
               </p:TypeAnnotation>
             </Pad>
             <Node Bounds="423,502,145,19" Id="TzX7X26BmnkM9ivsrIlmhJ">
-              <p:NodeReference LastCategoryFullName="Main.WarpGrid" LastDependency="Radiosity Example.vl">
+              <p:NodeReference LastCategoryFullName="Main.WarpGrid" LastDependency="HowTo Radiate.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="Subdivide" />
               </p:NodeReference>
@@ -3673,7 +3673,7 @@
               </p:TypeAnnotation>
             </Pad>
             <Node Bounds="440,607,145,19" Id="DVQPlDN6enEQat2HXKBuXv">
-              <p:NodeReference LastCategoryFullName="Main.WarpGrid" LastDependency="Radiosity Example.vl">
+              <p:NodeReference LastCategoryFullName="Main.WarpGrid" LastDependency="HowTo Radiate.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="Subdivide" />
               </p:NodeReference>
@@ -3944,7 +3944,7 @@
                 <Patch Id="Vl29mGHp6EEQAmQGcsyXQ2" Name="Update" ManuallySortedPins="true" />
                 <Patch Id="KUT7sFgNZnAOjeKWdLSDi3" Name="Dispose" ManuallySortedPins="true" />
                 <Node Bounds="475,728,62,19" Id="BV4t8LTX6DUPqCFL2Y607l">
-                  <p:NodeReference LastCategoryFullName="Main" LastDependency="Radiosity Example.vl">
+                  <p:NodeReference LastCategoryFullName="Main" LastDependency="HowTo Radiate.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="ProcessAppFlag" Name="Six_Shape" />
                   </p:NodeReference>
@@ -4620,7 +4620,7 @@
                   <Pin Id="SvsMt845HLOOAaX6m42eVp" Name="Result" Kind="OutputPin" />
                 </Node>
                 <Node Bounds="773,604,125,19" Id="DMmZ5h0Sl3TLZt3bfw8hqP">
-                  <p:NodeReference LastCategoryFullName="Main" LastDependency="Radiosity Example.vl">
+                  <p:NodeReference LastCategoryFullName="Main" LastDependency="HowTo Radiate.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="ProcessAppFlag" Name="Six_Shape" />
                   </p:NodeReference>
@@ -5448,7 +5448,7 @@
                   <Pin Id="FZCH4htA361NXwwKkTmneT" Name="Result" Kind="OutputPin" />
                 </Node>
                 <Node Bounds="592,636,145,19" Id="GumG4ynzNWnLRtydnbqRyu">
-                  <p:NodeReference LastCategoryFullName="Main" LastDependency="Radiosity Example.vl">
+                  <p:NodeReference LastCategoryFullName="Main" LastDependency="HowTo Radiate.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="ProcessAppFlag" Name="Six_Shape" />
                   </p:NodeReference>
@@ -7762,7 +7762,7 @@
             </p:TypeAnnotation>
           </Pad>
           <Node Bounds="316,1189,186,19" Id="KORvR50x2Q0L2acXF8WxAd">
-            <p:NodeReference LastCategoryFullName="Radiosity" LastDependency="Radiosity.vl">
+            <p:NodeReference LastCategoryFullName="Radiosity" LastDependency="VL.Radiosity.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="Category" Name="Radiosity" NeedsToBeDirectParent="true" />
               <Choice Kind="ProcessAppFlag" Name="Radiosity" />
@@ -7967,7 +7967,7 @@
             <Pin Id="NBHe5DboQC4PTInq7JVjNo" Name="Node Context" Kind="InputPin" IsHidden="true" />
             <Pin Id="CRrYQ4L1YUDO2d2jLPUY82" Name="Seg Length" Kind="InputPin" DefaultValue="0.15" />
             <Pin Id="KgfPOvvs2f3Lm4EJJ2NckY" Name="Deviation" Kind="InputPin" DefaultValue="0.2" />
-            <Pin Id="KBrnVH4aNe6LHDJOf48Rz5" Name="Seed" Kind="InputPin" DefaultValue="173" />
+            <Pin Id="KBrnVH4aNe6LHDJOf48Rz5" Name="Seed" Kind="InputPin" DefaultValue="182" />
             <Pin Id="DpB8QxfP7pVPS50ryduqEO" Name="Output" Kind="OutputPin" />
           </Node>
           <Node Bounds="637,574,47,19" Id="FivD8r3qj3wNftAwQxP4z2">
@@ -8039,13 +8039,13 @@
         <Link Id="RJGz6qhXCNJOSCBV1DX4EK" Ids="O7RGSEytGzjMLYD1Zsai6S,NSvfNGwJaVRLvlujXdsCQR" />
         <Link Id="QeMZWhz5livPMCtuYKyhHT" Ids="SSNSJKUHioLPGr83CXNoE3,CvHP2HdgyfMOSotuTFOGAa" />
         <Link Id="GJs2uZD8ZmEMxzZ6lxQVdn" Ids="DpB8QxfP7pVPS50ryduqEO,JNeUlK6UekfNKO3pXZpufS" />
-        <Link Id="AIGxo6jPUthNpjbRudDRH8" Ids="JUjZadatbuYLrVHlz1vefo,KBrnVH4aNe6LHDJOf48Rz5" />
+        <Link Id="GqbQPzZxrA0MP2BgjcFehF" Ids="JUjZadatbuYLrVHlz1vefo,KBrnVH4aNe6LHDJOf48Rz5" />
       </Patch>
     </Node>
   </Patch>
-  <DocumentDependency Id="IR8dOuBJa09MjVcW1yRLs7" Location="./Radiosity.vl" />
   <NugetDependency Id="APzBifgssL0NIeylMmE4xe" Location="VL.Skia" Version="2024.6.0-0166-gf4293d3464" />
   <NugetDependency Id="LbMkk7VDzXNPKqOOfoKRC6" Location="VL.Stride" Version="2024.6.0-0166-gf4293d3464" />
   <NugetDependency Id="Jf5QDO28qM3PRmWtUCUFlc" Location="VL.Stride.TextureFX" Version="2024.6.0-0166-gf4293d3464" />
-  <DocumentDependency Id="A8Jr6oRPOWpQBajD6CM9RM" Location="./VL/Helper.vl" />
+  <DocumentDependency Id="U5gk9JxZ0pbQJZfzXU2XN7" Location="../VL.Radiosity.vl" />
+  <DocumentDependency Id="IMZcqnbkBVDNtT18rIcyDV" Location="../Helper.vl" />
 </Document>
