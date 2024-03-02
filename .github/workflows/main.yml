@@ -21,4 +21,5 @@ jobs:
     - name: Publish VL Nuget
       uses: vvvv/PublishVLNuget@1.0.43
       with:
+        nuspec: deployment\VL.Radiosity.nuspec
         nuget-key: ${{ secrets.NUGET_KEY }}
