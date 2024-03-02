@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="N7nKnwmvVeBNegWecgA67u" LanguageVersion="2023.5.3-0164-g883a868a2e" Version="0.128">
+<Document xmlns:p="property" xmlns:r="reflection" Id="N7nKnwmvVeBNegWecgA67u" LanguageVersion="2024.6.0-0166-gf4293d3464" Version="0.128">
   <Patch Id="Ve0aGIUidpxQTQiFuTrrtK">
     <Canvas Id="DcYg7AMaOFlNA2EQcjmy9l" DefaultCategory="Radiosity" CanvasType="FullCategory">
       <!--
@@ -14,7 +14,7 @@
         <Patch Id="U98kUFmzljWPtDIGsmC9y0">
           <Canvas Id="VmY0UyKj26ULK46ce9rvZ8" CanvasType="Group">
             <Node Bounds="381,549,378,19" Id="BbLULqboYlEOxMi87TcXGh">
-              <p:NodeReference LastCategoryFullName="Stride.Textures" LastDependency="VL.Stride.Rendering.EffectShaderNodes (C:\projects\VL.Radiosity)">
+              <p:NodeReference LastCategoryFullName="Stride.Textures" LastDependency="VL.Stride.Rendering.EffectShaderNodes">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <CategoryReference Kind="Category" Name="Textures" NeedsToBeDirectParent="true" />
                 <Choice Kind="ProcessNode" Name="Radiosity" />
@@ -67,7 +67,7 @@
               <Pin Id="ROM5tLJQiuvOMmxb3VJWAn" Name="Compare Function" Kind="InputPin" />
               <Pin Id="UBqoHfSuI4LOfGk54zmKjB" Name="Output" Kind="OutputPin" />
             </Node>
-            <Pad Id="RK0mZC4okaqNyZBSFWNRXH" Comment="Address U" Bounds="611,242,79,15" ShowValueBox="true" isIOBox="true" Value="Border">
+            <Pad Id="RK0mZC4okaqNyZBSFWNRXH" Comment="Address U" Bounds="611,242,79,15" ShowValueBox="true" isIOBox="true" Value="Mirror">
               <p:TypeAnnotation LastCategoryFullName="Stride.API.Graphics" LastDependency="VL.Stride.vl">
                 <Choice Kind="TypeFlag" Name="TextureAddressMode" />
               </p:TypeAnnotation>
@@ -163,7 +163,7 @@
               <Pin Id="UglBrNqUkpuPaFd7mpCRML" Name="Output" Kind="OutputPin" />
             </Node>
             <Node Bounds="381,854,145,19" Id="UcOmfPAcqK0O2inefGAXey">
-              <p:NodeReference LastCategoryFullName="Stride.Textures.Mixer" LastDependency="VL.Stride.vl">
+              <p:NodeReference LastCategoryFullName="Stride.Textures.Mixer" LastDependency="VL.Stride.TextureFX.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <CategoryReference Kind="Category" Name="Mixer" NeedsToBeDirectParent="true" />
                 <Choice Kind="ProcessAppFlag" Name="Blend" />
@@ -192,7 +192,7 @@
               </p:ValueBoxSettings>
             </Pad>
             <Node Bounds="359,948,105,19" Id="Vz7BDr4I8mFNOErobP4m7Q">
-              <p:NodeReference LastCategoryFullName="Stride.Textures.Filter" LastDependency="VL.Stride.vl">
+              <p:NodeReference LastCategoryFullName="Stride.Textures.Filter" LastDependency="VL.Stride.TextureFX.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="FXAA" />
               </p:NodeReference>
@@ -421,7 +421,7 @@
         <Patch Id="Bclvm0Mey2WORnmRSmoWQ7">
           <Canvas Id="HHIKv90klrFO3IWVtTIt87" CanvasType="Group">
             <Node Bounds="139,435,145,19" Id="PcZOWHB42azQVu7YL42gIr">
-              <p:NodeReference LastCategoryFullName="Stride.Textures" LastDependency="VL.Stride.Rendering.EffectShaderNodes (C:\projects\VL.Radiosity)">
+              <p:NodeReference LastCategoryFullName="Stride.Textures" LastDependency="VL.Stride.Rendering.EffectShaderNodes">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessNode" Name="DistanceField2DVertical" />
               </p:NodeReference>
@@ -441,7 +441,7 @@
               </p:TypeAnnotation>
             </Pad>
             <Node Bounds="99,568,185,19" Id="BQ2HDVeG3AVOyZvaCVPiit">
-              <p:NodeReference LastCategoryFullName="Stride.Textures" LastDependency="VL.Stride.Rendering.EffectShaderNodes (C:\projects\VL.Radiosity)">
+              <p:NodeReference LastCategoryFullName="Stride.Textures" LastDependency="VL.Stride.Rendering.EffectShaderNodes">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessNode" Name="DistanceField2DHorizontal" />
               </p:NodeReference>
@@ -606,7 +606,7 @@
         <Patch Id="CNkZiRtb5viMbzC1onkyMz">
           <Canvas Id="EG2P6owwkRbL8WOTBKSANV" CanvasType="Group">
             <Node Bounds="725,700,125,19" Id="VrHDQbdIErhMhsYJUKbFay">
-              <p:NodeReference LastCategoryFullName="Stride.Textures.Filter" LastDependency="VL.Stride.Rendering.EffectShaderNodes">
+              <p:NodeReference LastCategoryFullName="Stride.Textures.Filter" LastDependency="VL.Stride.TextureFX.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessNode" Name="NormalGlow" />
               </p:NodeReference>
@@ -630,7 +630,7 @@
               </p:TypeAnnotation>
             </Pad>
             <Node Bounds="727,802,85,19" Id="CaIrECJvGHlMFTdA1MCp9s">
-              <p:NodeReference LastCategoryFullName="Stride.Textures.Filter" LastDependency="VL.Stride.vl">
+              <p:NodeReference LastCategoryFullName="Stride.Textures.Filter" LastDependency="VL.Stride.TextureFX.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <CategoryReference Kind="Category" Name="Filter" NeedsToBeDirectParent="true" />
                 <Choice Kind="ProcessAppFlag" Name="Blur" />
@@ -663,7 +663,7 @@
               </p:ValueBoxSettings>
             </Pad>
             <Node Bounds="725,664,66,19" Id="FoGdHy9YqS5PGL9Fg2Sn2r">
-              <p:NodeReference LastCategoryFullName="Stride.Textures" LastDependency="VL.Stride.Rendering.EffectShaderNodes (C:\projects\VL.Radiosity)">
+              <p:NodeReference LastCategoryFullName="Stride.Textures" LastDependency="VL.Stride.Rendering.EffectShaderNodes">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessNode" Name="AlphaMask" />
               </p:NodeReference>
@@ -727,11 +727,12 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="HIso4iDRN4iNSZxOaP0H2p" Location="VL.CoreLib" Version="2023.5.3-0164-g883a868a2e" />
-  <NugetDependency Id="CEszKi4CR48LXWCFc4Kevs" Location="VL.Stride" Version="2023.5.3-0164-g883a868a2e" />
-  <NugetDependency Id="QKt8dsFfXgNPAG8pqrdHFr" Location="VL.Skia" Version="2023.5.3-0164-g883a868a2e" />
-  <NugetDependency Id="IbDSUNiaLrHP34lXamuppu" Location="System.Drawing.Common" Version="6.0.0" />
+  <NugetDependency Id="HIso4iDRN4iNSZxOaP0H2p" Location="VL.CoreLib" Version="2024.6.0-0166-gf4293d3464" />
+  <NugetDependency Id="CEszKi4CR48LXWCFc4Kevs" Location="VL.Stride" Version="2024.6.0-0166-gf4293d3464" />
+  <NugetDependency Id="QKt8dsFfXgNPAG8pqrdHFr" Location="VL.Skia" Version="2024.6.0-0166-gf4293d3464" />
+  <NugetDependency Id="IbDSUNiaLrHP34lXamuppu" Location="System.Drawing.Common" Version="8.0.0" />
   <PlatformDependency Id="JHS49jB9PQmN0zM3vO19id" Location="System.Drawing" />
   <PlatformDependency Id="CXUy1IRQsb7LoaL6Gtrxjx" Location="System" />
   <DocumentDependency Id="TBYmXrGd2CcLWTmIipMycx" Location="./VL/Helper.vl" />
+  <NugetDependency Id="DstPAEzW9cQNtFoxDglC26" Location="VL.Stride.TextureFX" Version="2024.6.0-0166-gf4293d3464" />
 </Document>
