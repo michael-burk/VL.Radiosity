@@ -7746,7 +7746,7 @@
             <Pin Id="OZybSSvl8YAOQ3LuMUQoEM" Name="Output" Kind="OutputPin" />
           </Node>
           <Node Bounds="314,1243,51,19" Id="IYFIn71wiCZN0h1EGpUUAA">
-            <p:NodeReference LastCategoryFullName="Main" LastDependency="Helper.vl">
+            <p:NodeReference LastCategoryFullName="Radiosity" LastDependency="VL.Radiosity.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Preview" />
             </p:NodeReference>
@@ -8047,5 +8047,4 @@
   <NugetDependency Id="LbMkk7VDzXNPKqOOfoKRC6" Location="VL.Stride" Version="2024.6.0-0166-gf4293d3464" />
   <NugetDependency Id="Jf5QDO28qM3PRmWtUCUFlc" Location="VL.Stride.TextureFX" Version="2024.6.0-0166-gf4293d3464" />
   <DocumentDependency Id="U5gk9JxZ0pbQJZfzXU2XN7" Location="../VL.Radiosity.vl" />
-  <DocumentDependency Id="MsM3B4PtVbgMQWkOqptwpu" Location="../Helper.vl" />
 </Document>
