@@ -2,15 +2,16 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
     <id>VL.Radiosity</id>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <title>VL.Radiosity</title>
-    <authors>andand</authors>
-    <owners>andand</owners>
+    <authors>andand.xyz</authors>
+    <owners>andand.xyz</owners>
     <projectUrl>https://github.com/michael-burk/VL.Radiosity</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <summary>2D Radiosity Shader</summary>
     <description>2D Radiosity Shader</description>
     <tags>lightsimulation</tags>
+    <license type="expression">CC BY-NC-SA 4.0</license>
   </metadata>
   <files>
     <file src="..\*.vl" target="" exclude="" />
