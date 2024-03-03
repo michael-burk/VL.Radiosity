@@ -11,7 +11,7 @@
     <summary>2D Radiosity Shader</summary>
     <description>2D Radiosity Shader</description>
     <tags>lightsimulation</tags>
-    <license type="expression">CC BY-NC-SA 4.0</license>
+    <license type="expression">CC_BY-NC-SA_4.0</license>
   </metadata>
   <files>
     <file src="..\*.vl" target="" exclude="" />
