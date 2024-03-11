@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="K15iJfkRHIiNc46NMDnRPh" LanguageVersion="2024.6.0-0166-gf4293d3464" Version="0.128">
+<Document xmlns:p="property" xmlns:r="reflection" Id="K15iJfkRHIiNc46NMDnRPh" LanguageVersion="2024.6.0-0261-g38f7059b02" Version="0.128">
   <Patch Id="Ve0aGIUidpxQTQiFuTrrtK">
     <Canvas Id="DcYg7AMaOFlNA2EQcjmy9l" DefaultCategory="Radiosity" CanvasType="FullCategory">
       <!--
@@ -67,7 +67,7 @@
               <Pin Id="SDrlVP1v1HCOg7cWTtTpi3" Name="Compare Function" Kind="InputPin" />
               <Pin Id="EwEFIAAPSQRNLbypybkYfa" Name="Output" Kind="OutputPin" />
             </Node>
-            <Pad Id="LNX8QK52H38PfM1t6gKTo8" Comment="Address U" Bounds="526,513,79,15" ShowValueBox="true" isIOBox="true" Value="Border">
+            <Pad Id="LNX8QK52H38PfM1t6gKTo8" Comment="Address U" Bounds="526,513,79,15" ShowValueBox="true" isIOBox="true" Value="Mirror">
               <p:TypeAnnotation LastCategoryFullName="Stride.API.Graphics" LastDependency="VL.Stride.vl">
                 <Choice Kind="TypeFlag" Name="TextureAddressMode" />
               </p:TypeAnnotation>
@@ -344,7 +344,7 @@
               <Pin Id="Mrd3BYAJczHK9yfYv3Up9H" Name="Depth" Kind="OutputPin" />
             </Node>
             <ControlPoint Id="HTmTOCrNxazQL7veiV5Z27" Bounds="315,103" />
-            <Pad Id="SZyUuAi5UhiM9MjYfVr69J" Comment="MagicNumber (Resolution and Aspect Dependent)" Bounds="343,674,43,15" ShowValueBox="true" isIOBox="true" Value="0.08">
+            <Pad Id="SZyUuAi5UhiM9MjYfVr69J" Comment="MagicNumber (Resolution and Aspect Dependent)" Bounds="343,674,43,15" ShowValueBox="true" isIOBox="true" Value="0.066">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="TypeFlag" Name="Float32" />
               </p:TypeAnnotation>
@@ -1618,7 +1618,7 @@
                 <Choice Kind="ProcessAppFlag" Name="RenderWindow" />
               </p:NodeReference>
               <Pin Id="AEksjv9BIOWMGLfzZzsf2U" Name="Node Context" Kind="InputPin" />
-              <Pin Id="Dygre8PAOTKP22lfuSaMas" Name="Bounds" Kind="InputPin" DefaultValue="1199.4286, 88, 978.8571, 978.8571" />
+              <Pin Id="Dygre8PAOTKP22lfuSaMas" Name="Bounds" Kind="InputPin" DefaultValue="1199.4286, 88, 978.8571, 550.2857" />
               <Pin Id="PffU8hhiXhHMfFIDZRHpeK" Name="Bound to Document" Kind="InputPin" IsHidden="true" />
               <Pin Id="DUmL8B2s5c7NK0wwO4ZIlj" Name="Dialog If Document Changed" Kind="InputPin" IsHidden="true" />
               <Pin Id="HbgF24wxMXNPBjkU9WzloF" Name="Save Bounds" Kind="InputPin" IsHidden="true" />
@@ -1992,11 +1992,11 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="HIso4iDRN4iNSZxOaP0H2p" Location="VL.CoreLib" Version="2024.6.0-0166-gf4293d3464" />
-  <NugetDependency Id="CEszKi4CR48LXWCFc4Kevs" Location="VL.Stride" Version="2024.6.0-0166-gf4293d3464" />
-  <NugetDependency Id="QKt8dsFfXgNPAG8pqrdHFr" Location="VL.Skia" Version="2024.6.0-0166-gf4293d3464" />
+  <NugetDependency Id="HIso4iDRN4iNSZxOaP0H2p" Location="VL.CoreLib" Version="2024.6.0-0261-g38f7059b02" />
+  <NugetDependency Id="CEszKi4CR48LXWCFc4Kevs" Location="VL.Stride" Version="2024.6.0-0261-g38f7059b02" />
+  <NugetDependency Id="QKt8dsFfXgNPAG8pqrdHFr" Location="VL.Skia" Version="2024.6.0-0261-g38f7059b02" />
   <NugetDependency Id="IbDSUNiaLrHP34lXamuppu" Location="System.Drawing.Common" Version="8.0.0" />
   <PlatformDependency Id="JHS49jB9PQmN0zM3vO19id" Location="System.Drawing" />
   <PlatformDependency Id="CXUy1IRQsb7LoaL6Gtrxjx" Location="System" />
-  <NugetDependency Id="DstPAEzW9cQNtFoxDglC26" Location="VL.Stride.TextureFX" Version="2024.6.0-0166-gf4293d3464" />
+  <NugetDependency Id="DstPAEzW9cQNtFoxDglC26" Location="VL.Stride.TextureFX" Version="2024.6.0-0261-g38f7059b02" />
 </Document>
