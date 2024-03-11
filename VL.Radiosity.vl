@@ -25,8 +25,8 @@
               <Pin Id="NrxeEsOSGu6NtFLSOhaR2z" Name="Input 3" Kind="InputPin" />
               <Pin Id="QBiHiIN4SgxP3Ib1nnQQdK" Name="Input 4" Kind="InputPin" />
               <Pin Id="LyKy5FR8QA5NKTt1WXhLs8" Name="Input 5" Kind="InputPin" />
-              <Pin Id="F1TQjQZYzceLSgh1RLlRBM" Name="SAMPLES" Kind="InputPin" DefaultValue="128" />
-              <Pin Id="SBCPHQIFT3SPHUOqe94rnc" Name="SAMPLES2" Kind="InputPin" DefaultValue="64" />
+              <Pin Id="F1TQjQZYzceLSgh1RLlRBM" Name="SAMPLES" Kind="InputPin" />
+              <Pin Id="SBCPHQIFT3SPHUOqe94rnc" Name="SAMPLES2" Kind="InputPin" />
               <Pin Id="Nc0uLZzJgiKQG7Sbu5WtQl" Name="Time" Kind="InputPin" />
               <Pin Id="U6Bs8Pe1py2NDyRbgiQyl9" Name="Max Dist" Kind="InputPin" />
               <Pin Id="NOZjlXKxGNQOusIo6voRNU" Name="Bumpy" Kind="InputPin" DefaultValue="False" />
@@ -34,7 +34,7 @@
               <Pin Id="OeyVqQwjhP0NzYrsAwnLHJ" Name="Output Format" Kind="InputPin" DefaultValue="R16G16B16A16_Float" />
               <Pin Id="I5RYuBUu62dMJukBZlNqyJ" Name="Render Format" Kind="InputPin" IsHidden="true" />
               <Pin Id="TcdV5SLYMnwLqfc2V84gpB" Name="Output Texture" Kind="InputPin" IsHidden="true" />
-              <Pin Id="Troebkj01r2LFUEvAt07wt" Name="Enabled" Kind="InputPin" />
+              <Pin Id="Troebkj01r2LFUEvAt07wt" Name="Enabled" Kind="InputPin" DefaultValue="True" />
               <Pin Id="OtBXoZ5H10fORlMiVW2Wxu" Name="Output" Kind="OutputPin" />
             </Node>
             <Node Bounds="296,725,97,19" Id="IonuqyDbhZYOvndXqzxnYX">
@@ -228,12 +228,12 @@
               </p:NodeReference>
               <Pin Id="K1RUHa5RRKTLug4I3xJumL" Name="Node Context" Kind="InputPin" IsHidden="true" />
               <Pin Id="O2D8y1IfpZoNYDV1LC9abI" Name="Texture" Kind="InputPin" />
-              <Pin Id="LEYj5DPpXL1QVfwn9tydZv" Name="Amount" Kind="InputPin" DefaultValue="0.9" />
+              <Pin Id="LEYj5DPpXL1QVfwn9tydZv" Name="Amount" Kind="InputPin" DefaultValue="0.8" />
               <Pin Id="APFxUhiFl3JPrARtYYGEVi" Name="Size" Kind="InputPin" />
               <Pin Id="Tnjb9snVQ5vNMZ65O7wgvj" Name="Enabled" Kind="InputPin" DefaultValue="False" />
               <Pin Id="CWGdxmfyarSQVG7gZ6s7FF" Name="Output" Kind="OutputPin" />
             </Node>
-            <Pad Id="OCGkgKjurAcMSlQ7oJR4lB" Comment="Enabled" Bounds="361,896,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+            <Pad Id="OCGkgKjurAcMSlQ7oJR4lB" Comment="Enabled" Bounds="491,1171,35,35" ShowValueBox="true" isIOBox="true" Value="True">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
                 <CategoryReference Kind="Category" Name="Primitive" />
@@ -344,7 +344,7 @@
               <Pin Id="Mrd3BYAJczHK9yfYv3Up9H" Name="Depth" Kind="OutputPin" />
             </Node>
             <ControlPoint Id="HTmTOCrNxazQL7veiV5Z27" Bounds="315,103" />
-            <Pad Id="SZyUuAi5UhiM9MjYfVr69J" Comment="MagicNumber (Resolution and Aspect Dependent)" Bounds="343,674,43,15" ShowValueBox="true" isIOBox="true" Value="0.066">
+            <Pad Id="SZyUuAi5UhiM9MjYfVr69J" Comment="MagicNumber (Resolution and Aspect Dependent)" Bounds="343,674,43,15" ShowValueBox="true" isIOBox="true" Value="0.08">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="TypeFlag" Name="Float32" />
               </p:TypeAnnotation>
@@ -1618,7 +1618,7 @@
                 <Choice Kind="ProcessAppFlag" Name="RenderWindow" />
               </p:NodeReference>
               <Pin Id="AEksjv9BIOWMGLfzZzsf2U" Name="Node Context" Kind="InputPin" />
-              <Pin Id="Dygre8PAOTKP22lfuSaMas" Name="Bounds" Kind="InputPin" DefaultValue="1199.4286, 88, 978.8571, 550.2857" />
+              <Pin Id="Dygre8PAOTKP22lfuSaMas" Name="Bounds" Kind="InputPin" DefaultValue="1199.4286, 88, 510.2857, 510.2857" />
               <Pin Id="PffU8hhiXhHMfFIDZRHpeK" Name="Bound to Document" Kind="InputPin" IsHidden="true" />
               <Pin Id="DUmL8B2s5c7NK0wwO4ZIlj" Name="Dialog If Document Changed" Kind="InputPin" IsHidden="true" />
               <Pin Id="HbgF24wxMXNPBjkU9WzloF" Name="Save Bounds" Kind="InputPin" IsHidden="true" />
