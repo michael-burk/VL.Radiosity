@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="K15iJfkRHIiNc46NMDnRPh" LanguageVersion="2024.6.0-0166-gf4293d3464" Version="0.128">
+<Document xmlns:p="property" xmlns:r="reflection" Id="K15iJfkRHIiNc46NMDnRPh" LanguageVersion="2024.6.0-0261-g38f7059b02" Version="0.128">
   <Patch Id="Ve0aGIUidpxQTQiFuTrrtK">
     <Canvas Id="DcYg7AMaOFlNA2EQcjmy9l" DefaultCategory="Radiosity" CanvasType="FullCategory">
       <!--
@@ -25,8 +25,8 @@
               <Pin Id="NrxeEsOSGu6NtFLSOhaR2z" Name="Input 3" Kind="InputPin" />
               <Pin Id="QBiHiIN4SgxP3Ib1nnQQdK" Name="Input 4" Kind="InputPin" />
               <Pin Id="LyKy5FR8QA5NKTt1WXhLs8" Name="Input 5" Kind="InputPin" />
-              <Pin Id="F1TQjQZYzceLSgh1RLlRBM" Name="SAMPLES" Kind="InputPin" DefaultValue="128" />
-              <Pin Id="SBCPHQIFT3SPHUOqe94rnc" Name="SAMPLES2" Kind="InputPin" DefaultValue="64" />
+              <Pin Id="F1TQjQZYzceLSgh1RLlRBM" Name="SAMPLES" Kind="InputPin" />
+              <Pin Id="SBCPHQIFT3SPHUOqe94rnc" Name="SAMPLES2" Kind="InputPin" />
               <Pin Id="Nc0uLZzJgiKQG7Sbu5WtQl" Name="Time" Kind="InputPin" />
               <Pin Id="U6Bs8Pe1py2NDyRbgiQyl9" Name="Max Dist" Kind="InputPin" />
               <Pin Id="NOZjlXKxGNQOusIo6voRNU" Name="Bumpy" Kind="InputPin" DefaultValue="False" />
@@ -228,7 +228,7 @@
               </p:NodeReference>
               <Pin Id="K1RUHa5RRKTLug4I3xJumL" Name="Node Context" Kind="InputPin" IsHidden="true" />
               <Pin Id="O2D8y1IfpZoNYDV1LC9abI" Name="Texture" Kind="InputPin" />
-              <Pin Id="LEYj5DPpXL1QVfwn9tydZv" Name="Amount" Kind="InputPin" DefaultValue="0.9" />
+              <Pin Id="LEYj5DPpXL1QVfwn9tydZv" Name="Amount" Kind="InputPin" DefaultValue="0.8" />
               <Pin Id="APFxUhiFl3JPrARtYYGEVi" Name="Size" Kind="InputPin" />
               <Pin Id="Tnjb9snVQ5vNMZ65O7wgvj" Name="Enabled" Kind="InputPin" DefaultValue="False" />
               <Pin Id="CWGdxmfyarSQVG7gZ6s7FF" Name="Output" Kind="OutputPin" />
@@ -1618,7 +1618,7 @@
                 <Choice Kind="ProcessAppFlag" Name="RenderWindow" />
               </p:NodeReference>
               <Pin Id="AEksjv9BIOWMGLfzZzsf2U" Name="Node Context" Kind="InputPin" />
-              <Pin Id="Dygre8PAOTKP22lfuSaMas" Name="Bounds" Kind="InputPin" DefaultValue="1199.4286, 88, 978.8571, 978.8571" />
+              <Pin Id="Dygre8PAOTKP22lfuSaMas" Name="Bounds" Kind="InputPin" DefaultValue="1199.4286, 88, 584, 584" />
               <Pin Id="PffU8hhiXhHMfFIDZRHpeK" Name="Bound to Document" Kind="InputPin" IsHidden="true" />
               <Pin Id="DUmL8B2s5c7NK0wwO4ZIlj" Name="Dialog If Document Changed" Kind="InputPin" IsHidden="true" />
               <Pin Id="HbgF24wxMXNPBjkU9WzloF" Name="Save Bounds" Kind="InputPin" IsHidden="true" />
@@ -1992,11 +1992,11 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="HIso4iDRN4iNSZxOaP0H2p" Location="VL.CoreLib" Version="2024.6.0-0166-gf4293d3464" />
-  <NugetDependency Id="CEszKi4CR48LXWCFc4Kevs" Location="VL.Stride" Version="2024.6.0-0166-gf4293d3464" />
-  <NugetDependency Id="QKt8dsFfXgNPAG8pqrdHFr" Location="VL.Skia" Version="2024.6.0-0166-gf4293d3464" />
+  <NugetDependency Id="HIso4iDRN4iNSZxOaP0H2p" Location="VL.CoreLib" Version="2024.6.0-0261-g38f7059b02" />
+  <NugetDependency Id="CEszKi4CR48LXWCFc4Kevs" Location="VL.Stride" Version="2024.6.0-0261-g38f7059b02" />
+  <NugetDependency Id="QKt8dsFfXgNPAG8pqrdHFr" Location="VL.Skia" Version="2024.6.0-0261-g38f7059b02" />
   <NugetDependency Id="IbDSUNiaLrHP34lXamuppu" Location="System.Drawing.Common" Version="8.0.0" />
   <PlatformDependency Id="JHS49jB9PQmN0zM3vO19id" Location="System.Drawing" />
   <PlatformDependency Id="CXUy1IRQsb7LoaL6Gtrxjx" Location="System" />
-  <NugetDependency Id="DstPAEzW9cQNtFoxDglC26" Location="VL.Stride.TextureFX" Version="2024.6.0-0166-gf4293d3464" />
+  <NugetDependency Id="DstPAEzW9cQNtFoxDglC26" Location="VL.Stride.TextureFX" Version="2024.6.0-0261-g38f7059b02" />
 </Document>
