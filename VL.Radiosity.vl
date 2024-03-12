@@ -67,7 +67,7 @@
               <Pin Id="SDrlVP1v1HCOg7cWTtTpi3" Name="Compare Function" Kind="InputPin" />
               <Pin Id="EwEFIAAPSQRNLbypybkYfa" Name="Output" Kind="OutputPin" />
             </Node>
-            <Pad Id="LNX8QK52H38PfM1t6gKTo8" Comment="Address U" Bounds="526,513,79,15" ShowValueBox="true" isIOBox="true" Value="Border">
+            <Pad Id="LNX8QK52H38PfM1t6gKTo8" Comment="Address U" Bounds="526,513,79,15" ShowValueBox="true" isIOBox="true" Value="Mirror">
               <p:TypeAnnotation LastCategoryFullName="Stride.API.Graphics" LastDependency="VL.Stride.vl">
                 <Choice Kind="TypeFlag" Name="TextureAddressMode" />
               </p:TypeAnnotation>
@@ -2035,7 +2035,7 @@
               <Pin Id="U6GGhZPxZSCMeu3G5fD0Lw" Name="Compare Function" Kind="InputPin" />
               <Pin Id="MOlSlqzZGHaMMQxZcsddbk" Name="Output" Kind="OutputPin" />
             </Node>
-            <Pad Id="VYhlv0iM59YLALdFaZIZbJ" Comment="Address U" Bounds="526,513,79,15" ShowValueBox="true" isIOBox="true" Value="Border">
+            <Pad Id="VYhlv0iM59YLALdFaZIZbJ" Comment="Address U" Bounds="526,513,79,15" ShowValueBox="true" isIOBox="true" Value="Mirror">
               <p:TypeAnnotation LastCategoryFullName="Stride.API.Graphics" LastDependency="VL.Stride.vl">
                 <Choice Kind="TypeFlag" Name="TextureAddressMode" />
               </p:TypeAnnotation>
@@ -2259,7 +2259,7 @@
               <Pin Id="VytvhZ28S9YNrbAl2XFRHj" Name="Result" Kind="OutputPin" />
               <Pin Id="ShMSvLKfvfJMdNQnC3bEwa" Name="Not Assigned" Kind="OutputPin" />
             </Node>
-            <Pad Id="LDNVFJq9wJGMgQePhKJP8x" Comment="MagicNumber (Resolution and Aspect Dependent)" Bounds="343,674,43,15" ShowValueBox="true" isIOBox="true" Value="0.08">
+            <Pad Id="LDNVFJq9wJGMgQePhKJP8x" Comment="MagicNumber (Resolution and Aspect Dependent)" Bounds="343,674,43,15" ShowValueBox="true" isIOBox="true" Value="0.053">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="TypeFlag" Name="Float32" />
               </p:TypeAnnotation>
@@ -2392,26 +2392,39 @@
               <Pin Id="B4UVFTfUY2nLhnPMOPkvqg" Name="Color" Kind="OutputPin" />
               <Pin Id="E2fANn186nfNxpIYnoQcCM" Name="Depth" Kind="OutputPin" />
             </Node>
-            <ControlPoint Id="RqswHFvwmuBOBCznwuTzTD" Bounds="479,252" />
+            <ControlPoint Id="RqswHFvwmuBOBCznwuTzTD" Bounds="485,158" />
             <ControlPoint Id="SoIUPoIrdYdLBrce3vCI3j" Bounds="490,436" />
-            <ControlPoint Id="GSeyg5yW2VPNHnC4g4IJHa" Bounds="729,262" />
+            <ControlPoint Id="GSeyg5yW2VPNHnC4g4IJHa" Bounds="714,156" />
             <ControlPoint Id="MMumSzRnof0PXmZIg0XRxM" Bounds="730,459" />
             <ControlPoint Id="LYVoFKS4Ib3LfupdNxA7N5" Bounds="546,255" />
+            <Node Bounds="582,193,76,19" Id="JNaNXsLqp7zNIwF4HxHUV0">
+              <p:NodeReference LastCategoryFullName="Stride.Rendering" LastDependency="VL.Stride.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="ProcessAppFlag" Name="SkiaRenderer" />
+              </p:NodeReference>
+              <Pin Id="Vr385DktViFL6nBcQHYcFt" Name="Node Context" Kind="InputPin" IsHidden="true" />
+              <Pin Id="Q2esODsUzVhPu6t3cfCIWR" Name="Input" Kind="InputPin" />
+              <Pin Id="HRLMath23dnPoadsrzHou3" Name="Space" Kind="InputPin" />
+              <Pin Id="Kb0NjXDsaXcK9xEMxBzEae" Name="Output" Kind="OutputPin" />
+            </Node>
+            <Node Bounds="699,193,76,19" Id="TVpMM2RQCF8QFndttwO62x">
+              <p:NodeReference LastCategoryFullName="Stride.Rendering" LastDependency="VL.Stride.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="ProcessAppFlag" Name="SkiaRenderer" />
+              </p:NodeReference>
+              <Pin Id="STX5qlDGNbuPQnbEGXH4nP" Name="Node Context" Kind="InputPin" IsHidden="true" />
+              <Pin Id="Pct6Vjfdi9XLwlMMWQQ8Jl" Name="Input" Kind="InputPin" />
+              <Pin Id="TqA7wQdqJREMRofB3o9e8E" Name="Space" Kind="InputPin" />
+              <Pin Id="PeoPk7wFZ1ZPIVAOjJl4hT" Name="Output" Kind="OutputPin" />
+            </Node>
           </Canvas>
-          <!--
-
-    ************************  ************************
-
--->
           <ProcessDefinition Id="LGQDpBvQDdtPNUw9klmS0Z">
             <Fragment Id="Ppixahe0RcUNPvyums0TcG" Patch="QK53GHOZBIhNPjdK62cYnE" Enabled="true" />
             <Fragment Id="KwZLHp8R4pcLDK2RyrP3U1" Patch="AbmXqt0yePgMpB9SpqS4ad" Enabled="true" />
           </ProcessDefinition>
           <Link Id="JIgBg5VRW88N5aNOMvO6ZS" Ids="SSQ3ZiG5q77QbsiHRFCjyC,KyGBWC7yxTCLO6rzJ4lBh4" />
-          <Link Id="IIjUhwLExf5PYYpZeiOVqA" Ids="RqswHFvwmuBOBCznwuTzTD,TRKtmpAT6ZKNB0AEiuB9Zj" />
           <Link Id="BJegAGivtXhO670ASncncU" Ids="SCa6Lcsz4YtMkzNVF1ldKQ,SoIUPoIrdYdLBrce3vCI3j" />
           <Link Id="Toai8UvBgq5OHnWWbejCdI" Ids="SoIUPoIrdYdLBrce3vCI3j,EKiRvEnZNCuQBEAHA8aWwb" IsHidden="true" />
-          <Link Id="OBUM8I8tfWkO7aULLAEmEx" Ids="GSeyg5yW2VPNHnC4g4IJHa,QGC7mPHtAloOO0wJ6MphdI" />
           <Link Id="Vh3VqEdXdNaQXucR6QrhdW" Ids="Ig2DdEmtNgWPnIS1Vj3XPO,GSeyg5yW2VPNHnC4g4IJHa" IsHidden="true" />
           <Link Id="HwSarZbZE8qLIggA7RfbWk" Ids="B4UVFTfUY2nLhnPMOPkvqg,MMumSzRnof0PXmZIg0XRxM" />
           <Link Id="K1tFIfZzBG3LZDY408Mz2p" Ids="SHQNdq3bGEhQdlBuXc50Vo,RqswHFvwmuBOBCznwuTzTD" IsHidden="true" />
@@ -2427,6 +2440,10 @@
             <Pin Id="IrG1VqQIDYkPhf4vN40KLS" Name="Material" Kind="OutputPin" />
           </Patch>
           <Link Id="IpFziqFR8HfMeMvDU3NfXx" Ids="MMumSzRnof0PXmZIg0XRxM,IrG1VqQIDYkPhf4vN40KLS" IsHidden="true" />
+          <Link Id="MDsrOYc1MpPQJjyy9RTSR1" Ids="RqswHFvwmuBOBCznwuTzTD,Q2esODsUzVhPu6t3cfCIWR" />
+          <Link Id="A8YwwwDVPawMsnuRXfwKEz" Ids="Kb0NjXDsaXcK9xEMxBzEae,TRKtmpAT6ZKNB0AEiuB9Zj" />
+          <Link Id="UyGsISkeQ92LUnaGKr6rxS" Ids="GSeyg5yW2VPNHnC4g4IJHa,Pct6Vjfdi9XLwlMMWQQ8Jl" />
+          <Link Id="BmZt80qCk6hP36YPk8Smj5" Ids="PeoPk7wFZ1ZPIVAOjJl4hT,QGC7mPHtAloOO0wJ6MphdI" />
         </Patch>
       </Node>
     </Canvas>
