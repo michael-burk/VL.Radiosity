@@ -61,7 +61,7 @@
             <Pin Id="KCIbLVjBNNiMyVpjIpic4I" Name="Enabled" Kind="InputPin" DefaultValue="True" />
             <Pin Id="OZybSSvl8YAOQ3LuMUQoEM" Name="Output" Kind="OutputPin" />
           </Node>
-          <Node Bounds="316,1236,51,19" Id="IYFIn71wiCZN0h1EGpUUAA">
+          <Node Bounds="314,1278,51,19" Id="IYFIn71wiCZN0h1EGpUUAA">
             <p:NodeReference LastCategoryFullName="Radiosity" LastDependency="VL.Radiosity.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Preview" />
@@ -86,8 +86,13 @@
             <Pin Id="KT36jQ6NiHWMU0o4XYZr87" Name="Node Context" Kind="InputPin" IsHidden="true" />
             <Pin Id="C3JDdQs4WZaMBhpt1o3ouV" Name="Layer" Kind="InputPin" />
             <Pin Id="TlBBgErO5ExNrERL73z8D8" Name="Res" Kind="InputPin" />
+            <Pin Id="DAOIQCHu4PILMSNStAbOs0" Name="EchoAmount" Kind="InputPin" IsHidden="true" />
+            <Pin Id="CdiKE5nVYA9NtLaCwrmxfN" Name="MagicNumber" Kind="InputPin" IsHidden="true" />
+            <Pin Id="BbEq2ZRzCrFMaQUOXuJT0e" Name="Echo" Kind="InputPin" IsHidden="true" />
             <Pin Id="A0fg5qqk0UeOKLnBImRK6V" Name="NormalMapBackground" Kind="InputPin" />
             <Pin Id="M9JbR0ir1rILf8eExW3p54" Name="MaterialLayer" Kind="InputPin" />
+            <Pin Id="QnyVoINHm8PM66FeCn4YzD" Name="TextureAddressMode" Kind="InputPin" />
+            <Pin Id="Me3ndQwCmUrL9TYLck7xQQ" Name="MaxDist" Kind="InputPin" DefaultValue="2" />
             <Pin Id="QBGtsionDPNN043RlCAgSv" Name="Output" Kind="OutputPin" />
           </Node>
           <Node Bounds="497,1052,76,19" Id="QrzLnIZVYLPQFJt9wn5tDA">
@@ -331,16 +336,21 @@
             <Pin Id="BzMH8crGqEnOKYbyGJsDOz" Name="Color" Kind="OutputPin" />
             <Pin Id="AHWnNL4xVv3PbgFx46EVsA" Name="Material" Kind="OutputPin" />
           </Node>
-          <Node Bounds="183,1237,111,19" Id="TH9msFMvtxQNYgIfdjZ3fP">
+          <Node Bounds="183,1243,165,19" Id="TH9msFMvtxQNYgIfdjZ3fP">
             <p:NodeReference LastCategoryFullName="Radiosity" LastDependency="VL.Radiosity.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Radiosity_TexIn" />
             </p:NodeReference>
             <Pin Id="QV7uGAzfKSJOwt9n0AVL0I" Name="Node Context" Kind="InputPin" IsHidden="true" />
             <Pin Id="IbKXGvvpoYIOxIeMq2iabM" Name="Input" Kind="InputPin" />
+            <Pin Id="V5MbFINuM91PbZOAkY9SFc" Name="EchoAmount" Kind="InputPin" IsHidden="true" />
+            <Pin Id="GFxIb1o56W3Mn9rpf20zR7" Name="MagicNumber" Kind="InputPin" IsHidden="true" />
             <Pin Id="LxKd34e0EXnQI4vrjiFqgf" Name="Res" Kind="InputPin" />
+            <Pin Id="GT8lD52OnGsOh4TBgU7Wm2" Name="Echo" Kind="InputPin" IsHidden="true" />
             <Pin Id="QBGyeaRXEr6PmqxbBViB65" Name="NormalMapBackground" Kind="InputPin" />
             <Pin Id="GAf5MaWOawQOQGFHtUbSzq" Name="Material" Kind="InputPin" />
+            <Pin Id="T3jFemySsHcLSB63t3HiFO" Name="TextureAddressMode" Kind="InputPin" />
+            <Pin Id="Ix0L9OiDZT6Nw78sHO0pzg" Name="MaxDist" Kind="InputPin" DefaultValue="2" />
             <Pin Id="Cz3KdAL5YPlOBXSCWHDsma" Name="Output" Kind="OutputPin" />
           </Node>
         </Canvas>
