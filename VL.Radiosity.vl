@@ -107,7 +107,7 @@
                 <Choice Kind="TypeFlag" Name="RGBA" />
               </p:TypeAnnotation>
             </Pad>
-            <Pad Id="Cmnj93yH10MMJv0UhlR44f" Comment="Max Dist" Bounds="555,721,35,15" ShowValueBox="true" isIOBox="true" Value="2">
+            <Pad Id="Cmnj93yH10MMJv0UhlR44f" Comment="Max Dist" Bounds="556,716,35,15" ShowValueBox="true" isIOBox="true" Value="2">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="TypeFlag" Name="Float32" />
               </p:TypeAnnotation>
@@ -353,6 +353,8 @@
             <ControlPoint Id="IzRN4eI4JCiM6YaRfv6kyw" Bounds="560,629" />
             <ControlPoint Id="CCrk9GT01SJMTAqWL4yIuf" Bounds="387,888" />
             <ControlPoint Id="NggynwAxcXUOZPKLNIXScv" Bounds="317,1161" />
+            <ControlPoint Id="DqpwIVZRxVNN0SjpU0SmNR" Bounds="473,759" />
+            <ControlPoint Id="KYs5eIvAZxYOcVPbiQP4LZ" Bounds="502,736" />
           </Canvas>
           <ProcessDefinition Id="Pik2ZvwYvtANowJ176Oty2">
             <Fragment Id="CIPVMPxQZTWOxIuzB7mq0t" Patch="LGbKiQ4wsElOa3xX8QVt7t" Enabled="true" />
@@ -419,6 +421,10 @@
           <Link Id="G5nlmzsDPDFP8I9kW0aHXX" Ids="HilUV4PCQ9aMzUyi7IbrqX,CCrk9GT01SJMTAqWL4yIuf" IsHidden="true" />
           <Link Id="SzTnm3gHe9oOGpjgXXzN64" Ids="NggynwAxcXUOZPKLNIXScv,LEYj5DPpXL1QVfwn9tydZv" />
           <Link Id="FCiFXBxUhh7NoHbGi36SPV" Ids="K3n1k7pUdoYPIUHYUn3kWq,NggynwAxcXUOZPKLNIXScv" IsHidden="true" />
+          <Link Id="GxJnXzog9UWNzTy4FeBhR1" Ids="DqpwIVZRxVNN0SjpU0SmNR,F1TQjQZYzceLSgh1RLlRBM" />
+          <Link Id="JAG2FFcHYXnPayE4nvyIJP" Ids="RURlFqZm0bSLgO9yiqgrrt,DqpwIVZRxVNN0SjpU0SmNR" IsHidden="true" />
+          <Link Id="NPwEdiiZW8KLagJqWeI4hI" Ids="KYs5eIvAZxYOcVPbiQP4LZ,SBCPHQIFT3SPHUOqe94rnc" />
+          <Link Id="PNBG82RF7doOYevC6HL34N" Ids="OVjfACmaroeNPVjZflbYov,KYs5eIvAZxYOcVPbiQP4LZ" IsHidden="true" />
           <Patch Id="LGbKiQ4wsElOa3xX8QVt7t" Name="Create" />
           <Patch Id="U5xcjqqp532NYfQ0XS5IEc" Name="Update">
             <Pin Id="JIhnzGxDryEPKGpQnNNxcw" Name="Layer" Kind="InputPin" Bounds="481,-119" />
@@ -427,7 +433,9 @@
             <Pin Id="R99esHaZDFRPh8wtnrZGU6" Name="MagicNumber" Kind="InputPin" DefaultValue="0.08" Visibility="Optional" />
             <Pin Id="HilUV4PCQ9aMzUyi7IbrqX" Name="Echo" Kind="InputPin" DefaultValue="True" Visibility="Optional" />
             <Pin Id="QNQzY4DYR6LN8UD5huhmv3" Name="NormalMapBackground" Kind="InputPin" />
+            <Pin Id="RURlFqZm0bSLgO9yiqgrrt" Name="SAMPLES" Kind="InputPin" DefaultValue="64" Visibility="Optional" />
             <Pin Id="KhwDvm2QTTJMYQbUsneier" Name="MaterialLayer" Kind="InputPin" Bounds="532,474" />
+            <Pin Id="OVjfACmaroeNPVjZflbYov" Name="SAMPLES2" Kind="InputPin" DefaultValue="48" Visibility="Optional" />
             <Pin Id="Oa3M61ZM37RQN5ElaWWsdw" Name="TextureAddressMode" Kind="InputPin" DefaultValue="Border" Visibility="Optional" />
             <Pin Id="EXNAYU34S02Nx6iIzmOymN" Name="MaxDist" Kind="InputPin" DefaultValue="1" Visibility="Optional" />
             <Pin Id="HzN4FV14smsL6RCroINiIO" Name="Output" Kind="OutputPin" Bounds="353,1003" />
@@ -2283,6 +2291,8 @@
             <ControlPoint Id="DSaqRZzNlDVLJ1LL7AQ4Cc" Bounds="558,644" />
             <ControlPoint Id="HbBD3PiHVXTLgcqBgOW7Af" Bounds="396,885" />
             <ControlPoint Id="Tz9FLRqyoB2PlJxZGgPXFb" Bounds="322,1004" />
+            <ControlPoint Id="HPpfNANTNllNQ5Nn7edHs5" Bounds="470,757" />
+            <ControlPoint Id="HcikctgeuyEMD8KKuVxe6f" Bounds="497,736" />
           </Canvas>
           <ProcessDefinition Id="IoYormjlOUqMDgZKmc29gk">
             <Fragment Id="BIe2gdnIW7ZLZXodPDPtbd" Patch="EY0q5ErHueULng8HWfTnDu" Enabled="true" />
@@ -2343,6 +2353,8 @@
           <Link Id="BaQ6KjdTOTfNUN3Au6NtB3" Ids="GsQoXArpR1MPuYvycRxcZH,HbBD3PiHVXTLgcqBgOW7Af" IsHidden="true" />
           <Link Id="LCwIlKWuIFHLEYN1W9oKmh" Ids="Tz9FLRqyoB2PlJxZGgPXFb,DV0T0x1c6fRMTsK359hudr" />
           <Link Id="NwhJ1g4mMdBLo0iNOHKSo1" Ids="LU1UHYS2WDIN2SIiRDw0Jh,Tz9FLRqyoB2PlJxZGgPXFb" IsHidden="true" />
+          <Link Id="Lqw60M9FkCbMqbSMvvrr0o" Ids="JwWOA7N0hQUMCifCNiBdNX,HPpfNANTNllNQ5Nn7edHs5" IsHidden="true" />
+          <Link Id="SBNAa4MI1exNDyXkqHoqMW" Ids="E86DNP5wUMhQKWKMatazef,HcikctgeuyEMD8KKuVxe6f" IsHidden="true" />
           <Patch Id="EY0q5ErHueULng8HWfTnDu" Name="Create" />
           <Patch Id="EKWVPFNj4QoNxzVErfp6mD" Name="Update">
             <Pin Id="AmpEa9QaZsoOXRC0HOQf36" Name="Input" Kind="InputPin" />
@@ -2352,10 +2364,14 @@
             <Pin Id="GsQoXArpR1MPuYvycRxcZH" Name="Echo" Kind="InputPin" DefaultValue="True" Visibility="Optional" />
             <Pin Id="GVxKesYYoDmNZVUfhntqFk" Name="NormalMapBackground" Kind="InputPin" />
             <Pin Id="Tme2PAHIWxhOuy1SHM2sgq" Name="Material" Kind="InputPin" Bounds="532,474" />
+            <Pin Id="JwWOA7N0hQUMCifCNiBdNX" Name="SAMPLES" Kind="InputPin" DefaultValue="64" Visibility="Optional" />
+            <Pin Id="E86DNP5wUMhQKWKMatazef" Name="SAMPLES2" Kind="InputPin" DefaultValue="48" Visibility="Optional" />
             <Pin Id="OngjuFFIluZPXHwxCcLoEj" Name="TextureAddressMode" Kind="InputPin" DefaultValue="Border" Visibility="Optional" />
-            <Pin Id="DksnzIo0qviPmiAPx8ojRH" Name="MaxDist" Kind="InputPin" DefaultValue="1" Visibility="Optional" />
+            <Pin Id="DksnzIo0qviPmiAPx8ojRH" Name="MaxDist" Kind="InputPin" DefaultValue="2" Visibility="Optional" />
             <Pin Id="InLsoqOYRdYPP8Y6h2y8VL" Name="Output" Kind="OutputPin" Bounds="353,1003" />
           </Patch>
+          <Link Id="Lmi1tok8sezPSe96FUtxPa" Ids="HPpfNANTNllNQ5Nn7edHs5,A1PdqdCURI3N3kAFz4z63e" />
+          <Link Id="PIvzOb35QPaMxDQ7CVAIUD" Ids="HcikctgeuyEMD8KKuVxe6f,AuSOepoHgVGPUzIZREtbGD" />
         </Patch>
       </Node>
       <!--
