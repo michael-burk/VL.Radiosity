@@ -813,7 +813,7 @@
             </Node>
             <Pad Id="Fvjwa8dsE4wMXFNlqToDYA" SlotId="HPbWECTrB4WMSfB70MoZyF" Bounds="728,549" />
             <Pad Id="Mxh6Haxj1YqPwJEK4jQ4W9" SlotId="HPbWECTrB4WMSfB70MoZyF" Bounds="453,568" />
-            <Node Bounds="451,692,25,19" Id="I6qWVp09pVYLc041c1LwqI">
+            <Node Bounds="451,692,46,19" Id="I6qWVp09pVYLc041c1LwqI">
               <p:NodeReference LastCategoryFullName="2D.Vector2" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <CategoryReference Kind="Vector2Type" Name="Vector2" />
@@ -936,7 +936,7 @@
               </p:ValueBoxSettings>
             </Pad>
             <ControlPoint Id="C8squIO5emGOqpaswCMcct" Bounds="404,892" />
-            <Node Bounds="1118,452,25,19" Id="P0JF9kRtJylLIk6YnVDkqd">
+            <Node Bounds="1118,452,63,19" Id="P0JF9kRtJylLIk6YnVDkqd">
               <p:NodeReference LastCategoryFullName="Animation" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="Stopwatch" />
@@ -950,7 +950,7 @@
               <Pin Id="ROCMkZwa03RNsuw9rA0gG4" Name="Reset" Kind="InputPin" />
               <Pin Id="H7TYkP9zTnrPXMiyIu9ig9" Name="Time" Kind="OutputPin" />
             </Node>
-            <Node Bounds="1100,385,25,19" Id="CFOGqrfT05uLRzp1bzQsfj">
+            <Node Bounds="1100,385,56,19" Id="CFOGqrfT05uLRzp1bzQsfj">
               <p:NodeReference LastCategoryFullName="Control" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="TogEdge" />
@@ -969,7 +969,7 @@
               <Pin Id="PR4mBQxfcnTQT6SIVlczb5" Name="Input 2" Kind="InputPin" DefaultValue="0.25" />
               <Pin Id="NS6esuLurAWOHbMtJBv8Bb" Name="Result" Kind="OutputPin" />
             </Node>
-            <Node Bounds="1125,592,25,19" Id="Pxk6jGzKogBN62ZUr9CTVB">
+            <Node Bounds="1125,592,56,19" Id="Pxk6jGzKogBN62ZUr9CTVB">
               <p:NodeReference LastCategoryFullName="Control" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="TogEdge" />
@@ -1123,7 +1123,7 @@
               <Pin Id="RULp2EnjFu5NRFEgsfZJet" Name="Up Edge" Kind="OutputPin" />
               <Pin Id="OxxMZcbddV3QJjYnSyUwIX" Name="Down Edge" Kind="OutputPin" />
             </Node>
-            <Node Bounds="1098,136,25,19" Id="SoVgKTbpmROPDcytAmcSjx">
+            <Node Bounds="1098,136,56,19" Id="SoVgKTbpmROPDcytAmcSjx">
               <p:NodeReference LastCategoryFullName="Control" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="TogEdge" />
@@ -1165,6 +1165,7 @@
               <Pin Id="QgJxeWwkSxIMqOkuVhpkpV" Name="Up Edge" Kind="OutputPin" />
               <Pin Id="GiC1vmjVj8sORGk1FArY2B" Name="Down Edge" Kind="OutputPin" />
             </Node>
+            <Pad Id="QTkcQOVZiQbMiP5QFKNhbs" Comment="" Bounds="1096,244,35,35" ShowValueBox="true" isIOBox="true" />
           </Canvas>
           <Link Id="VvI4hPot9P3M5L1G7ApHFV" Ids="TDRY2dLwpjfPPC2bBRfFPn,QQ7PxmUruPKQbB8Pa4ihpt" />
           <Link Id="QfefsNYehNzPp1F2UTPQ6G" Ids="TZ6SzblN0uIM26ekH9YsId,TDRY2dLwpjfPPC2bBRfFPn" IsHidden="true" />
@@ -1253,6 +1254,7 @@
           <Link Id="FyzIUybw3rSLj0IlObRTbi" Ids="QgJxeWwkSxIMqOkuVhpkpV,DiyINBGuwnIOKP5x7Lr2lG" />
           <Link Id="HqntEudTa5SQCRPs8rdKwu" Ids="RyB6F4nrwdwNeLmi4tFD1p,PtGVroj5xP7PFqCNZjzpiq" />
           <Link Id="ACPBV2P9CdrLuur83Lxmxz" Ids="B6Ln4WirVF2OIMRXNV0AcS,OJtmXMBY19XP93QJXH5oJl" IsHidden="true" />
+          <Link Id="RvA2EpvcJmHQA9aGn0C8OB" Ids="MHwNUU7zGZEQX0aIqKd45S,QTkcQOVZiQbMiP5QFKNhbs" />
         </Patch>
       </Node>
       <!--
@@ -1640,7 +1642,7 @@
                 <Choice Kind="ProcessAppFlag" Name="RenderWindow" />
               </p:NodeReference>
               <Pin Id="AEksjv9BIOWMGLfzZzsf2U" Name="Node Context" Kind="InputPin" />
-              <Pin Id="Dygre8PAOTKP22lfuSaMas" Name="Bounds" Kind="InputPin" DefaultValue="1199.4286, 88, 584, 584" />
+              <Pin Id="Dygre8PAOTKP22lfuSaMas" Name="Bounds" Kind="InputPin" DefaultValue="1459.4286, 6.857143, 733.7143, 733.7143" />
               <Pin Id="PffU8hhiXhHMfFIDZRHpeK" Name="Bound to Document" Kind="InputPin" IsHidden="true" />
               <Pin Id="DUmL8B2s5c7NK0wwO4ZIlj" Name="Dialog If Document Changed" Kind="InputPin" IsHidden="true" />
               <Pin Id="HbgF24wxMXNPBjkU9WzloF" Name="Save Bounds" Kind="InputPin" IsHidden="true" />
@@ -1930,6 +1932,15 @@
               <Pin Id="O3Gmk58lwlfMpgsWL4GUcw" Name="Value" Kind="InputPin" DefaultValue="False" />
               <Pin Id="TdlXhJAkj60MgXO54XNQUw" Name="Output" Kind="StateOutputPin" />
             </Node>
+            <Pad Id="LXOEs7Yo4jOOblUe3eL41m" Bounds="449,400,152,81" ShowValueBox="true" isIOBox="true" Value="A - Resize to Aspect&#xD;&#xA;B - Borderless&#xD;&#xA;Right Mouse - Zoom&#xD;&#xA;Middle Mouse - Pan">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                <Choice Kind="TypeFlag" Name="String" />
+              </p:TypeAnnotation>
+              <p:ValueBoxSettings>
+                <p:fontsize p:Type="Int32">9</p:fontsize>
+                <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+              </p:ValueBoxSettings>
+            </Pad>
           </Canvas>
           <ProcessDefinition Id="TzZ6Gj21DefNrZ4tedChxl">
             <Fragment Id="T7CuFZkcjuYQPiBKNuL3zu" Patch="QxgmVfQwksxL2tNOQMPvN7" Enabled="true" />
