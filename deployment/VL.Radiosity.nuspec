@@ -10,8 +10,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <summary>2D Radiosity Shader</summary>
     <description>2D Radiosity Shader</description>
-    <tags>lightsimulation</tags>
-    <tags>VL</tags>
+    <tags>lightsimulation, VL</tags>
     <license type="expression">MIT</license>
   </metadata>
   <files>
