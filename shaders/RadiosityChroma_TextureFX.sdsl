@@ -1,0 +1,208 @@
+[TextureSource]
+
+
+shader RadiosityChroma_TextureFX : TextureFX
+{
+float2 R = ViewSize;
+int SAMPLES = 64;
+int SAMPLES2 = 48;
+float time = 0;
+float maxDist = 0.15;
+bool bumpy = false;
+float accumulationAmount = 0.95; // GPT Comment: Higher means slower blending, retains more history
+bool doAccumulation = true;      // GPT Comment: Toggle temporal accumulation
+bool chromaticAberration = true; // Toggle RGB split
+
+// GPT Comment: Calculates Phong directional lighting with Blinn-Phong specular highlights
+float4 PhongDirectional(float3 NormV, float3 ViewDirV, float3 LightDirV)
+{
+    float3 H = normalize(ViewDirV + LightDirV); // GPT Comment: Half vector for Blinn-Phong
+    float3 shades = lit(dot(NormV, LightDirV), dot(NormV, H), 10.0f).xyz; // GPT Comment: Lighting terms
+    float4 diff = 1 * shades.y; // GPT Comment: Diffuse intensity
+    diff.a = 1;
+
+    float3 R = normalize(2 * dot(NormV, LightDirV) * NormV - LightDirV); // GPT Comment: Reflection vector
+    float3 V = normalize(ViewDirV); // GPT Comment: View direction
+    float4 spec = pow(max(dot(R, V), 0), 2.0) * 0.1; // GPT Comment: Specular intensity
+
+    return diff + spec; // GPT Comment: Final lighting color
+}
+
+// GPT Comment: Simulates bump lighting using normal map and directional input
+float3 BumpDirectional(float4 nmap, float2 uv, float2 dir, float2 R)
+{
+    float3 LightDirV = float3(dir.x, dir.y, -1.0);
+    float3 NormV = float3(nmap.x - 0.5, -(nmap.y - 0.5), -1);
+    NormV = lerp(float3(0, 0, -1), NormV, 10.0f);
+    NormV = normalize(NormV);
+
+    float3 ViewDirV = -normalize(float3((uv.xy * 2 - 1) * float2(1, -1) * R / R.x, 11.1));
+    return PhongDirectional(NormV, ViewDirV, LightDirV).rgb;
+}
+
+// GPT Comment: Signed distance function for circle
+float sphereSDF(float2 p, float size) {
+    return length(p) - size;
+}
+
+// GPT Comment: Signed distance function for rectangle
+float boxSDF(float2 p, float2 size) {
+    float2 r = abs(p) - size;
+    return min(max(r.x, r.y), 0.0) + length(max(r, 0));
+}
+
+// GPT Comment: Adds an object to the scene if it's closer than previous
+void addObj(inout float dist, inout float3 color, float d, float3 c) {
+    if (dist >= d) {
+        dist = d;
+        color = c;
+    }
+}
+
+// GPT Comment: Samples distance field from Texture0
+float texDist(float2 p) {
+    return Texture0.SampleLevel(Sampler0, p + 0.5, 0).r;
+}
+
+// GPT Comment: Adds an object to the scene using distance texture + emissive color
+void addObjTex(inout float dist, inout float3 color, float d, float2 p) {
+    if (dist > d) {
+        dist = d;
+        color = Texture1.SampleLevel(Sampler0, p + 0.5, 0).rgb;
+    }
+}
+
+// GPT Comment: Evaluates the scene by sampling distance + emissive color
+void scene(float2 pos, out float3 color, out float dist) {
+    dist = 1e9;
+    addObjTex(dist, color, texDist(pos), pos);
+}
+
+// GPT Comment: Performs raymarching from a point in a direction and computes resulting color
+void trace(float2 p, float2 dir, out float3 c, out float marchedDist, out float2 endpoint, float aspectX) {
+    float marched = 0;
+    float d;
+    float2 start = p;
+    float3 bounceCol = 1;
+    int bounces = 0;
+
+    for (int j = 0; j < SAMPLES2; j++) {
+        scene(p, c, d);
+        marched += d;
+
+        if (d <= 0.0001) {
+            bounces++;
+            float2 normal = normalize(Texture2.SampleLevel(Sampler0, p + 0.5, 0).rg - 0.5);
+            float material = Texture3.SampleLevel(Sampler0, p + 0.5, 0).r;
+
+            if (material == 0.0) {
+                marchedDist = marched;
+                if (bounces > 1) c *= bounceCol;
+                return;
+            } else if (material < 0.1) {
+                dir = normalize(-normal - normalize(float2(random(p + sin(time)), random(p + 5 + sin(time))) - 0.5));
+                p -= dir * 0.009;
+            } else if (material < 0.2) {
+                dir = normalize(-normal - normalize(float2(random(p + sin(time)), random(p + 5 + sin(time))) - 0.5));
+                p -= dir * 0.009;
+                bounceCol *= c;
+            } else if (material < 0.3) {
+                dir = reflect(dir, normal);
+                p -= dir * 0.009;
+            } else if (material < 0.4) {
+                dir = reflect(dir, normal);
+                p -= dir * 0.009;
+                bounceCol *= c;
+            } else if (material < 0.5) {
+                dir = refract(dir, -normal, 3.0);
+                p -= dir * 0.02;
+            } else if (material < 0.6) {
+                dir = refract(dir, -normal, 3.0);
+                p -= dir * 0.02;
+                bounceCol *= c;
+            }
+        }
+
+        p -= dir * float2(1, aspectX) * d;
+        endpoint = p;
+        if (marchedDist >= maxDist) return;
+    }
+
+    bounceCol = 0;
+    c = float3(0, 0, 0);
+}
+
+// GPT Comment: Hash function to generate pseudo-random values from 2D coordinates
+float random(in float2 _st) {
+    return frac(sin(dot(_st.xy, float2(12.9898, 78.233))) * 43758.5453123);
+}
+
+// GPT Comment: Entry point for the shader – calculates radiosity-based shading per pixel
+stage override float4 Shading() 
+{
+    float aspectX = R.x / R.y;
+    float2 uv = streams.TexCoord.xy - 0.5;
+    float3 col = 0;
+    float3 c;
+    float4 texCol = Texture1.SampleLevel(Sampler1, uv + 0.5, 0);
+    float4 bump;
+
+    if (bumpy)
+        bump = Texture4.SampleLevel(Sampler0, streams.TexCoord.xy, 0);
+
+    const float TWO_PI = 6.28318530718;
+
+    float3 chromaOffsets = float3(0.995, 1.0, 1.005); // slight angular offsets for RGB channels
+
+    // ✨ Add randomized global angular offset per frame to break radial symmetry
+    float tOffset = random(float2(time * 17.7, 42.42)) * TWO_PI;
+
+    for (int i = 0; i < SAMPLES; i++) {
+        float randOffset = random(uv + float(i) + time); // individual ray jitter
+        float t = (float(i) + randOffset) / SAMPLES * TWO_PI + tOffset;
+
+        if (chromaticAberration) {
+            float3 cRGB = 0;
+
+            // Per-channel ray with slight angular offset
+            for (int ch = 0; ch < 3; ++ch) {
+                float2 dir = float2(cos(t) * chromaOffsets[ch], sin(t) * chromaOffsets[ch]);
+                float2 endpoint = 0;
+                float marchedDist;
+
+                trace(uv, dir, c, marchedDist, endpoint, aspectX);
+                c = lerp(c, 0, pow(abs(marchedDist / maxDist), maxDist));
+
+                if (bumpy)
+                    c *= BumpDirectional(bump, uv, normalize(uv - endpoint) * float2(-1, 1), R);
+
+                cRGB[ch] = c[ch]; // assign per-channel result
+            }
+
+            col += cRGB;
+        } else {
+            float2 dir = float2(cos(t), sin(t));
+            float2 endpoint = 0;
+            float marchedDist;
+
+            trace(uv, dir, c, marchedDist, endpoint, aspectX);
+            c = lerp(c, 0, pow(abs(marchedDist / maxDist), maxDist));
+
+            if (bumpy)
+                c *= BumpDirectional(bump, uv, normalize(uv - endpoint) * float2(-1, 1), R);
+
+            col += c;
+        }
+    }
+
+    col /= SAMPLES;
+
+    if (doAccumulation) {
+        float4 prevCol = Texture5.Sample(Sampler0, streams.TexCoord.xy);
+        col = lerp(prevCol.rgb, col, 1.0 - accumulationAmount);
+    }
+
+    return saturate(float4(col, 1.0));
+}
+
+};
