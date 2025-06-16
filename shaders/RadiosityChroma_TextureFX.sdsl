@@ -51,9 +51,8 @@ float boxSDF(float2 p, float2 size) {
     return min(max(r.x, r.y), 0.0) + length(max(r, 0));
 }
 
-// GPT Comment: Adds an object to the scene if it's closer than previous
 void addObj(inout float dist, inout float3 color, float d, float3 c) {
-    if (dist >= d) {
+    if (dist > d) {
         dist = d;
         color = c;
     }
@@ -75,7 +74,10 @@ void addObjTex(inout float dist, inout float3 color, float d, float2 p) {
 // GPT Comment: Evaluates the scene by sampling distance + emissive color
 void scene(float2 pos, out float3 color, out float dist) {
     dist = 1e9;
+    // addObj(dist, color, boxSDF(pos - float2(.9,0), float2(.01, 0.5)), float3(1.0,.5,.5));
     addObjTex(dist, color, texDist(pos), pos);
+    
+
 }
 
 // GPT Comment: Performs raymarching from a point in a direction and computes resulting color
@@ -122,12 +124,11 @@ void trace(float2 p, float2 dir, out float3 c, out float marchedDist, out float2
                 bounceCol *= c;
             }
         }
-
+    
         p -= dir * float2(1, aspectX) * d;
         endpoint = p;
         if (marchedDist >= maxDist) return;
     }
-
     bounceCol = 0;
     c = float3(0, 0, 0);
 }
@@ -152,14 +153,35 @@ stage override float4 Shading()
 
     const float TWO_PI = 6.28318530718;
 
-    float3 chromaOffsets = float3(0.995, 1.0, 1.005); // slight angular offsets for RGB channels
+    float3 chromaOffsets = float3(0.99, 1.0, 1.01); // slight angular offsets for RGB channels
 
     // ✨ Add randomized global angular offset per frame to break radial symmetry
     float tOffset = random(float2(time * 17.7, 42.42)) * TWO_PI;
 
+       // Blue-noise texture size (adjust accordingly)
+    // float2 blueNoiseTexSize = float2(128,128);
+
+
     for (int i = 0; i < SAMPLES; i++) {
+
+            // Sample blue noise texture for randOffset
+        // We use (uv * blueNoiseTexSize) + sample index for spatial + sample variance
+                        // Blue noise sample used as a seed
+            // float2 frameOffset = float2(
+            //     frac(sin(time * 12.9898) * 43758.5453),
+            //     frac(cos(time * 78.233) * 12345.6789)
+            // );
+            // float2 blueNoiseUV = frac((streams.TexCoord.xy + frameOffset) * blueNoiseTexSize);
+            // float seed = Texture6.SampleLevel(Sampler2, blueNoiseUV, 0).r;
+
+            // // Use seed + i to randomize angle slightly
+            // float jitter = frac(sin(seed * 91.7 + float(i) * 17.13) * 43758.5453);
+            // float t = (float(i) + jitter) / SAMPLES * TWO_PI + tOffset;
+
+
         float randOffset = random(uv + float(i) + time); // individual ray jitter
         float t = (float(i) + randOffset) / SAMPLES * TWO_PI + tOffset;
+
 
         if (chromaticAberration) {
             float3 cRGB = 0;
