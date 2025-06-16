@@ -80,13 +80,13 @@ void scene(float2 pos, out float3 color, out float dist) {
 
 }
 
-// GPT Comment: Performs raymarching from a point in a direction and computes resulting color
-void trace(float2 p, float2 dir, out float3 c, out float marchedDist, out float2 endpoint, float aspectX) {
+// GPT Comment: Performs raymarching and returns color, endpoint, distance, and first material encountered
+void trace(float2 p, float2 dir, out float3 c, out float marchedDist, out float2 endpoint, out float material, float aspectX) {
     float marched = 0;
     float d;
-    float2 start = p;
     float3 bounceCol = 1;
     int bounces = 0;
+    material = -1.0;
 
     for (int j = 0; j < SAMPLES2; j++) {
         scene(p, c, d);
@@ -95,7 +95,7 @@ void trace(float2 p, float2 dir, out float3 c, out float marchedDist, out float2
         if (d <= 0.0001) {
             bounces++;
             float2 normal = normalize(Texture2.SampleLevel(Sampler0, p + 0.5, 0).rg - 0.5);
-            float material = Texture3.SampleLevel(Sampler0, p + 0.5, 0).r;
+            material = Texture3.SampleLevel(Sampler0, p + 0.5, 0).r;
 
             if (material == 0.0) {
                 marchedDist = marched;
@@ -124,11 +124,12 @@ void trace(float2 p, float2 dir, out float3 c, out float marchedDist, out float2
                 bounceCol *= c;
             }
         }
-    
+
         p -= dir * float2(1, aspectX) * d;
         endpoint = p;
         if (marchedDist >= maxDist) return;
     }
+
     bounceCol = 0;
     c = float3(0, 0, 0);
 }
@@ -138,83 +139,73 @@ float random(in float2 _st) {
     return frac(sin(dot(_st.xy, float2(12.9898, 78.233))) * 43758.5453123);
 }
 
-// GPT Comment: Entry point for the shader – calculates radiosity-based shading per pixel
 stage override float4 Shading() 
 {
     float aspectX = R.x / R.y;
     float2 uv = streams.TexCoord.xy - 0.5;
     float3 col = 0;
     float3 c;
-    float4 texCol = Texture1.SampleLevel(Sampler1, uv + 0.5, 0);
     float4 bump;
 
     if (bumpy)
         bump = Texture4.SampleLevel(Sampler0, streams.TexCoord.xy, 0);
 
     const float TWO_PI = 6.28318530718;
-
-    float3 chromaOffsets = float3(0.99, 1.0, 1.01); // slight angular offsets for RGB channels
-
-    // ✨ Add randomized global angular offset per frame to break radial symmetry
+    float3 chromaOffsets = float3(0.98, 1.0, 1.02); // RGB angular offsets
     float tOffset = random(float2(time * 17.7, 42.42)) * TWO_PI;
 
-       // Blue-noise texture size (adjust accordingly)
-    // float2 blueNoiseTexSize = float2(128,128);
-
-
     for (int i = 0; i < SAMPLES; i++) {
-
-            // Sample blue noise texture for randOffset
-        // We use (uv * blueNoiseTexSize) + sample index for spatial + sample variance
-                        // Blue noise sample used as a seed
-            // float2 frameOffset = float2(
-            //     frac(sin(time * 12.9898) * 43758.5453),
-            //     frac(cos(time * 78.233) * 12345.6789)
-            // );
-            // float2 blueNoiseUV = frac((streams.TexCoord.xy + frameOffset) * blueNoiseTexSize);
-            // float seed = Texture6.SampleLevel(Sampler2, blueNoiseUV, 0).r;
-
-            // // Use seed + i to randomize angle slightly
-            // float jitter = frac(sin(seed * 91.7 + float(i) * 17.13) * 43758.5453);
-            // float t = (float(i) + jitter) / SAMPLES * TWO_PI + tOffset;
-
-
-        float randOffset = random(uv + float(i) + time); // individual ray jitter
+        float randOffset = random(uv + float(i) + time);
         float t = (float(i) + randOffset) / SAMPLES * TWO_PI + tOffset;
 
+        float3 cRGB = 0;
 
-        if (chromaticAberration) {
-            float3 cRGB = 0;
+        // Initial trace (neutral direction, no offset — used for green or full if no CA)
+        float2 dir = float2(cos(t), sin(t));
+        float2 endpoint;
+        float marchedDist;
+        float material;
+        trace(uv, dir, c, marchedDist, endpoint, material, aspectX);
 
-            // Per-channel ray with slight angular offset
-            for (int ch = 0; ch < 3; ++ch) {
-                float2 dir = float2(cos(t) * chromaOffsets[ch], sin(t) * chromaOffsets[ch]);
-                float2 endpoint = 0;
-                float marchedDist;
+        c = lerp(c, 0, pow(abs(marchedDist / maxDist), maxDist));
+        if (bumpy)
+            c *= BumpDirectional(bump, uv, normalize(uv - endpoint) * float2(-1, 1), R);
 
-                trace(uv, dir, c, marchedDist, endpoint, aspectX);
-                c = lerp(c, 0, pow(abs(marchedDist / maxDist), maxDist));
+        // Check if we need chromatic aberration based on material
+        bool doCA = chromaticAberration && (material > 0.4 && material < 0.5);
 
-                if (bumpy)
-                    c *= BumpDirectional(bump, uv, normalize(uv - endpoint) * float2(-1, 1), R);
+        if (doCA) {
+            cRGB.g = c.g;
 
-                cRGB[ch] = c[ch]; // assign per-channel result
-            }
-
-            col += cRGB;
-        } else {
-            float2 dir = float2(cos(t), sin(t));
-            float2 endpoint = 0;
-            float marchedDist;
-
-            trace(uv, dir, c, marchedDist, endpoint, aspectX);
-            c = lerp(c, 0, pow(abs(marchedDist / maxDist), maxDist));
-
+            // Red
+            float2 dirR = float2(cos(t) * chromaOffsets.r, sin(t) * chromaOffsets.r);
+            float3 cR;
+            float2 endpointR;
+            float marchedDistR;
+            float materialR;
+            trace(uv, dirR, cR, marchedDistR, endpointR, materialR, aspectX);
+            cR = lerp(cR, 0, pow(abs(marchedDistR / maxDist), maxDist));
             if (bumpy)
-                c *= BumpDirectional(bump, uv, normalize(uv - endpoint) * float2(-1, 1), R);
+                cR *= BumpDirectional(bump, uv, normalize(uv - endpointR) * float2(-1, 1), R);
+            cRGB.r = cR.r;
 
-            col += c;
+            // Blue
+            float2 dirB = float2(cos(t) * chromaOffsets.b, sin(t) * chromaOffsets.b);
+            float3 cB;
+            float2 endpointB;
+            float marchedDistB;
+            float materialB;
+            trace(uv, dirB, cB, marchedDistB, endpointB, materialB, aspectX);
+            cB = lerp(cB, 0, pow(abs(marchedDistB / maxDist), maxDist));
+            if (bumpy)
+                cB *= BumpDirectional(bump, uv, normalize(uv - endpointB) * float2(-1, 1), R);
+            cRGB.b = cB.b;
+        } else {
+            // No CA — use all components from the first trace
+            cRGB = c;
         }
+
+        col += cRGB;
     }
 
     col /= SAMPLES;

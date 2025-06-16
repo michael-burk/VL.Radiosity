@@ -63,7 +63,7 @@
               <Choice Kind="ProcessAppFlag" Name="Radiosity" />
             </p:NodeReference>
             <Pin Id="KT36jQ6NiHWMU0o4XYZr87" Name="Node Context" Kind="InputPin" IsHidden="true" />
-            <Pin Id="VkLe4WigPTNQUrlZ20Lyla" Name="Normals" Kind="InputPin" />
+            <Pin Id="VkLe4WigPTNQUrlZ20Lyla" Name="Condition" Kind="InputPin" DefaultValue="True" />
             <Pin Id="C3JDdQs4WZaMBhpt1o3ouV" Name="Layer" Kind="InputPin" />
             <Pin Id="TlBBgErO5ExNrERL73z8D8" Name="Res" Kind="InputPin" />
             <Pin Id="CdiKE5nVYA9NtLaCwrmxfN" Name="MagicNumber" Kind="InputPin" />
@@ -71,12 +71,12 @@
             <Pin Id="AYd6rH40EWpQaMWdxdmDCz" Name="SAMPLES" Kind="InputPin" DefaultValue="16" />
             <Pin Id="QkqfRx0nqUdNwuImspTexO" Name="SAMPLES2" Kind="InputPin" />
             <Pin Id="M9JbR0ir1rILf8eExW3p54" Name="MaterialLayer" Kind="InputPin" />
-            <Pin Id="QnyVoINHm8PM66FeCn4YzD" Name="TextureAddressMode" Kind="InputPin" DefaultValue="Border" />
+            <Pin Id="QnyVoINHm8PM66FeCn4YzD" Name="TextureAddressMode" Kind="InputPin" />
             <Pin Id="Me3ndQwCmUrL9TYLck7xQQ" Name="MaxDist" Kind="InputPin" DefaultValue="2" />
             <Pin Id="QBGtsionDPNN043RlCAgSv" Name="Output" Kind="OutputPin" />
             <Pin Id="R9Gld4KxWQ7QOtpmW1kofO" Name="Do Accumulation" Kind="InputPin" DefaultValue="True" />
-            <Pin Id="TwqvYHu0ngIMEV1nSypcFA" Name="Accumulation Amount" Kind="InputPin" DefaultValue="0.9" />
-            <Pin Id="OgP5vSCam3POLsBkC9uGLP" Name="Chromatic Aberration" Kind="InputPin" DefaultValue="False" />
+            <Pin Id="TwqvYHu0ngIMEV1nSypcFA" Name="Accumulation Amount" Kind="InputPin" DefaultValue="0.95" />
+            <Pin Id="OgP5vSCam3POLsBkC9uGLP" Name="Chromatic Aberration" Kind="InputPin" DefaultValue="True" />
           </Node>
           <Node Bounds="410,817,76,19" Id="QrzLnIZVYLPQFJt9wn5tDA">
             <p:NodeReference LastCategoryFullName="Stride.Rendering" LastDependency="VL.Stride.vl">
@@ -120,21 +120,6 @@
               </Node>
             </Patch>
           </Node>
-          <Node Bounds="411,780,105,19" Id="Bw6vQEWHdG2MpZs0OYnaSv">
-            <p:NodeReference LastCategoryFullName="Graphics.Skia" LastDependency="VL.Skia.vl">
-              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <CategoryReference Kind="Category" Name="Skia" NeedsToBeDirectParent="true" />
-              <Choice Kind="ProcessAppFlag" Name="Group" />
-            </p:NodeReference>
-            <Pin Id="BGRe63olpfwPFb0GREDZlM" Name="Node Context" Kind="InputPin" IsHidden="true" />
-            <Pin Id="BUH6YHW1icnNwUUMit5Ydw" Name="Input" Kind="InputPin" />
-            <Pin Id="AVGKxUJ0DbDN904gFrmOAa" Name="Input 2" Kind="InputPin" />
-            <Pin Id="OU1FMKcAKEtNlz1fuZCd4C" Name="Input 3" Kind="InputPin" />
-            <Pin Id="RvCcYD7VJa3OZNwwEbqNXF" Name="Input 4" Kind="InputPin" />
-            <Pin Id="EqnvfpqzeCzNONGg7jse2D" Name="Debug" Kind="InputPin" />
-            <Pin Id="Q8fq2GJAdOZL4fWx0hLKvq" Name="Enabled" Kind="InputPin" DefaultValue="True" />
-            <Pin Id="SNEESVjBt4BMhKC8lhom3L" Name="Output" Kind="OutputPin" />
-          </Node>
           <Node Bounds="473,600,65,19" Id="FuArwoxCYerPBpAZgk4IxN">
             <p:NodeReference LastCategoryFullName="Color.RGBA" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -146,7 +131,7 @@
             <Pin Id="GtwsEYWnb8zMGqOY0OeQnB" Name="Alpha" Kind="InputPin" />
             <Pin Id="JRMNO4EfvJZQIM0E6GtTTv" Name="Result" Kind="OutputPin" />
           </Node>
-          <Pad Id="CrAMiC70X0LN3FMOwccpG6" Comment="Red" Bounds="475,578,35,15" ShowValueBox="true" isIOBox="true" Value="0">
+          <Pad Id="CrAMiC70X0LN3FMOwccpG6" Comment="Red" Bounds="475,578,35,15" ShowValueBox="true" isIOBox="true" Value="0.7">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Float32" />
             </p:TypeAnnotation>
@@ -205,12 +190,12 @@
             <Pin Id="DT4S33egAjRP4AkHdxDPzK" Name="State Output" Kind="OutputPin" IsHidden="true" />
             <Pin Id="L246bq3q74mLla8O9d5UVq" Name="Output" Kind="OutputPin" />
           </Node>
-          <Pad Id="LphfNoKYv1YPIc32XUbESm" Comment="Point A" Bounds="169,520,35,28" ShowValueBox="true" isIOBox="true" Value="-0.99, 0.33">
+          <Pad Id="LphfNoKYv1YPIc32XUbESm" Comment="Point A" Bounds="169,520,35,28" ShowValueBox="true" isIOBox="true" Value="0.31, -0.14">
             <p:TypeAnnotation LastCategoryFullName="2D" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Vector2" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="VSQTScBwaP1O1t9rcPJpgL" Comment="Point B" Bounds="190,565,35,28" ShowValueBox="true" isIOBox="true" Value="0.14, 0.62">
+          <Pad Id="VSQTScBwaP1O1t9rcPJpgL" Comment="Point B" Bounds="190,565,35,28" ShowValueBox="true" isIOBox="true" Value="-0.54, 0.45">
             <p:TypeAnnotation LastCategoryFullName="2D" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Vector2" />
             </p:TypeAnnotation>
@@ -352,16 +337,12 @@
         <Link Id="AGcyEUKKadOOnMXJSe8q8X" Ids="VcdRofFNOSxORqtHZoSQmB,Bqn3lNGvgoXLpzVcWwOZN5" IsHidden="true" />
         <Link Id="CVPsHs8kuf1MY3I1Aac7lH" Ids="AVJymG4iqnBPZXefkvcjLo,T5nPNIf2j87Ps4i6q0ldy0" />
         <Link Id="CCqxZkykWfvObPlHSD5vG4" Ids="Ad3XRtTDRDOOb4bQCyIPwp,VcdRofFNOSxORqtHZoSQmB" />
-        <Link Id="O1cYNGe4KSiQUEwttwEglO" Ids="SNEESVjBt4BMhKC8lhom3L,Auua83tP01lPWHyDmrnbLp" />
         <Link Id="BLe0tZTpyvSOWWOg1wdZdA" Ids="JRMNO4EfvJZQIM0E6GtTTv,TJavkBm5OQ6LHvzBv8SE0X" />
-        <Link Id="SjCc9yyLuscPn7H6TeE3VL" Ids="CkCgoeVQLpXMLnb8HNn37z,BUH6YHW1icnNwUUMit5Ydw" />
         <Link Id="HSf0sSpZjyZMVrzR9G7MRs" Ids="CrAMiC70X0LN3FMOwccpG6,FQIz2a9eOSUMdYH2tJ3wta" />
         <Link Id="VY1jKK81VtuMP1a7QPuMtt" Ids="LCMC6kilacjOkhxHR4rF4F,IvKJaKdYRySNOabFTXGEh4" />
         <Link Id="JTkK9HYIHSxMDB07xn1TBh" Ids="LphfNoKYv1YPIc32XUbESm,BLsqajirOuLMBa1CwcTOsu" />
-        <Link Id="KChSkQxDv4INB0sSNKq1c2" Ids="VSQTScBwaP1O1t9rcPJpgL,VHdlBPMY7WiOXBFVLhcPKY" />
         <Link Id="VKWEHf2VDLBLYNg5OQwOUW" Ids="QtOb3iW2TeNOf3QsRgypA1,BMEtVD0t5uLP6VsCPlCVxS" />
         <Link Id="GFMiF4UHULINrJiCukldTI" Ids="FkZrtVhITxqMoXT0dofjZs,JmqloNP5tbGPEPmQ92gedc" />
-        <Link Id="VS4g0cB0bQFM1me98fIiUb" Ids="JAc8Mes1ezdN7FghQULxik,CqO1t4nQ7jsONboMf5oeKN" />
         <Link Id="UWn23M4OSsKQVSrlsdO10P" Ids="QtOb3iW2TeNOf3QsRgypA1,QZqBsmhgpswNWcAwH7yV0C" />
         <Link Id="SqE8gbU8j4mNAQa2h1oKOw" Ids="GJCB8hj664WQWdCJgOoYvs,Bflai8h0fN3QZFz7zDrT5G" />
         <Link Id="SU7RbNktlRYOvfEVKmdHVC" Ids="JAc8Mes1ezdN7FghQULxik,NbCh7gVBrMqMy5OUB5A5Jo" />
@@ -375,6 +356,11 @@
         <Link Id="QZJTnU3TiNGNgNCEMAHih0" Ids="G0rhL645XJLQCixqsDVj7H,TlBBgErO5ExNrERL73z8D8" />
         <Link Id="KPKrN7mXkC1MnFVddENodR" Ids="RS6TTaelzgHQIqaCLomP5L,FPHvMcb6Md1OyDsZwB2XCN" />
         <Link Id="NpZIDIu7w4tMkQESAdnsWb" Ids="LkO7lMVx5JuOMSW9LKzXty,CdiKE5nVYA9NtLaCwrmxfN" />
+        <Link Id="HG1b0TVhiFePzCYSITfo02" Ids="B23ZDNhXxKiL7WKvecBtoW,TF0xY1DKxcCONHftEpREsZ" />
+        <Link Id="K37uDYHacexL4nSO1cct6k" Ids="CkCgoeVQLpXMLnb8HNn37z,Auua83tP01lPWHyDmrnbLp" />
+        <Link Id="Ezq56g7h7blMBzNhwChB3R" Ids="O7RGSEytGzjMLYD1Zsai6S,NSvfNGwJaVRLvlujXdsCQR" />
+        <Link Id="IrjCqHUzyA7PmUbPgp6eCv" Ids="JAc8Mes1ezdN7FghQULxik,CqO1t4nQ7jsONboMf5oeKN" />
+        <Link Id="IyOHuIEepqlMkfZNRDn9HS" Ids="VSQTScBwaP1O1t9rcPJpgL,VHdlBPMY7WiOXBFVLhcPKY" />
       </Patch>
     </Node>
   </Patch>
