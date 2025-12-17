@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="VL.Stride.Runtime" Version="2025.7.0-0393-g156b5a762f" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\shaders\**\*.sdsl" Link="shaders\%(RecursiveDir)%(Filename)%(Extension)">
+    </None>
+    <Compile Include="..\shaders\**\*.sdsl.cs" Link="shaders\%(RecursiveDir)%(Filename)%(Extension)">
+    </Compile>
+  </ItemGroup>
+  
+</Project>

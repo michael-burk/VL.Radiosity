@@ -1,0 +1,40 @@
+[Category("Filter")]
+[Summary("Clean Over blending in linear space, removes gray fringes from semi-transparent textures.")]
+shader CleanOver_TextureFX : FilterBase
+{
+    [Color]
+    float4 Color = float4(1,1,1,1); // Global tint
+
+    // Background and foreground textures
+    [Texture]
+    Texture2D BackgroundTexture;
+
+    [Texture]
+    Texture2D ForegroundTexture;
+
+    stage override float4 Filter(float4 tex0col)
+    {
+        float2 uv = streams.TexCoord.xy;
+
+        // Sample textures
+        float4 bg = BackgroundTexture.Sample(Sampler0, uv);
+        float4 fg = ForegroundTexture.Sample(Sampler0, uv);
+
+        // Convert to linear space for correct blending
+        float3 bgLin = pow(bg.rgb, 2.2);
+        float3 fgLin = pow(fg.rgb, 2.2);
+
+        // Soft mask: fade RGB to 0 where alpha is 0
+        fgLin = lerp(float3(0,0,0), fgLin, fg.a);
+
+        // Linear-space premultiplied alpha Over
+        float3 outLin = fgLin + bgLin * (1.0 - fg.a);
+        float outAlpha = fg.a + bg.a * (1.0 - fg.a);
+
+        // Convert back to gamma (sRGB)
+        float3 outRgb = pow(outLin, 1.0 / 2.2);
+
+        // Apply global tint
+        return float4(outRgb, outAlpha) * Color;
+    }
+};

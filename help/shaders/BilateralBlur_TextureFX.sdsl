@@ -1,0 +1,93 @@
+[Category("Filter")]
+[Summary("")]
+shader BilateralBlur_TextureFX : FilterBase
+{
+    [Color]
+    float4 Color = float4(1, 1, 1, 1);
+
+    // --- Shader Parameters ---
+    // These will be exposed in the Game Studio or set via C#
+    // Use [Range(...)] or [Color] attributes for better UI in Game Studio.
+
+    // [Range(0.1, 20.0, 3.0)] // SigmaSpatial: Controls the spatial influence (higher = wider blur)
+    float SigmaSpatial = 3.0;
+
+    // [Range(0.01, 1.0, 0.15)] // SigmaRange: Controls intensity difference tolerance (lower = stronger edge preservation)
+    float SigmaRange = 0.15;
+
+    // TexelSize needs to be passed from C# or calculated using texture intrinsics if available.
+    // E.g., float2(1.0 / Texture.Width, 1.0 / Texture.Height)
+    // For simplicity here, we assume it's passed directly.
+    // In real Stride, you might derive this from a common constant buffer or helper.
+    float2 TexelSize;
+
+    // Kernel radius (e.g., 2 for a 5x5 kernel centered around the pixel)
+    // Making this a constant for compilation efficiency.
+    #define KERNEL_RADIUS 2
+
+    // Helper function for the Gaussian weight calculation
+    float GaussianWeight(float val, float sigma)
+    {
+        // Avoid division by zero if sigma is too small, though Range attribute should prevent it.
+        float denom = 2.0 * sigma * sigma;
+        if (denom < 0.0001) denom = 0.0001; // Clamp for safety
+        return exp(-(val * val) / denom);
+    }
+
+
+
+    float4 Filter(float4 tex0col)
+    {
+
+         float4 sumColor = float4(0.0, 0.0, 0.0, 0.0);
+        float sumWeight = 0.0;
+
+        // Get the color and an intensity reference from the central pixel.
+        // For range weight, we need a single scalar intensity value.
+        // Using luminance for better color perception.
+        // Luminance formula for sRGB: L = 0.2126*R + 0.7152*G + 0.0722*B
+        float centerIntensity = dot(tex0col.rgb, float3(0.2126, 0.7152, 0.0722));
+
+         for (int x = -KERNEL_RADIUS; x <= KERNEL_RADIUS; x++)
+        {
+            for (int y = -KERNEL_RADIUS; y <= KERNEL_RADIUS; y++)
+            {
+                // Calculate the UV offset for the current sample
+                float2 offsetUV = streams.TexCoord.xy + float2(x, y) * TexelSize;
+
+                // Sample the color from the input texture at the offset UV
+                // 'Texture' and 'Sampler' are implicitly available from FilterBase.
+                float4 sampleColor = Texture0.Sample(Sampler0, offsetUV);
+
+                // Calculate spatial weight (distance from center pixel)
+                float spatialDistSq = (float)(x * x + y * y);
+                // Using sqrt for actual distance, then square it for Gaussian (val * val)
+                float spatialWeight = GaussianWeight(sqrt(spatialDistSq), SigmaSpatial);
+
+                // Calculate range weight (intensity similarity)
+                float sampleIntensity = dot(sampleColor.rgb, float3(0.2126, 0.7152, 0.0722));
+                float intensityDiff = abs(sampleIntensity - centerIntensity);
+                float rangeWeight = GaussianWeight(intensityDiff, SigmaRange);
+
+                // Combine the two weights
+                float combinedWeight = spatialWeight * rangeWeight;
+
+                // Accumulate weighted color and total weight
+                sumColor += sampleColor * combinedWeight;
+                sumWeight += combinedWeight;
+            }
+        }
+
+           // Normalize the accumulated color by the total weight
+        if (sumWeight > 0.0001) // Avoid division by zero
+        {
+            return (sumColor / sumWeight) * Color; // Apply the tint after the blur
+        }
+        else
+        {
+            // Fallback to original color if no valid weights (should not happen with reasonable sigmas)
+            return tex0col * Color;
+        }
+    }
+};
+

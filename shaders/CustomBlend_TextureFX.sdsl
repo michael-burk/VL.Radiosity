@@ -1,0 +1,27 @@
+[Category("Mixer")]
+[Summary("Hybrid blend: Additive if foreground brighter than threshold, Over if foreground darker.")]
+shader CustomBlend_TextureFX : MixerBase
+{
+    float fader1 = 0.5; // Threshold / scaling
+
+    float4 Mix(float4 tex0col, float4 tex1col, float fader)
+    {
+        // Compute foreground luminance
+        float fgLum = dot(tex1col.rgb, float3(0.299, 0.587, 0.114));
+
+        if (fgLum > fader1)
+        {
+            // Additive blending
+            float3 added = tex0col.rgb + tex1col.rgb;
+            return float4(saturate(added), tex0col.a); // preserve background alpha
+        }
+        else
+        {
+            // Standard Over blending
+            float3 fgPremul = tex1col.rgb * tex1col.a;
+            float3 bgPremul = tex0col.rgb * tex0col.a * (1.0 - tex1col.a);
+            float alphaOut = tex1col.a + tex0col.a * (1.0 - tex1col.a );
+            return float4(fgPremul + bgPremul, alphaOut);
+        }
+    }
+};

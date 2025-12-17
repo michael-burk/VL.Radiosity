@@ -1,0 +1,33 @@
+[Category("Filter")]
+[Summary("")]
+shader AlphaBlendRadiosity_TextureFX : FilterBase
+{
+    [Color]
+    float4 Color = float4(1, 1, 1, 1);
+
+    float4 Filter(float4 tex0col)
+    {   
+        float2 uv = streams.TexCoord.xy;
+
+        // Sample background and foreground (halo)
+        float4 bg = Texture0.Sample(Sampler0, uv);
+        float4 fg = Texture1.Sample(Sampler0, uv);
+
+        // Convert to linear space
+        float3 bgLin = pow(bg.rgb, 2.2);
+
+        // Apply soft mask: fade RGB to 0 where alpha is 0
+        float3 fgLin = pow(fg.rgb, 2.2);
+        fgLin = lerp(float3(0,0,0), fgLin, fg.a);
+
+        // Premultiplied alpha blend in linear space
+        float3 blendedLin = fgLin + bgLin * (1.0 - fg.a);
+        float alphaOut = fg.a + bg.a * (1.0 - fg.a);
+
+        // Convert back to sRGB
+        float3 blendedRgb = pow(blendedLin, 1.0 / 2.2);
+
+        // Apply optional tint
+        return float4(blendedRgb, alphaOut) * Color;
+    }
+};
