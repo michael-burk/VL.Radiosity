@@ -423,6 +423,7 @@
               <Pin Id="LM9asmmGquFNWCRBuMMwi4" Name="Input 2" Kind="InputPin" DefaultValue="0.5" />
               <Pin Id="ALEsQ1BVRd0NdOIzg5fTjk" Name="Output" Kind="OutputPin" />
             </Node>
+            <ControlPoint Id="EIFUBJN7L1oLyG4GfBOvlZ" Bounds="1272,750" />
           </Canvas>
           <ProcessDefinition Id="Pik2ZvwYvtANowJ176Oty2">
             <Fragment Id="CIPVMPxQZTWOxIuzB7mq0t" Patch="LGbKiQ4wsElOa3xX8QVt7t" Enabled="true" />
@@ -486,6 +487,7 @@
             <Pin Id="TfTbsuD2gKbLziCIoap8cA" Name="Crop" Kind="InputPin" Visibility="Optional" />
             <Pin Id="M6962uUkeH9LPt3TQqbf2L" Name="DoCrop" Kind="InputPin" DefaultValue="False" Visibility="Optional" />
             <Pin Id="KI1BIWtyLdWQYe7iH3UlYh" Name="NoOverlay" Kind="OutputPin" />
+            <Pin Id="IJukTdOumluLJvJLUBZIZ3" Name="Enabled" Kind="InputPin" />
           </Patch>
           <Link Id="L4xTJ17GM7rQWMAETJXkbQ" Ids="OtBXoZ5H10fORlMiVW2Wxu,LX3I8MyXAFxOVPNTLlA57K" />
           <Link Id="BHazaJLN8htLNX8IleB3UY" Ids="SN5Es1T25OnLCeP31iO56q,UoMc9ae4YgCPWs4d8teHuv" />
@@ -557,6 +559,8 @@
           <Link Id="VF7ZEquy4cXMshr91f1PHd" Ids="AYSK5IZSSLYQCNHNeqFBpx,LM9asmmGquFNWCRBuMMwi4" />
           <Link Id="DLrqrCrnrTOLUER6eE2Jh2" Ids="NWhQupYmOBoLRjLDcL6WEx,F7eKe7cM8LxNUuoYZK6RkK" />
           <Link Id="LGoDmy5uyr5PXEO69YT2fI" Ids="ALEsQ1BVRd0NdOIzg5fTjk,KY7Odgl0tn1NHpb1rBQHlw" />
+          <Link Id="DZCHZiE1GMyNHcixPcZ9iT" Ids="EIFUBJN7L1oLyG4GfBOvlZ,USzbASPXohtPjT4T7EpkX1" />
+          <Link Id="CzXn0ZjeaRbP7OzL6nLFzx" Ids="IJukTdOumluLJvJLUBZIZ3,EIFUBJN7L1oLyG4GfBOvlZ" IsHidden="true" />
         </Patch>
       </Node>
       <!--
@@ -1334,6 +1338,7 @@
               <Pin Id="GiC1vmjVj8sORGk1FArY2B" Name="Down Edge" Kind="OutputPin" />
             </Node>
             <Pad Id="QTkcQOVZiQbMiP5QFKNhbs" Comment="" Bounds="1096,244,35,35" ShowValueBox="true" isIOBox="true" />
+            <ControlPoint Id="UeoiAREWfu6PeGwpTEkZQ7" Bounds="240,710" />
           </Canvas>
           <Link Id="VvI4hPot9P3M5L1G7ApHFV" Ids="TDRY2dLwpjfPPC2bBRfFPn,QQ7PxmUruPKQbB8Pa4ihpt" />
           <Link Id="QfefsNYehNzPp1F2UTPQ6G" Ids="TZ6SzblN0uIM26ekH9YsId,TDRY2dLwpjfPPC2bBRfFPn" IsHidden="true" />
@@ -1398,6 +1403,7 @@
           <Link Id="NeQpDfhIi37M8Rn9h00Qpj" Ids="RcxT93JRIylMNBis9GgBMl,LSOlLNOhXOJQZwe0GY2672" IsHidden="true" />
           <Patch Id="MQU1qxTb4doNZMHs07TSZJ" Name="Create" />
           <Patch Id="QgjsZrWwLR5O0asdkiSv0u" Name="Update">
+            <Pin Id="Eqi3SMm5lnqMzan8AAGhlA" Name="Filter" Kind="InputPin" />
             <Pin Id="TZ6SzblN0uIM26ekH9YsId" Name="Input" Kind="InputPin" Bounds="373,550" />
             <Pin Id="R8dv5QtSgX8OMyVa83OoNh" Name="Border Color" Kind="InputPin" Bounds="326,647" />
             <Pin Id="OArday6Z90iOG8kvsAHOwp" Name="Enabled" Kind="InputPin" Bounds="401,791" DefaultValue="True" />
@@ -1420,6 +1426,8 @@
           <Link Id="HqntEudTa5SQCRPs8rdKwu" Ids="RyB6F4nrwdwNeLmi4tFD1p,PtGVroj5xP7PFqCNZjzpiq" />
           <Link Id="ACPBV2P9CdrLuur83Lxmxz" Ids="B6Ln4WirVF2OIMRXNV0AcS,OJtmXMBY19XP93QJXH5oJl" IsHidden="true" />
           <Link Id="RvA2EpvcJmHQA9aGn0C8OB" Ids="MHwNUU7zGZEQX0aIqKd45S,QTkcQOVZiQbMiP5QFKNhbs" />
+          <Link Id="J79lKnpFfBBL7XymQDMBLw" Ids="UeoiAREWfu6PeGwpTEkZQ7,Dgt8S1BYd4MNhcIZJnYh7T" />
+          <Link Id="N9vLDpmpEUpOJ49GTXeFAN" Ids="Eqi3SMm5lnqMzan8AAGhlA,UeoiAREWfu6PeGwpTEkZQ7" IsHidden="true" />
         </Patch>
       </Node>
       <!--
@@ -1851,12 +1859,13 @@
               <Pin Id="LHwPqC4E5ZyNhRex5qlFY8" Name="Depth Stencil State" Kind="InputPin" />
               <Pin Id="M5u0wutrtT7Pvf5uu0wQyy" Name="Output" Kind="OutputPin" />
             </Node>
-            <Node Bounds="679,528,85,19" Id="HQsTtzNGxfHP2LUiQl4POz">
+            <Node Bounds="679,528,105,19" Id="HQsTtzNGxfHP2LUiQl4POz">
               <p:NodeReference LastCategoryFullName="Radiosity" LastDependency="VL.Radiosity.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="TextureCam" />
               </p:NodeReference>
               <Pin Id="Vp0cbA9WdQSNQrabqLfWl8" Name="Node Context" Kind="InputPin" IsHidden="true" />
+              <Pin Id="AKW4EQk8j7SMgug1DpJFRi" Name="Filter" Kind="InputPin" DefaultValue="Point" />
               <Pin Id="CCPmSeRPjq7OrH9uzyxcSa" Name="Input" Kind="InputPin" />
               <Pin Id="ELEPkxb4inBOffYvz1q8rL" Name="Border Color" Kind="InputPin" DefaultValue="0, 0, 0, 1" />
               <Pin Id="SXGO9sWUsEbOMwshJ6JHKl" Name="Enabled" Kind="InputPin" />
@@ -2109,6 +2118,7 @@
                 <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
               </p:ValueBoxSettings>
             </Pad>
+            <ControlPoint Id="NZeaft1I0RpLO2UxNMUYTG" Bounds="674,410" />
           </Canvas>
           <ProcessDefinition Id="TzZ6Gj21DefNrZ4tedChxl">
             <Fragment Id="T7CuFZkcjuYQPiBKNuL3zu" Patch="QxgmVfQwksxL2tNOQMPvN7" Enabled="true" />
@@ -2124,6 +2134,7 @@
           <Link Id="QfZKmA52l7HPPf1wMmQybB" Ids="EjJhCpgdWMOM4rgYre1Ewf,VWYBQbMQ3tkLuIJ5ADlqhs" IsHidden="true" />
           <Patch Id="QxgmVfQwksxL2tNOQMPvN7" Name="Create" />
           <Patch Id="JPZKn0PNb15PwvXTeEwUTj" Name="Update">
+            <Pin Id="IdpvmP2rvSANSsFlUxHXZK" Name="Filter" Kind="InputPin" />
             <Pin Id="TlAZBNS2HfaOMoTB6CXOBu" Name="Input" Kind="InputPin" Bounds="683,442" />
             <Pin Id="EjJhCpgdWMOM4rgYre1Ewf" Name="Title" Kind="InputPin" Bounds="636,647" />
             <Pin Id="UAMFvaYl6ADMvfexVJwaXd" Name="Enabled" Kind="InputPin" Bounds="1001,574" />
@@ -2169,6 +2180,8 @@
           <Link Id="TTK99XYBXOvPoUVzIk02yK" Ids="US0KLNJMQkELhE7G7huWTe,Ef1ALKciBldLjuGcH4mQ2y" />
           <Link Id="AmDWObbBpHrMV10pw98gWj" Ids="Q2QJqcO0EByNWjFwIq718a,T876Uev4CTyOZmOkR1SLeW" />
           <Link Id="EauM5bYmyVzND4IsFgUk1J" Ids="TdlXhJAkj60MgXO54XNQUw,EWlFlrg4G37OZDpoUyJlWr" />
+          <Link Id="DcEbvpOVeKTNg1ynkmn7wb" Ids="NZeaft1I0RpLO2UxNMUYTG,AKW4EQk8j7SMgug1DpJFRi" />
+          <Link Id="NjHYE8FfeD9NoE634qrYIQ" Ids="IdpvmP2rvSANSsFlUxHXZK,NZeaft1I0RpLO2UxNMUYTG" IsHidden="true" />
         </Patch>
       </Node>
       <!--
