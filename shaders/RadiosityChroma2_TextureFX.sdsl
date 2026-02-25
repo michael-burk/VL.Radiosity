@@ -8,6 +8,8 @@ int SAMPLES = 64;
 int SAMPLES2 = 48;
 float time = 0;
 float maxDist = 0.15;
+// Refractive index (exposed shader input)
+float refractiveIndex = 1.0;
 bool bumpy = false;
 float accumulationAmount = 0.95; // GPT Comment: Higher means slower blending, retains more history
 bool doAccumulation = true;      // GPT Comment: Toggle temporal accumulation
@@ -126,12 +128,47 @@ void trace(float2 p, float2 dir, out float3 c, out float marchedDist, out float2
                 p -= dir  * 0.001;
                 bounceCol *= c;
             } else if (material < 0.5) {
-                dir = refract(dir, -normal, 3.0);
+                dir = refract(dir, -normal, refractiveIndex * 3);
                 p -= dir * 0.1;
             } else if (material < 0.6) {
-                dir = refract(dir, -normal, 3.0);
+                dir = refract(dir, -normal, refractiveIndex * 3);
                 p -= dir * 0.1;
                 bounceCol *= c;
+            } else if (material < 0.7) {
+                // Combined reflection/refraction: probabilistic Fresnel decision
+                float eta = 3.0; // same refractive index used elsewhere
+                float cosTheta = clamp(dot(-dir, normal), 0.0, 1.0);
+                float r0 = pow((1.0 - refractiveIndex) / (1.0 + refractiveIndex), 2.0);
+                float fresnel = r0 + (1.0 - r0) * pow(1.0 - cosTheta, 5.0);
+
+                // Use a random number per-hit to probabilistically choose reflection/refraction
+                float u = random(p + float2(time + float(bounces), 7.77));
+                if (u < fresnel) {
+                    dir = reflect(dir, normal);
+                    p -= dir * 0.001;
+                } else {
+                    dir = refract(dir, -normal, refractiveIndex);
+                    p -= dir * 0.1;
+                }
+            }
+            else if (material < 0.8) {
+                // Combined reflection/refraction: probabilistic Fresnel decision
+                float eta = 3.0; // same refractive index used elsewhere
+                float cosTheta = clamp(dot(-dir, normal), 0.0, 1.0);
+                float r0 = pow((1.0 - refractiveIndex) / (1.0 + refractiveIndex), 2.0);
+                float fresnel = r0 + (1.0 - r0) * pow(1.0 - cosTheta, 5.0);
+
+                // Use a random number per-hit to probabilistically choose reflection/refraction
+                float u2 = random(p + float2(time + float(bounces) + 3.14, 2.71));
+                if (u2 < fresnel) {
+                    dir = reflect(dir, normal);
+                    p -= dir * 0.001;
+                    bounceCol *= c;
+                } else {
+                    dir = refract(dir, -normal, refractiveIndex);
+                    p -= dir * 0.1;
+                    bounceCol *= c;
+                }
             }
         }
         if (marched >= maxDist) break;
@@ -169,7 +206,10 @@ stage override float4 Shading()
         bump = Texture4.SampleLevel(Sampler0, streams.TexCoord.xy, 0);
 
     const float TWO_PI = 6.28318530718;
-    float3 chromaOffsets = float3(0.98, 1.0, 1.02); // RGB angular offsets
+    // Increased chromatic offsets to make CA more visible (red shifts less, blue more)
+    float3 chromaOffsets = float3(0.92, 1.0, 1.08); // RGB angular offsets
+    float redBoost = 1.4; // amplify red contribution so red variation is more visible
+    float blueBoost = 1.0; // keep blue as-is (tweakable)
     float tOffset = random(float2(time * 17.7, 42.42)) * TWO_PI;
 
     
@@ -193,7 +233,8 @@ stage override float4 Shading()
             c *= BumpDirectional(bump, uv, normalize(uv - endpoint) * float2(-1, 1), R);
 
         // Check if we need chromatic aberration based on material
-        bool doCA = chromaticAberration && (material > 0.4 && material < 0.5);
+        // Enable CA for refractive and combined-reflect/refract materials (0.4 - 0.8)
+        bool doCA = chromaticAberration && (material > 0.4 && material < 0.8);
 
         if (doCA) {
             cRGB.g = c.g;
@@ -208,7 +249,7 @@ stage override float4 Shading()
             cR = lerp(cR, 0, pow(abs(marchedDistR / maxDist), maxDist));
             if (bumpy)
                 cR *= BumpDirectional(bump, uv, normalize(uv - endpointR) * float2(-1, 1), R);
-            cRGB.r = cR.r;
+            cRGB.r = cR.r * redBoost;
 
             // Blue
             float2 dirB = float2(cos(t) * chromaOffsets.b, sin(t) * chromaOffsets.b);
@@ -220,7 +261,7 @@ stage override float4 Shading()
             cB = lerp(cB, 0, pow(abs(marchedDistB / maxDist), maxDist));
             if (bumpy)
                 cB *= BumpDirectional(bump, uv, normalize(uv - endpointB) * float2(-1, 1), R);
-            cRGB.b = cB.b;
+            cRGB.b = cB.b * blueBoost;
         } else {
             // No CA — use all components from the first trace
             cRGB = c;

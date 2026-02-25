@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="AkC7fsML7yQQRWqOWPRKiu" LanguageVersion="2025.7.0" Version="0.128">
+<Document xmlns:p="property" xmlns:r="reflection" Id="AkC7fsML7yQQRWqOWPRKiu" LanguageVersion="2025.7.1-0173-g8ac97ecefe" Version="0.128">
   <Patch Id="Ve0aGIUidpxQTQiFuTrrtK">
     <Canvas Id="DcYg7AMaOFlNA2EQcjmy9l" DefaultCategory="Radiosity" CanvasType="FullCategory">
       <!--
@@ -30,6 +30,7 @@
               <Pin Id="SBCPHQIFT3SPHUOqe94rnc" Name="SAMPLES2" Kind="InputPin" />
               <Pin Id="Nc0uLZzJgiKQG7Sbu5WtQl" Name="Time" Kind="InputPin" />
               <Pin Id="U6Bs8Pe1py2NDyRbgiQyl9" Name="Max Dist" Kind="InputPin" />
+              <Pin Id="CKdS8jkcYYYOCWpJWhhcne" Name="Refractive Index" Kind="InputPin" />
               <Pin Id="NOZjlXKxGNQOusIo6voRNU" Name="Bumpy" Kind="InputPin" DefaultValue="False" />
               <Pin Id="JWqUMBoLOpTPaUCGB2yG91" Name="Accumulation Amount" Kind="InputPin" DefaultValue="0.8" />
               <Pin Id="N5jAuguncLJM2ZtS71tTXy" Name="Do Accumulation" Kind="InputPin" DefaultValue="True" />
@@ -43,7 +44,7 @@
               <Pin Id="I5RYuBUu62dMJukBZlNqyJ" Name="Render Format" Kind="InputPin" IsHidden="true" />
               <Pin Id="TcdV5SLYMnwLqfc2V84gpB" Name="Output Texture" Kind="InputPin" IsHidden="true" />
               <Pin Id="OtBXoZ5H10fORlMiVW2Wxu" Name="Output" Kind="OutputPin" />
-              <Pin Id="USzbASPXohtPjT4T7EpkX1" Name="Enabled" Kind="InputPin" />
+              <Pin Id="IMpMFqHgTreOUwab0MNBdI" Name="Enabled" Kind="InputPin" />
             </Node>
             <Node Bounds="296,725,97,19" Id="IonuqyDbhZYOvndXqzxnYX">
               <p:NodeReference LastCategoryFullName="Radiosity" LastDependency="VL.Radiosity.vl">
@@ -76,7 +77,7 @@
               <Pin Id="SDrlVP1v1HCOg7cWTtTpi3" Name="Compare Function" Kind="InputPin" />
               <Pin Id="EwEFIAAPSQRNLbypybkYfa" Name="Output" Kind="OutputPin" />
             </Node>
-            <Pad Id="VFxiCGuNToXOSmc8feqkP5" Comment="Filter" Bounds="587,488,215,15" ShowValueBox="true" isIOBox="true" Value="Point">
+            <Pad Id="VFxiCGuNToXOSmc8feqkP5" Comment="Filter" Bounds="587,488,216,15" ShowValueBox="true" isIOBox="true" Value="Point">
               <p:TypeAnnotation LastCategoryFullName="Stride.Graphics" LastDependency="Stride.dll">
                 <Choice Kind="TypeFlag" Name="TextureFilter" />
               </p:TypeAnnotation>
@@ -179,7 +180,7 @@
               <Pin Id="RDfIxPVOf8JO0MFxmpj6DI" Name="Result" Kind="OutputPin" />
               <Pin Id="AGivIkJfTeaMPU7b00sLQy" Name="Not Assigned" Kind="OutputPin" />
             </Node>
-            <Node Bounds="292,290,125,19" Id="JWel6cWqWvEPKc63A9U7dW">
+            <Node Bounds="292,290,145,19" Id="JWel6cWqWvEPKc63A9U7dW">
               <p:NodeReference LastCategoryFullName="Stride" LastDependency="VL.Stride.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="RenderTexture" />
@@ -189,6 +190,7 @@
               <Pin Id="Qnq9pTCudHRM4T8UPLIj2Y" Name="Size" Kind="InputPin" />
               <Pin Id="CtDMikoyU52QIW6GFyUjcf" Name="Render View" Kind="InputPin" />
               <Pin Id="MRCihPiEwyIQKnXR6D5MqG" Name="Format" Kind="InputPin" />
+              <Pin Id="SKvgRzud9zjNr50KYxle2h" Name="View Format" Kind="InputPin" />
               <Pin Id="S0a72oA8cwSOgKP76RNabP" Name="Color Shared" Kind="InputPin" IsHidden="true" />
               <Pin Id="Gff4fXYTax5LdEnAQyCcNG" Name="Depth Format" Kind="InputPin" DefaultValue="None" />
               <Pin Id="NYYBDIYuAc0MTQsKLyYATx" Name="Depth Shared" Kind="InputPin" IsHidden="true" />
@@ -208,7 +210,7 @@
               </p:TypeAnnotation>
             </Pad>
             <ControlPoint Id="SDOJRNEfxhkOCCyVXDOEHv" Bounds="272,150" />
-            <Node Bounds="493,300,125,19" Id="LMJJRiU9u4gOaxUbnaLvXn">
+            <Node Bounds="493,300,145,19" Id="LMJJRiU9u4gOaxUbnaLvXn">
               <p:NodeReference LastCategoryFullName="Stride" LastDependency="VL.Stride.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="RenderTexture" />
@@ -218,6 +220,7 @@
               <Pin Id="NMEiwqTcLhMQAGqWoyXyyi" Name="Size" Kind="InputPin" />
               <Pin Id="R5qxcFimkYeQcUVcWjBlAz" Name="Render View" Kind="InputPin" />
               <Pin Id="AzpLv9CoMTCLn3lKtq9yBF" Name="Format" Kind="InputPin" />
+              <Pin Id="B9rQSGAUmjVQGvtKFQqr33" Name="View Format" Kind="InputPin" />
               <Pin Id="Lvjo3p2dNtTL33RZ2u3K7Z" Name="Color Shared" Kind="InputPin" IsHidden="true" />
               <Pin Id="CnTsemKjpmmOcKNhvUW6KL" Name="Depth Format" Kind="InputPin" />
               <Pin Id="BhDnZwpnJ58OtiXdCZrLet" Name="Depth Shared" Kind="InputPin" IsHidden="true" />
@@ -401,6 +404,7 @@
             <ControlPoint Id="Qw05RntTwOFQVIWLEpMMO4" Bounds="544,1240" />
             <ControlPoint Id="Nm0MvqubYq6N7X50xwETSa" Bounds="223,590" />
             <ControlPoint Id="VzUtuwZWcMPL9K9pEOnqwl" Bounds="501,1440" />
+            <ControlPoint Id="S2UWTP5PJAyPvwIP3FD8ux" Bounds="835,630" />
           </Canvas>
           <ProcessDefinition Id="Pik2ZvwYvtANowJ176Oty2">
             <Fragment Id="CIPVMPxQZTWOxIuzB7mq0t" Patch="LGbKiQ4wsElOa3xX8QVt7t" Enabled="true" />
@@ -456,6 +460,7 @@
             <Pin Id="OVjfACmaroeNPVjZflbYov" Name="SAMPLES2" Kind="InputPin" DefaultValue="48" Visibility="Optional" />
             <Pin Id="EXNAYU34S02Nx6iIzmOymN" Name="MaxDist" Kind="InputPin" DefaultValue="1" Visibility="Optional" />
             <Pin Id="HzN4FV14smsL6RCroINiIO" Name="Output" Kind="OutputPin" Bounds="353,1003" />
+            <Pin Id="N5LGcwGDUwJPDkvZZZLg6w" Name="Refractive Index" Kind="InputPin" Visibility="Optional" />
             <Pin Id="PVWuOfpM00KP7M2I7eITJ0" Name="Accumulation Amount" Kind="InputPin" />
             <Pin Id="Hxo20Y4kZSqQKtz22zTaB5" Name="Do Accumulation" Kind="InputPin" />
             <Pin Id="FZvR1Gbu3RTNwAiQeRe3c6" Name="Chromatic Aberration" Kind="InputPin" DefaultValue="False" />
@@ -528,6 +533,8 @@
           <Link Id="QG7KQlNGBBELDBLTPEe4Lv" Ids="IYTqQZzfUs4K9l9jyoipKl,Nm0MvqubYq6N7X50xwETSa" IsHidden="true" />
           <Link Id="LhSvJP8bTJFLsbGMwuaBm8" Ids="OtBXoZ5H10fORlMiVW2Wxu,VzUtuwZWcMPL9K9pEOnqwl" />
           <Link Id="T4L3vhrgG7TOrPaX2Jz8lW" Ids="VzUtuwZWcMPL9K9pEOnqwl,KI1BIWtyLdWQYe7iH3UlYh" IsHidden="true" />
+          <Link Id="Sr6V5EGYpDIPLhzhaDl7eG" Ids="S2UWTP5PJAyPvwIP3FD8ux,CKdS8jkcYYYOCWpJWhhcne" />
+          <Link Id="PciS1jEsWAqLve2kVedi2H" Ids="N5LGcwGDUwJPDkvZZZLg6w,S2UWTP5PJAyPvwIP3FD8ux" IsHidden="true" />
         </Patch>
       </Node>
       <!--
@@ -1432,6 +1439,7 @@
                   <Pin Id="MXnHKQFALwlQC3uIBGtvTu" Name="Size" Kind="InputPin" />
                   <Pin Id="TBnU7cEJNLzOiL14rbCsSr" Name="Render View" Kind="InputPin" />
                   <Pin Id="DTLYbxrlR5IPuMjpH4gXbh" Name="Format" Kind="InputPin" />
+                  <Pin Id="Q0hzfQrSniXPfU9TW01CK8" Name="View Format" Kind="InputPin" />
                   <Pin Id="TFyhERMUmZnMs08XNUrsRf" Name="Color Shared" Kind="InputPin" IsHidden="true" />
                   <Pin Id="BZCEUroKb54PoZQR0PdziN" Name="Depth Format" Kind="InputPin" />
                   <Pin Id="NnGUsVoMmExMbxELmtTaVO" Name="Depth Shared" Kind="InputPin" IsHidden="true" />
@@ -1786,6 +1794,8 @@
               <Pin Id="PffU8hhiXhHMfFIDZRHpeK" Name="Bound to Document" Kind="InputPin" IsHidden="true" />
               <Pin Id="DUmL8B2s5c7NK0wwO4ZIlj" Name="Dialog If Document Changed" Kind="InputPin" IsHidden="true" />
               <Pin Id="HbgF24wxMXNPBjkU9WzloF" Name="Save Bounds" Kind="InputPin" DefaultValue="False" />
+              <Pin Id="TiYFoButB7mMTwVwZoOadd" Name="Always On Top" Kind="InputPin" IsHidden="true" />
+              <Pin Id="MvJLT9EP3dANRD2Zultr5Q" Name="Extend Into Title Bar" Kind="InputPin" IsHidden="true" />
               <Pin Id="DiS4J8A1obHNYlodj1i0Gp" Name="Back Buffer Format" Kind="InputPin" IsHidden="true" />
               <Pin Id="Q0VI6IioUOsQdPE5QnrqLi" Name="Depth Buffer Format" Kind="InputPin" IsHidden="true" />
               <Pin Id="B3bYQjxbT2WP3PzkLjXHSd" Name="Multisample Count" Kind="InputPin" IsHidden="true" />
@@ -1793,6 +1803,7 @@
               <Pin Id="J91oHtibKDFPjHniaXO6Sx" Name="Input" Kind="InputPin" />
               <Pin Id="QMMB9YlEGVnLsZUV5FwiIr" Name="Render View" Kind="InputPin" />
               <Pin Id="Ppie98x5hLONLBDBlhWLtc" Name="Title" Kind="InputPin" />
+              <Pin Id="KjKOg4kIRUrMQGQjQr9fOV" Name="Title Bar Interaction Width" Kind="InputPin" IsHidden="true" />
               <Pin Id="GbP6mD7Lu6TPM9UP5J6JO5" Name="Clear Flags" Kind="InputPin" IsHidden="true" />
               <Pin Id="LshBiRKCPGnMYF2splbHAM" Name="Clear Color" Kind="InputPin" />
               <Pin Id="Js5cq95XZRGPVOiBYAk3IC" Name="Clear Depth" Kind="InputPin" IsHidden="true" />
@@ -1809,6 +1820,8 @@
               <Pin Id="TS8nWs4jWEROAehwLwj50q" Name="Back Buffer" Kind="OutputPin" />
               <Pin Id="LZo8YMxu4eAMaBYIGBIltH" Name="Depth Buffer" Kind="OutputPin" />
               <Pin Id="EG70spjXqRiNxvsAT4DINt" Name="Present Call Intercept" Kind="InputPin" IsHidden="true" />
+              <Pin Id="Q4RQBYvDRo3NTJK78w4RWi" Name="Output Color Space" Kind="InputPin" IsHidden="true" />
+              <Pin Id="DKPa5eTo6DwL9a9WB2Zxo8" Name="Backbuffer Format" Kind="InputPin" IsHidden="true" />
             </Node>
             <Node Bounds="659,593,145,19" Id="Cwb1FIflIfbMqh4h66I6p4">
               <p:NodeReference LastCategoryFullName="Stride.Rendering" LastDependency="VL.Stride.vl">
@@ -2174,6 +2187,7 @@
               <Pin Id="AuSOepoHgVGPUzIZREtbGD" Name="SAMPLES2" Kind="InputPin" />
               <Pin Id="C9es3bYvcm7PWShqaTWRsN" Name="Time" Kind="InputPin" />
               <Pin Id="KgI3BgJpTEAQHE09uRvYgr" Name="Max Dist" Kind="InputPin" />
+              <Pin Id="IGkt4MnOIyTQUuSIHLErYU" Name="Refractive Index" Kind="InputPin" />
               <Pin Id="CJKuTm7a4KZLNIj80FdgMG" Name="Bumpy" Kind="InputPin" DefaultValue="False" />
               <Pin Id="HfxR7vZQkymPzAVw4EZqf8" Name="Accumulation Amount" Kind="InputPin" />
               <Pin Id="UObBzfxpCplOJ5o7COZ7yt" Name="Do Accumulation" Kind="InputPin" />
@@ -2806,6 +2820,7 @@
               <Pin Id="BpxJQMIqST9NPmp6s3zbAl" Name="Size" Kind="InputPin" />
               <Pin Id="MomXlP6qxV7OYLgBMPyyZU" Name="Render View" Kind="InputPin" />
               <Pin Id="SOPBJ8SUMmdP8WPMcDvBIG" Name="Format" Kind="InputPin" />
+              <Pin Id="O1g2OGdxc45NIMdQNIyjgP" Name="View Format" Kind="InputPin" />
               <Pin Id="KpTctIyDr3ANA4dmyWOZlA" Name="Color Shared" Kind="InputPin" IsHidden="true" />
               <Pin Id="Rwtxq7Wh27mOrsF7v55ctz" Name="Depth Format" Kind="InputPin" DefaultValue="None" />
               <Pin Id="QR4hgbBWeeRL8dt57zcQpa" Name="Depth Shared" Kind="InputPin" IsHidden="true" />
@@ -2834,6 +2849,7 @@
               <Pin Id="UPCbuwsaxGhP666UnxagAw" Name="Size" Kind="InputPin" />
               <Pin Id="QIsJ29wurXfPBlt6Qc05c2" Name="Render View" Kind="InputPin" />
               <Pin Id="O1ep3QbISJbORv2ZafLIZw" Name="Format" Kind="InputPin" />
+              <Pin Id="SI55MquCH6LO4qfr98rGV7" Name="View Format" Kind="InputPin" />
               <Pin Id="HtiXcq3zQ9oLCjnCpNP2hj" Name="Color Shared" Kind="InputPin" IsHidden="true" />
               <Pin Id="AJqLfs4E1V7MFOEnXBDBOf" Name="Depth Format" Kind="InputPin" DefaultValue="None" />
               <Pin Id="Jbugla8RxyyO1R46QK6tXf" Name="Depth Shared" Kind="InputPin" IsHidden="true" />
@@ -2977,12 +2993,12 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="HIso4iDRN4iNSZxOaP0H2p" Location="VL.CoreLib" Version="2025.7.0" />
-  <NugetDependency Id="CEszKi4CR48LXWCFc4Kevs" Location="VL.Stride" Version="2025.7.0" />
-  <NugetDependency Id="QKt8dsFfXgNPAG8pqrdHFr" Location="VL.Skia" Version="2025.7.0" />
-  <NugetDependency Id="IbDSUNiaLrHP34lXamuppu" Location="System.Drawing.Common" Version="8.0.19" />
+  <NugetDependency Id="HIso4iDRN4iNSZxOaP0H2p" Location="VL.CoreLib" Version="2025.7.1-0173-g8ac97ecefe" />
+  <NugetDependency Id="CEszKi4CR48LXWCFc4Kevs" Location="VL.Stride" Version="2025.7.1-0173-g8ac97ecefe" />
+  <NugetDependency Id="QKt8dsFfXgNPAG8pqrdHFr" Location="VL.Skia" Version="2025.7.1-0173-g8ac97ecefe" />
+  <NugetDependency Id="IbDSUNiaLrHP34lXamuppu" Location="System.Drawing.Common" Version="8.0.1" />
   <PlatformDependency Id="JHS49jB9PQmN0zM3vO19id" Location="System.Drawing" />
   <PlatformDependency Id="CXUy1IRQsb7LoaL6Gtrxjx" Location="System" />
-  <NugetDependency Id="DstPAEzW9cQNtFoxDglC26" Location="VL.Stride.TextureFX" Version="2025.7.0" />
-  <NugetDependency Id="ETomSYxZvHQLpxan5hnWVR" Location="VL.Stride.Runtime" Version="2025.7.0" />
+  <NugetDependency Id="DstPAEzW9cQNtFoxDglC26" Location="VL.Stride.TextureFX" Version="2025.7.1-0173-g8ac97ecefe" />
+  <NugetDependency Id="ETomSYxZvHQLpxan5hnWVR" Location="VL.Stride.Runtime" Version="2025.7.1-0173-g8ac97ecefe" />
 </Document>
