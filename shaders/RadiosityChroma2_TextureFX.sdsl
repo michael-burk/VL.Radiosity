@@ -1,7 +1,7 @@
 [TextureSource]
 
 
-shader RadiosityChroma_TextureFX : TextureFX
+shader RadiosityChroma2_TextureFX : TextureFX
 {
 float2 R = ViewSize;
 int SAMPLES = 64;
@@ -13,6 +13,9 @@ float accumulationAmount = 0.95; // GPT Comment: Higher means slower blending, r
 bool doAccumulation = true;      // GPT Comment: Toggle temporal accumulation
 bool chromaticAberration = true; // Toggle RGB split
 //float DistanceFieldSize = 1;
+[Color]
+float4 bgColor = 0;
+float gain = 1;
 
 // GPT Comment: Calculates Phong directional lighting with Blinn-Phong specular highlights
 float4 PhongDirectional(float3 NormV, float3 ViewDirV, float3 LightDirV)
@@ -70,7 +73,8 @@ float texDist(float2 p) {
 void addObjTex(inout float dist, inout float3 color, float d, float2 p) {
     if (dist > d) {
         dist = d;
-        color = Texture1.SampleLevel(Sampler0, p + 0.5, 0).rgb;
+        float4 samp = Texture1.SampleLevel(Sampler0, p + 0.5, 0);
+        color = samp.rgb * 1;
     }
 }
 
@@ -108,25 +112,25 @@ void trace(float2 p, float2 dir, out float3 c, out float marchedDist, out float2
                 if (bounces > 1) c *= bounceCol;
                 return;
             } else if (material < 0.1) {
-                dir = normalize(-normal - normalize(float2(random(p + sin(time)), random(p + 5 + sin(time))) - 0.5));
-                p -= dir * 0.009;
+                dir = normalize(-normal - normalize(float2(random(p + sin(time)), random(p + 5 + sin(time))) - 0.5)*.25);
+                p -= dir * 0.001;
             } else if (material < 0.2) {
-                dir = normalize(-normal - normalize(float2(random(p + sin(time)), random(p + 5 + sin(time))) - 0.5));
-                p -= dir * 0.009;
+                dir = normalize(-normal - normalize(float2(random(p + sin(time)), random(p + 5 + sin(time))) - 0.5)*.25);
+                p -= dir * 0.001;
                 bounceCol *= c;
             } else if (material < 0.3) {
                 dir = reflect(dir, normal);
-                p -= dir * 0.009;
+                p -= dir  * 0.001;
             } else if (material < 0.4) {
                 dir = reflect(dir, normal);
-                p -= dir * 0.009;
+                p -= dir  * 0.001;
                 bounceCol *= c;
             } else if (material < 0.5) {
                 dir = refract(dir, -normal, 3.0);
-                p -= dir * 0.02;
+                p -= dir * 0.1;
             } else if (material < 0.6) {
                 dir = refract(dir, -normal, 3.0);
-                p -= dir * 0.02;
+                p -= dir * 0.1;
                 bounceCol *= c;
             }
         }
@@ -145,10 +149,18 @@ float random(in float2 _st) {
     return frac(sin(dot(_st.xy, float2(12.9898, 78.233))) * 43758.5453123);
 }
 
+float2 crop = .5;
+bool doCrop = false;
+
 stage override float4 Shading() 
-{
-    float aspectX = R.x / R.y;
+{   
     float2 uv = streams.TexCoord.xy - 0.5;
+    if((abs(uv.x)*2 > crop.x || abs(uv.y)*2 > crop.y) && doCrop)  return 0;
+    // float4 texCol = Texture1.SampleLevel(Sampler0, uv+.5, 0);
+    // if(texCol.a > .0) return texCol;
+
+    float aspectX = R.x / R.y;
+    
     float3 col = 0;
     float3 c;
     float4 bump;
@@ -159,6 +171,8 @@ stage override float4 Shading()
     const float TWO_PI = 6.28318530718;
     float3 chromaOffsets = float3(0.98, 1.0, 1.02); // RGB angular offsets
     float tOffset = random(float2(time * 17.7, 42.42)) * TWO_PI;
+
+    
 
     for (int i = 0; i < SAMPLES; i++) {
         float randOffset = random(uv + float(i) + time);
@@ -212,10 +226,13 @@ stage override float4 Shading()
             cRGB = c;
         }
 
+        // if(length(col)/i>1) break;
         col += cRGB;
     }
 
     col /= SAMPLES;
+    col *= gain;
+    col += bgColor;
 
     if (doAccumulation) {
         float4 prevCol = Texture5.Sample(Sampler0, streams.TexCoord.xy);

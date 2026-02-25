@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!DOCTYPE ROOT PUBLIC "" ""[]>
+<KairosSessionModel>
+  <Clock_model Loop_Out="10" Period="1" Speed="1" />
+  <Composition_Sampler_Model />
+  <Default_KeyframeEditor_Model ID="c2a43b87-3e80-43eb-8aa9-b29bfb856fab" />
+  <KeyframeEditor_UI_Model Composition_Track_Folding="True" ID="e32f8963-51da-4175-bd77-e831998bb517" Output_Monitor_Folding="True" Time_Grid_Snapping_Enabled="True">
+    <Camera_Model Maximum_Position_Bound="9999, 9999" Maximum_Zoom="50" Minimum_Position_Bound="-9999, -9999" Minimum_Zoom="0.01" Scroll_Speed="1, 1" Zoom_Speed="1" />
+  </KeyframeEditor_UI_Model>
+  <Settings Auto_Backup_Enabled="True" Auto_Backup_Interval="10" Auto_Save_Enabled="True" />
+</KairosSessionModel>

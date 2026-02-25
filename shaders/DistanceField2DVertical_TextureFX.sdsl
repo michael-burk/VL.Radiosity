@@ -3,27 +3,42 @@
 shader DistanceField2DVertical_TextureFX : TextureFX
 {
 	float2 R = ViewSize;
-	float Threshold = .5;
+	float Threshold = 0.5;
 	float Width = 512;
+	float scale = 1;
 
-	float pVERT(float2 x){
-	int2 ip=x*R;
-	bool inside=Texture0.Load(int3(ip.xy,0)).a>Threshold;
-	float dist=1;
-	for(int i=1;i<=Width;i++){
-		if((Texture0.Load(int3(ip.x,clamp(ip.y+i,0,R.y-1),0)).a>Threshold)^inside)dist=min(dist,(float)i/Width);
-		if((Texture0.Load(int3(ip.x,clamp(ip.y-i,0,R.y-1),0)).a>Threshold)^inside)dist=min(dist,(float)i/Width);
-		
-	}
-	if(inside)dist*=-1;
-	//dist=inside;
-	return dist;
+	// Change AddressV to WRAP, CLAMP, MIRROR, BORDER etc.
+	SamplerState MySampler
+	{
+		Filter = MIN_MAG_MIP_LINEAR;
+		AddressU = WRAP;
+		AddressV = WRAP;
+	};
+
+	float pVERT(float2 uv)
+	{
+		bool inside = Texture0.Sample(Sampler0, uv).a > Threshold;
+		float dist = 1;
+
+		// Only UV math, letting sampler mode decide behavior
+		for (int i = 1; i <= Width; i++) {
+			float offset = i / R.y;
+
+			float2 uvPlus = uv + float2(0.0, offset);
+			float2 uvMinus = uv - float2(0.0, offset);
+
+			if ((Texture0.Sample(Sampler0, uvPlus).a > Threshold) ^ inside)
+				dist = min(dist, (float)i / Width);
+			if ((Texture0.Sample(Sampler0, uvMinus).a > Threshold) ^ inside)
+				dist = min(dist, (float)i / Width);
+		}
+
+		if (inside) dist *= -1;
+		return dist * scale;
 	}
 
 	stage override float Shading()
 	{
 		return pVERT(streams.TexCoord.xy);
 	}
-
-
 };
