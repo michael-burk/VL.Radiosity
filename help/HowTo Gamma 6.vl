@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="IaedzP2kQBtMeagKuEFvQr" LanguageVersion="2024.6.0-0261-g38f7059b02" Version="0.128">
-  <NugetDependency Id="QrOYju77YY9OrnbvnlTSan" Location="VL.CoreLib" Version="2024.6.0-0261-g38f7059b02" />
+<Document xmlns:p="property" xmlns:r="reflection" Id="IaedzP2kQBtMeagKuEFvQr" LanguageVersion="2025.7.1-0173-g8ac97ecefe" Version="0.128">
+  <NugetDependency Id="QrOYju77YY9OrnbvnlTSan" Location="VL.CoreLib" Version="2025.7.1-0173-g8ac97ecefe" />
   <Patch Id="C1ljkcUxLWTP3tvaADzCDe">
     <Canvas Id="GKhVJHOvR8xQc0OA4MyKr9" DefaultCategory="Main" CanvasType="FullCategory">
       <!--
@@ -63,7 +63,7 @@
               <Pin Id="IRS1QmHRgRHMJpuEDf7Scx" Name="Alpha" Kind="InputPin" />
               <Pin Id="OOIU9WZlTAbLNSJbLEfx5d" Name="Result" Kind="OutputPin" />
             </Node>
-            <Pad Id="HjhH86DB010LQH4GjZ9Ar5" Comment="Red" Bounds="920,689,35,15" ShowValueBox="true" isIOBox="true" Value="0.7">
+            <Pad Id="HjhH86DB010LQH4GjZ9Ar5" Comment="Red" Bounds="920,689,35,15" ShowValueBox="true" isIOBox="true" Value="0.8">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="TypeFlag" Name="Float32" />
               </p:TypeAnnotation>
@@ -136,6 +136,7 @@
               <Pin Id="CsaciLvvQOHLNfK0ZgW0vk" Name="Point B" Kind="InputPin" />
               <Pin Id="FD4O5IBSEGCP0ocKdgoxaR" Name="Paint" Kind="InputPin" />
               <Pin Id="EymZ9hM7MCROtDwZ4f3nvj" Name="Enabled" Kind="InputPin" />
+              <Pin Id="OXF9sorgEQrLW4J9CiValL" Name="State Output" Kind="OutputPin" IsHidden="true" />
               <Pin Id="N0aHejCUvSONjmaYZixtvj" Name="Output" Kind="OutputPin" />
             </Node>
             <Pad Id="J0fEsk8JpwFOEdVRt9ZGNM" Comment="Point B" Bounds="350,400,35,28" ShowValueBox="true" isIOBox="true" Value="0.034, -0.334">
@@ -497,7 +498,7 @@
             <Pin Id="VPJbWqSe7OFOsdRLjFcKqh" Name="Enabled" Kind="InputPin" />
             <Pin Id="GznWIBNyTP4QaBkeluNDBW" Name="Input Source" Kind="OutputPin" />
           </Node>
-          <Pad Id="LbSlfU9b98bNDg1ZlIQqOh" Comment="Size" Bounds="221,426,35,28" ShowValueBox="true" isIOBox="true" Value="800, 800">
+          <Pad Id="LbSlfU9b98bNDg1ZlIQqOh" Comment="Size" Bounds="221,426,35,28" ShowValueBox="true" isIOBox="true" Value="1024, 1024">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Int2" />
             </p:TypeAnnotation>
@@ -512,24 +513,36 @@
             <Pin Id="NOqZvMaqmGvOqbBjl4WVci" Name="Output" Kind="OutputPin" />
             <Pin Id="RNuTEkbesDXNjrhAkLjk2r" Name="Output 2" Kind="OutputPin" />
           </Node>
-          <Node Bounds="118,822,185,19" Id="Jp8gQqx17l2LBUdIykWyeq">
+          <Node Bounds="118,822,405,19" Id="Jp8gQqx17l2LBUdIykWyeq">
             <p:NodeReference LastCategoryFullName="Radiosity" LastDependency="VL.Radiosity.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Radiosity_TexIn" />
             </p:NodeReference>
             <Pin Id="Vndy1RFivRVLP0ztHHMDz1" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="AVydw6k6gZMP6ocYBA9v41" Name="NormalMap" Kind="InputPin" DefaultValue="True" />
+            <Pin Id="BB1PTPpZ3JbP6RYej9zO0V" Name="NormalMapStrength" Kind="InputPin" DefaultValue="1" />
+            <Pin Id="UZ6LJAiE2bnPO8K56m8mNE" Name="BlendAlpha" Kind="InputPin" DefaultValue="False" />
             <Pin Id="D9AG1EwTu3QNypdZDywNYh" Name="Input" Kind="InputPin" />
-            <Pin Id="QQqCbyhznPOLAx1wKXa7nk" Name="EchoAmount" Kind="InputPin" DefaultValue="0.7" />
-            <Pin Id="Azf75crvuAUMXzILc8ycao" Name="MagicNumber" Kind="InputPin" />
-            <Pin Id="VCAoRj2DHUoPVHfCJ7ijkc" Name="Res" Kind="InputPin" />
-            <Pin Id="MqxziUb80pzL51Po6kt0Dl" Name="Echo" Kind="InputPin" IsHidden="true" />
-            <Pin Id="Ezy6YXB42IVLpe7t3XQIH4" Name="NormalMapBackground" Kind="InputPin" />
+            <Pin Id="NRXwLNx7oFUMFZthfcABNh" Name="ResolutionFactor" Kind="InputPin" />
+            <Pin Id="Azf75crvuAUMXzILc8ycao" Name="MagicNumber" Kind="InputPin" DefaultValue="0.12" />
+            <Pin Id="OmqZ4xzhcmfMQSG0B4A1f2" Name="ResolutionDistanceField" Kind="InputPin" />
+            <Pin Id="PXnOdZIIrqMNGtpfl0etQc" Name="Overlay" Kind="InputPin" DefaultValue="True" />
             <Pin Id="DAF8cMG8vKePVVetGC9xpW" Name="Material" Kind="InputPin" />
+            <Pin Id="Ezy6YXB42IVLpe7t3XQIH4" Name="NormalMapBackground" Kind="InputPin" />
             <Pin Id="P1uJ1BuBkiHMyYmuIFzYoB" Name="SAMPLES" Kind="InputPin" />
             <Pin Id="Om8zFFDWfhtLNgMnWqmSaf" Name="SAMPLES2" Kind="InputPin" />
-            <Pin Id="B4H4heDx3iJNOUsaTvDeh4" Name="TextureAddressMode" Kind="InputPin" DefaultValue="MirrorOnce" />
-            <Pin Id="QiKzaqbZXypM0sjklcBTZF" Name="MaxDist" Kind="InputPin" DefaultValue="2" />
+            <Pin Id="QiKzaqbZXypM0sjklcBTZF" Name="MaxDist" Kind="InputPin" DefaultValue="1" />
             <Pin Id="TQS2fnLmHwmOeiVZ9qw1SN" Name="Output" Kind="OutputPin" />
+            <Pin Id="OIxAk3lUYx5NGZ7LhYqiFa" Name="Accumulation Amount" Kind="InputPin" DefaultValue="0.9" />
+            <Pin Id="B4H4heDx3iJNOUsaTvDeh4" Name="TextureAddressMode" Kind="InputPin" DefaultValue="MirrorOnce" />
+            <Pin Id="KrfE6MEpnwWO4WoY6hQNb0" Name="Do Accumulation" Kind="InputPin" DefaultValue="False" />
+            <Pin Id="EingCHbPdUfLmS72AbBEqv" Name="Chromatic Aberration" Kind="InputPin" DefaultValue="False" />
+            <Pin Id="St7Xxzj5U2eLFXIAX75ua6" Name="Bg Color" Kind="InputPin" />
+            <Pin Id="D5hEk8aTlyJPIwLXMkw0fK" Name="Gain" Kind="InputPin" />
+            <Pin Id="HJBQHEDBM4gPzaNAvBXKnW" Name="Crop" Kind="InputPin" IsHidden="true" />
+            <Pin Id="Fl79JYPTyN6NhBuzrsWmpa" Name="DoCrop" Kind="InputPin" IsHidden="true" />
+            <Pin Id="E6SmBfF86rjOnKvpthkWKr" Name="Output Format" Kind="InputPin" />
+            <Pin Id="NMr732O9IwMQS0UsYsBiHy" Name="Enabled" Kind="InputPin" />
           </Node>
           <Node Bounds="139,621,111,19" Id="AyJIzXnAZbCLizSYmVyg4I">
             <p:NodeReference LastCategoryFullName="Radiosity" LastDependency="VL.Radiosity.vl">
@@ -772,7 +785,7 @@
             <Pin Id="QT0xcmy96OFLXFKPLcdYGo" Name="Output Texture" Kind="InputPin" IsHidden="true" />
             <Pin Id="QPQ7QMhuMzkPqoH5KITWtV" Name="Output Size" Kind="InputPin" IsHidden="true" />
             <Pin Id="QEYSmIelrm3MysM0RabfdQ" Name="Output Format" Kind="InputPin" IsHidden="true" />
-            <Pin Id="JiZHm4S83EyOclgTrnEGPg" Name="Apply" Kind="InputPin" />
+            <Pin Id="JiZHm4S83EyOclgTrnEGPg" Name="Apply" Kind="InputPin" DefaultValue="True" />
             <Pin Id="AK9aDtgsxHQPafpdm0XsOH" Name="Output" Kind="OutputPin" />
           </Node>
           <Node Bounds="580,509,126,19" Id="AJKVrGzMGQAOnHRtyr3iLZ">
@@ -894,7 +907,6 @@
         <Link Id="CzcOcrGxudMMHfxu3t1TWJ" Ids="LbSlfU9b98bNDg1ZlIQqOh,NIajkNJEhe3PJwef1KlxAL" />
         <Link Id="KFKjto3clzPPNh8LPB7tCd" Ids="LbSlfU9b98bNDg1ZlIQqOh,EcVoHNATLSzO7acmB4FG64" />
         <Link Id="KIRODUyTSh9LKWME8Hhu19" Ids="LbSlfU9b98bNDg1ZlIQqOh,AzGYWJKgZYTNjgQnb3cZtQ" />
-        <Link Id="SHPEhterPgrQYsTT9xS9du" Ids="LbSlfU9b98bNDg1ZlIQqOh,VCAoRj2DHUoPVHfCJ7ijkc" />
         <Link Id="D4fImMcTePBLkK8c6IlNF5" Ids="AuzbTLfLslrNCpvZgEx2C2,TgNnK42iyhzPmktNujmfCJ" />
         <Link Id="RnMJvaygeTbPQzQoqjLV2G" Ids="ALgTTEDuELHP8dc7i3T6XX,DsQUtMrOKdcQH8bIes1QLJ" />
         <Link Id="DT1iixxb3cOOIaKJ06sZ89" Ids="BD4Iyktgyn9LzKT4SyiwBR,IEdjsTY1VhDPjt3XF0Zogh" />
@@ -919,8 +931,8 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="APzBifgssL0NIeylMmE4xe" Location="VL.Skia" Version="2024.6.0-0261-g38f7059b02" />
-  <NugetDependency Id="LbMkk7VDzXNPKqOOfoKRC6" Location="VL.Stride" Version="2024.6.0-0261-g38f7059b02" />
-  <NugetDependency Id="Jf5QDO28qM3PRmWtUCUFlc" Location="VL.Stride.TextureFX" Version="2024.6.0-0261-g38f7059b02" />
+  <NugetDependency Id="APzBifgssL0NIeylMmE4xe" Location="VL.Skia" Version="2025.7.1-0173-g8ac97ecefe" />
+  <NugetDependency Id="LbMkk7VDzXNPKqOOfoKRC6" Location="VL.Stride" Version="2025.7.1-0173-g8ac97ecefe" />
+  <NugetDependency Id="Jf5QDO28qM3PRmWtUCUFlc" Location="VL.Stride.TextureFX" Version="2025.7.1-0173-g8ac97ecefe" />
   <DocumentDependency Id="VUAyLV9RNCtObFXG3pavgp" Location="../VL.Radiosity.vl" />
 </Document>
